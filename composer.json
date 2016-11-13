@@ -1,0 +1,17 @@
+{
+	"name": "jewmich/jewmich_wordpress",
+	"description": "Contains code for www.jewmich.com",
+	"license": "proprietary",
+	"repositories":[
+		{ "type": "composer", "url": "https://wpackagist.org" }
+	],
+	"require": {
+		"johnpbloch/wordpress": "4.6.1"
+	},
+	"extra": {
+		"wordpress-install-dir": "public/wordpress",
+		"installer-paths": {
+			"public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
+		}
+	}
+}
