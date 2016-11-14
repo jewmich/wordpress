@@ -27,16 +27,17 @@ class Person {
 	}
 
 	public function save() {
+		global $wpdb;
 		$query = 'UPDATE People SET firstname = ?, lastname = ?, fullname = ?, email = ?, phone = ?, is_student = ?, student_year = ? WHERE id = ?';
-		getDb()->prepare($query)->execute(array($this->firstName, $this->lastName, $this->fullName, $this->email, $this->phone, $this->isStudent, $this->studentYear, $this->id));
+		$query = $wpdb->prepare($query, $this->firstName, $this->lastName, $this->fullName, $this->email, $this->phone, $this->isStudent, $this->studentYear, $this->id);
+		$wpdb->query($query);
 		return true;
 	}
 
 	private static function getByField($fieldName, $fieldValue) {
-		$query = "SELECT * FROM People WHERE $fieldName = ?";
-		$stmt = getDb()->prepare($query);
-		$stmt->execute(array($fieldValue));
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		global $wpdb;
+		$sql = $wpdb->prepare("SELECT * FROM People WHERE $fieldName = ?", $fieldValue);
+		$row = $wpdb->get_row($sql, ARRAY_A);
 		if (!$row) return null;
 		return new self($row['id'], $row['firstname'], $row['lastname'], $row['fullname'], $row['email'], $row['phone'], $row['is_student'], $row['student_year']);
 	}
@@ -55,14 +56,15 @@ class Person {
 	}
 
 	public static function getOrCreate($firstName = '', $lastName = '', $fullName = '', $email = '', $phone = '', $isStudent = '', $studentYear = '') {
+		global $wpdb;
 		$query = 'SELECT id FROM People WHERE firstname = ? AND lastname = ? AND fullname = ? AND email = ? AND phone = ? AND is_student = ? AND student_year = ?';
-		$stmt = getDb()->prepare($query);
-		$stmt->execute(array($firstName, $lastName, $fullName, $email, $phone, $isStudent, $studentYear));
-		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+		$query = $wpdb->prepare($query, $firstName, $lastName, $fullName, $email, $phone, $isStudent, $studentYear);
+		$row = $wpdb->get_row($query, ARRAY_A);
 		if ($row) return new self($row['id'], $firstName, $lastName, $fullName, $email, $phone, $isStudent, $studentYear);
 
 		$query = 'INSERT INTO People SET firstname = ?, lastname = ?, fullname = ?, email = ?, phone = ?, is_student = ?, student_year = ?';
-		getDb()->prepare($query)->execute(array($firstName, $lastName, $fullName, $email, $phone, $isStudent, $studentYear));
-		return new self(getDb()->lastInsertId(), $firstName, $lastName, $fullName, $email, $phone, $isStudent, $studentYear);
+		$query = $wpdb->prepare($query, $firstName, $lastName, $fullName, $email, $phone, $isStudent, $studentYear);
+		$wpdb->query($query);
+		return new self($wpdb->insert_id, $firstName, $lastName, $fullName, $email, $phone, $isStudent, $studentYear);
 	}
 }

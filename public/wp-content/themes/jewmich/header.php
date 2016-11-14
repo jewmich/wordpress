@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title><?= TITLE ?></title>
-		<meta name="keywords" content="University of Michigan, Chabad Judaism, Synagogue, Campus Center, Jewish Campus,  Ann Arbor mi,Jewish Student center, Jewish community, Student groups, Holiday Services,  Shabbat Services, U of M, Israel trips  Chabad House, Chabad House Ann Arbor Mi, chabad">
-		<link href="/files/chabad.css" rel="stylesheet" type="text/css">
+      <?php wp_head(); ?>
 		<script type="text/javascript" src="/files/kdate.js"></script>
 		<script type="text/javascript" src="/files/chabad.js"></script>
-		<link rel="shortcut icon" href="/favicon.ico" >
 	</head>
-	<body topmargin="0" marginwidth="0" marginheight="0" background="/pic/chabad-bg.gif">
+	<body <?php body_class(); ?> topmargin="0" marginwidth="0" marginheight="0" background="/pic/chabad-bg.gif">
 		<div align="center">
 			<table width="44%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
 				<tr>

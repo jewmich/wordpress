@@ -30,15 +30,6 @@ function emailExceptionDetails($exception) {
 	die;
 }
 
-function getDb() {
-	static $dbh = null;
-	if (is_null($dbh)) { 
-		$dbh = new PDO(DB_DSN, DB_USERNAME, DB_PASSWORD);
-		$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	}
-	return $dbh;
-}
-
 // helper function for getSidebarImages() and getUpcomingEvents()
 function filterRowsByDate($rows) {
 	$ordered = array();
@@ -86,15 +77,15 @@ function isCurrentDateBetween($startJd, $endJd) {
 }
 
 function getSidebarImages() {
+	global $wpdb;
 	$query = "SELECT position, description, url, img_src, date_type, date_start, date_end FROM Sidebar ORDER BY position ASC";
-	$stmt = getDb()->query($query);
-	return filterRowsByDate($stmt->fetchAll(PDO::FETCH_ASSOC));
+	return filterRowsByDate($wpdb->get_results($query, ARRAY_A));
 }
 
 function getUpcomingEvents() {
+	global $wpdb;
 	$query = "SELECT position, link_text, url, date_type, date_start, date_end FROM UpcomingEvents ORDER BY position ASC";
-	$stmt = getDb()->query($query);
-	return filterRowsByDate($stmt->fetchAll(PDO::FETCH_ASSOC));
+	return filterRowsByDate($wpdb->get_results($query, ARRAY_A));
 }
 
 //can't use the mail() function, because the server jewmich is on (tablot.dreamhost.com)
