@@ -21,8 +21,11 @@ services:
      links:
        - db
      ports:
-       - "8000:8000"
+       - "8000:80"
      restart: always
      environment:
+       WORDPRESS_DB_NAME: jewmichmainsql
        WORDPRESS_DB_HOST: db:3306
        WORDPRESS_DB_PASSWORD: wordpress
+     # Not in version control for security
+     env_file: ./secrets.env

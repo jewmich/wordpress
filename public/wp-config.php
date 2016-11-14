@@ -18,6 +18,12 @@
 /** The name of the database for WordPress */
 define('DB_NAME', 'jewmichmainsql');
 
+/** MySQL database username */
+define('DB_USER', $_ENV['WORDPRESS_DB_USER']);
+
+/** MySQL database password */
+define('DB_PASSWORD', $_ENV['WORDPRESS_DB_PASSWORD']);
+
 /** MySQL hostname */
 define('DB_HOST', 'mysql.jewmich.org');
 
@@ -35,6 +41,15 @@ define('DB_COLLATE', '');
  */
 $table_prefix  = 'wp_';
 
+define('AUTH_KEY',         $_ENV['WORDPRESS_AUTH_KEY']);
+define('SECURE_AUTH_KEY',  $_ENV['WORDPRESS_SECURE_AUTH_KEY']);
+define('LOGGED_IN_KEY',    $_ENV['WORDPRESS_LOGGED_IN_KEY']);
+define('NONCE_KEY',        $_ENV['WORDPRESS_NONCE_KEY']);
+define('AUTH_SALT',        $_ENV['WORDPRESS_AUTH_SALT']);
+define('SECURE_AUTH_SALT', $_ENV['WORDPRESS_SECURE_AUTH_SALT']);
+define('LOGGED_IN_SALT',   $_ENV['WORDPRESS_LOGGED_IN_SALT']);
+define('NONCE_SALT',       $_ENV['WORDPRESS_NONCE_SALT']);
+
 /**
  * For developers: WordPress debugging mode.
  *
@@ -49,14 +64,6 @@ define('WP_DEBUG', false);
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', __DIR__ . '/');
-
-define('WP_SITEURL', 'http://' . $_SERVER['SERVER_NAME'] . '/wordpress');
-define('WP_HOME',    'http://' . $_SERVER['SERVER_NAME']);
-define('WP_CONTENT_DIR', $_SERVER['DOCUMENT_ROOT'] . '/wp-content');
-define('WP_CONTENT_URL', 'http://' . $_SERVER['SERVER_NAME'] . '/wp-content');
-
-// Not in version control for security
-require(ABSPATH . '../secrets.php');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

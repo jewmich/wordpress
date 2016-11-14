@@ -108,8 +108,8 @@ function getMailer() {
 	$mailer->Host = 'mail.jewmich.com';
 	$mailer->SMTPAuth = true;
 	$mailer->Port = 25;
-	$mailer->Username = SMTP_USERNAME;
-	$mailer->Password = SMTP_PASSWORD;
+	$mailer->Username = $_ENV['SMTP_USERNAME'];
+	$mailer->Password = $_ENV['SMTP_PASSWORD'];
 	return $mailer;
 }
 
