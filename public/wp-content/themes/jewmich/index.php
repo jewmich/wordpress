@@ -10,11 +10,11 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  */
 
-get_header();
+get_header(is_home() ? 'redesign' : 'old');
 ?>
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<?php the_content(); ?>
 
 	<?php endwhile; ?>
-<?php get_footer(); ?>
+<?php get_footer(is_home() ? 'redesign' : 'old'); ?>

@@ -1,5 +1,4 @@
 <?php
-require_once('PasswordHash.php');
 
 class User {
 	public $person;
