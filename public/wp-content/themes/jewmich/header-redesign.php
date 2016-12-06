@@ -83,52 +83,52 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" id="adults" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ADULTS <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="https://www.jewmich.com/cong">About Congregation Chabad</a></li>
-							<li><a href="https://www.jewmich.com/studycenter">Adult Education</a></li>
-							<li><a href="https://www.jewmich.com/mikvah">Mikvah</a></li>
-							<li><a href="https://www.jewmich.com/kiddush">Sponsor a Shabbat Lunch</a></li>
-							<li><a href="https://www.jewmich.com/jwc">Jewish Women's Circle</a></li>
-							<li><a href="https://www.jewmich.com/kosher">Kosher in Ann Arbor</a></li>
-							<li><a href="https://www.jewmich.com/candlelighting">Candle Lighting Times</a></li>
-							<li><a href="https://www.jewmich.com/ask">Ask the Rabbi</a></li>
-							<li><a href="https://www.jewmich.com/map">Map</a></li>
-							<li><a href="https://www.jewmich.com/visiting&living">Visiting & Living</a></li>
+							<li><a href="/cong">About Congregation Chabad</a></li>
+							<li><a href="/studycenter">Adult Education</a></li>
+							<li><a href="/mikvah">Mikvah</a></li>
+							<li><a href="/kiddush">Sponsor a Shabbat Lunch</a></li>
+							<li><a href="/jwc">Jewish Women's Circle</a></li>
+							<li><a href="/kosher">Kosher in Ann Arbor</a></li>
+							<li><a href="/candlelighting">Candle Lighting Times</a></li>
+							<li><a href="/ask">Ask the Rabbi</a></li>
+							<li><a href="/map">Map</a></li>
+							<li><a href="/visiting&living">Visiting & Living</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" id="youth" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUTH <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="https://www.jewmich.com/tep">Torah Enrichment Program</a></li>
-							<li><a href="https://www.jewmich.com/tep">Programs</a></li>
+							<li><a href="/tep">Torah Enrichment Program</a></li>
+							<li><a href="/tep">Programs</a></li>
 							<li><a href="http://www.mycampganisrael.com/about.htm">Camp Gan Israel</a></li>
-							<li><a href="https://www.jewmich.com/ask">Ask the Rabbi</a></li>
+							<li><a href="/ask">Ask the Rabbi</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" id="events" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTS <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="https://www.jewmich.com/highholiday">High Holiday Reservation</a></li>
-							<li><a href="https://www.jewmich.com/kiddush">Sponsor a Kiddush Lunch</a></li>
-							<li><a href="https://www.jewmich.com/shabbat">RSVP for a Student Shabbat Dinner</a></li>
+							<li><a href="/highholiday">High Holiday Reservation</a></li>
+							<li><a href="/kiddush">Sponsor a Kiddush Lunch</a></li>
+							<li><a href="/shabbat">RSVP for a Student Shabbat Dinner</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" id="contact_us" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CONTACT US <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="https://www.jewmich.com/contact">Contact Information</a></li>
-							<li><a href="https://www.jewmich.com/map">Map</a></li>
-							<li><a href="https://www.jewmich.com/aboutus">About Us</a></li>
-							<li><a href="https://www.jewmich.com/visiting&living">Visiting & Living</a></li>
+							<li><a href="/contact">Contact Information</a></li>
+							<li><a href="/map">Map</a></li>
+							<li><a href="/aboutus">About Us</a></li>
+							<li><a href="/visiting&living">Visiting & Living</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" id="donate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DONATE <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="https://www.jewmich.com/donation">About Donations</a></li>
-							<li><a href="https://www.jewmich.com/donate">Donate Online</a></li>
-							<li><a href="https://www.jewmich.com/wishlist">Shabbat Wish List</a></li>
-							<li><a href="https://www.jewmich.com/charitybox">Request a Charity Box</a></li>
-							<li><a href="https://www.jewmich.com/chaiclub">Chai Club</a></li>
+							<li><a href="/donation">About Donations</a></li>
+							<li><a href="/donate">Donate Online</a></li>
+							<li><a href="/wishlist">Shabbat Wish List</a></li>
+							<li><a href="/charitybox">Request a Charity Box</a></li>
+							<li><a href="/chaiclub">Chai Club</a></li>
 						</ul>
 					</li>
 				</ul>
