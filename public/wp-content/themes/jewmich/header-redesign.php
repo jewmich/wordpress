@@ -7,9 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Chabad House of Ann Arbor</title>
 	<!-- Include bootstrap CSS -->
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/carousel.style.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Noto" rel='stylesheet' type='text/css'>
+	<link href="<?= get_template_directory_uri() ?>/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?= get_template_directory_uri() ?>/css/carousel.style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alef" rel='stylesheet' type='text/css'>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,13 +30,13 @@
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="carousel/images/header.jpg" alt="chabad house">
+						<img src="<?= get_template_directory_uri() ?>/images/carousel/header.jpg" alt="chabad house">
 					</div>
 					<div class="item">
-						<img src="carousel/images/header2.jpg" alt="chabad house 2">
+						<img src="<?= get_template_directory_uri() ?>/images/carousel/header2.jpg" alt="chabad house 2">
 					</div>
 					<div class="item">
-						<img src="carousel/images/header3.jpg" alt="chabad house 3">
+						<img src="<?= get_template_directory_uri() ?>/images/carousel/header3.jpg" alt="chabad house 3">
 					</div>
 				</div>
 
@@ -52,7 +51,7 @@
 		</div>
 	</div><!-- end wrapper -->
 	<header>
-		<h1><a href="https://www.jewmich.com/">C<small>HABAD OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
+		<h1><a href="/">C<small>HABAD OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
 	</header>
 	<nav class="navbar navbar-inverse" role="navigaton">
 		<div class="container">
@@ -62,21 +61,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 				</button>
-		   </div> <!-- Carousel -->
-			</div>
-	</div><!-- end wrapper -->
-	<header>
-			<h1><a href="https://www.jewmich.com/">C<small>HABAD OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
-	</header>
-	<nav class="navbar navbar-inverse" role="navigaton">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-				</button>
-			</div>
+		   </div>
 			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="navBar">
 				<ul class="nav navbar-nav">
@@ -150,4 +135,3 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container -->
 	</nav>
-	<div class="row" id="homeSections" role="main">

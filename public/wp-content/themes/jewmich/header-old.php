@@ -3,10 +3,10 @@
 	<head>
 		<title><?= TITLE ?></title>
       <?php wp_head(); ?>
-		<script type="text/javascript" src="/files/kdate.js"></script>
-		<script type="text/javascript" src="/files/chabad.js"></script>
+		<script type="text/javascript" src="<?= get_template_directory_uri() ?>/js/kdate.js"></script>
+		<script type="text/javascript" src="<?= get_template_directory_uri() ?>/js/chabad.js"></script>
 	</head>
-	<body <?php body_class(); ?> topmargin="0" marginwidth="0" marginheight="0" background="/pic/chabad-bg.gif">
+	<body <?php body_class(); ?> topmargin="0" marginwidth="0" marginheight="0" background="<?= get_template_directory_uri() ?>/images/chabad-bg.gif">
 		<div align="center">
 			<table width="44%" height="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
 				<tr>
@@ -14,13 +14,13 @@
 						<table width="726" border="0" cellpadding="0" cellspacing="0" bordercolor="#FFFFFF">
 							<tr align="left" valign="top">
 								<td width="7">
-									<img src="/pic/spacer.gif" width="7" height="11">
+									<img src="<?= get_template_directory_uri() ?>/images/spacer.gif" width="7" height="11">
 								</td>
 								<td>
-									<a href="/"><img border="0" src="/pic/header.gif" width="711" height="33"></a>
+									<a href="/"><img border="0" src="<?= get_template_directory_uri() ?>/images/header.gif" width="711" height="33"></a>
 								</td>
 								<td width="7">
-									<img src="/pic/spacer.gif" width="7" height="11">
+									<img src="<?= get_template_directory_uri() ?>/images/spacer.gif" width="7" height="11">
 								</td>
 							</tr>
 							<tr align="left" valign="top">
@@ -113,7 +113,7 @@
 							<tr align="left" valign="top">
 								<td>&nbsp;</td>
 								<td align="left">
-									<img src="/pic/mid-spacer.gif" width="32" height="24">
+									<img src="<?= get_template_directory_uri() ?>/images/mid-spacer.gif" width="32" height="24">
 								</td>
 								<td>&nbsp;</td>
 							</tr>
