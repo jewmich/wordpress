@@ -15,7 +15,7 @@
  */
 
 // Load sensitive data, which is stored outside the webroot for security.
-foreach (parse_ini_file(__DIR__ . '/../secrets.env', false, INI_SCANNER_RAW) as $option => $value) {
+foreach (parse_ini_file(__DIR__ . '/../secrets/secrets.env', false, INI_SCANNER_RAW) as $option => $value) {
 	define(str_replace('WORDPRESS_', '', $option), $value);
 }
 

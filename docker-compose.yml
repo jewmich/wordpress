@@ -16,12 +16,12 @@ services:
      depends_on:
        - db
      volumes:
-       - "./:/var/www/"
+       - "./html/:/var/www/html"
+       - "./secrets:/var/www/secrets"
      image: wordpress:latest
      links:
        - db
      ports:
        - "8000:80"
      restart: always
-     # Not in version control for security
-     env_file: ./secrets.env
+     env_file: ./secrets/secrets.env
