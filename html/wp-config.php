@@ -14,18 +14,10 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'jewmichmainsql');
-
-/** MySQL database username */
-define('DB_USER', $_ENV['WORDPRESS_DB_USER']);
-
-/** MySQL database password */
-define('DB_PASSWORD', $_ENV['WORDPRESS_DB_PASSWORD']);
-
-/** MySQL hostname */
-define('DB_HOST', 'mysql.jewmich.org');
+// Load sensitive data, which is stored outside the webroot for security.
+foreach (parse_ini_file(__DIR__ . '/../secrets.env', false, INI_SCANNER_RAW) as $option => $value) {
+	define(str_replace('WORDPRESS_', '', $option), $value);
+}
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -40,15 +32,6 @@ define('DB_COLLATE', '');
  * prefix. Only numbers, letters, and underscores please!
  */
 $table_prefix  = 'wp_';
-
-define('AUTH_KEY',         $_ENV['WORDPRESS_AUTH_KEY']);
-define('SECURE_AUTH_KEY',  $_ENV['WORDPRESS_SECURE_AUTH_KEY']);
-define('LOGGED_IN_KEY',    $_ENV['WORDPRESS_LOGGED_IN_KEY']);
-define('NONCE_KEY',        $_ENV['WORDPRESS_NONCE_KEY']);
-define('AUTH_SALT',        $_ENV['WORDPRESS_AUTH_SALT']);
-define('SECURE_AUTH_SALT', $_ENV['WORDPRESS_SECURE_AUTH_SALT']);
-define('LOGGED_IN_SALT',   $_ENV['WORDPRESS_LOGGED_IN_SALT']);
-define('NONCE_SALT',       $_ENV['WORDPRESS_NONCE_SALT']);
 
 /**
  * For developers: WordPress debugging mode.

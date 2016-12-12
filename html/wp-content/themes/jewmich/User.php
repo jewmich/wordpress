@@ -23,7 +23,7 @@ class User {
 		// this isn't as secure as it could be because an attacker could forge reset links if they 
 		// gain access to both the code and DB, but the worst they could do is reserve shabbat dinners 
 		// under someone else's name, which isn't exactly the end of the world
-		return sha1($_ENV['RESET_LINK_SALT'] . $this->passwordHash . $expireTime);
+		return sha1(RESET_LINK_SALT . $this->passwordHash . $expireTime);
 	}
 
 	private function checkPassword($password) {
