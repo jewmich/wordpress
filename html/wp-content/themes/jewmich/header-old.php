@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?= TITLE ?></title>
+		<title><?= get_post_meta(get_the_ID(), 'title', true) ?></title>
       <?php wp_head(); ?>
+		<link rel="stylesheet" href="<?= get_template_directory_uri() ?>/css/old.css" type="text/css" />
+		<script type="text/javascript" src="<?= get_template_directory_uri() ?>//kdate.js"></script>
 		<script type="text/javascript" src="<?= get_template_directory_uri() ?>/js/kdate.js"></script>
 		<script type="text/javascript" src="<?= get_template_directory_uri() ?>/js/chabad.js"></script>
 	</head>
@@ -26,9 +28,9 @@
 							<tr align="left" valign="top">
 								<td>&nbsp;</td>
 								<td>
-									<? if (defined('BANNER_LINK')): ?><a href="<?= BANNER_LINK ?>"><? endif ?>
-									<img border="0" src="<?= BANNER ?>" width="711" height="210">
-									<? if (defined('BANNER_LINK')): ?></a><? endif ?>
+									<? if ($bannerLink = get_post_meta(get_the_ID(), 'banner_link', true)): ?><a href="<?= $bannerLink ?>"><? endif ?>
+									<img border="0" src="<?= get_post_meta(get_the_ID(), 'banner', true) ?>" width="711" height="210">
+									<? if ($bannerLink): ?></a><? endif ?>
 								</td>
 								<td>&nbsp;</td>
 							</tr>

@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Chabad House of Ann Arbor</title>
 	<!-- Include bootstrap CSS -->
+	<link href="<?= get_template_directory_uri() ?>/css/redesign.css" rel="stylesheet" />
 	<link href="<?= get_template_directory_uri() ?>/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?= get_template_directory_uri() ?>/css/carousel.style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alef" rel='stylesheet' type='text/css'>
