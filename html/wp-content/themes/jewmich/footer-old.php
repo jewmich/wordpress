@@ -8,9 +8,7 @@
 		<a href="myaccount">My Account</a> &ndash; <a href="logout?return=<?= $_SERVER['PHP_SELF'] ?>">Logout</a>
 	</div>
 	<? endif ?>
-	<? foreach (getSidebarImages() as $image): ?>
-	<p><a href="<?= $image['url'] ?>"><img border="0" src="<?= $image['img_src'] ?>" alt="<?= $image['description'] ?>"/></a></p>
-	<? endforeach ?>
+	<?= do_shortcode('[sidebar]') ?>
 	<script type="text/javascript" language="javascript" src="//beta.chabad.org/tools/shared/candlelighting/candlelighting.js.asp?z=48104"></script>
 	<br>&nbsp;</p>
 </td>
