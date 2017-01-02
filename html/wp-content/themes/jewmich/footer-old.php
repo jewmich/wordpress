@@ -1,6 +1,6 @@
 </td>
 
-<? if (get_post_meta(get_the_ID(), 'no_sidebar', true)): ?>
+<? if (!get_post_meta(get_the_ID(), 'no_sidebar', true)): ?>
 <td class="sidebar" width="203" valign="top" align="right">
 	<? if ($user = User::getLoggedInUser()): ?>
 	<div class="chabad" style="text-align: center; padding-bottom: 5px;">
