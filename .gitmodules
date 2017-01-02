@@ -1,0 +1,3 @@
+[submodule "html/wp-content/plugins/jewmich_sidebar"]
+	path = html/wp-content/plugins/jewmich_sidebar
+	url = https://github.com/jewmich/jewmich_sidebar.git
