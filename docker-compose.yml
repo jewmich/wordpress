@@ -18,7 +18,9 @@ services:
      volumes:
        - "./html/:/var/www/html"
        - "./secrets:/var/www/secrets"
-     image: wordpress:latest
+     build:
+        context: .
+        dockerfile: Dockerfile-wordpress
      links:
        - db
      ports:

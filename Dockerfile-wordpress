@@ -1,0 +1,5 @@
+FROM wordpress:latest
+
+# Need the calendar functions for Jewmich sidebar and event-related code
+RUN docker-php-ext-install calendar
+
