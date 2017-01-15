@@ -3,7 +3,7 @@ body {
 	background: #fff;
 	margin: 0;
 }
-nav, header, main, section, article, footer, h1, h2, h3, h4, p {
+nav, header, section, article, h1, h2, h3, h4, p {
 	display: block;
 	margin: 0;
 }
@@ -34,9 +34,6 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 	article p {
 		margin-top: 15px;
 	}
-	footer {
-		margin-top: 20px;
-	}
 }
 /*all @media screens*/
 
@@ -49,22 +46,22 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 		background-size: cover;
 	}
 	#wrapper {
-		width: 1904px;
+		width: 100%;
 		position: relative;
 		margin: 0 auto;
 		background: #333;
 	}
 	header {
 		width: 100%;
+		position: absolute;
+		top: 0;
+	}
+	h1 {
 		background: rgba(0, 0, 0, 0.5);
 		background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
 		background: -o-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
 		background: -moz-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
 		background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		position: absolute;
-		top: 0;
-	}
-	h1 {
 		margin: 0;
 		padding: 25px;
 	}
@@ -72,7 +69,6 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 		color: #fff;
 		text-shadow: 1px 1px 1px black, 0 0 50px black, 0 0 5px black;
 		font-family: 'Perpetua Titling', serif;
-		text-decoration: none;
 		letter-spacing: 1px;
 	}
 	h1 a:hover {
@@ -104,14 +100,13 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 		list-style: none;
 	}
 	nav ul li a {
-		text-decoration: none;
 		color: #ffc;
 		font-size: 1.25em;
 	}
 	nav ul li a:active {
-		text-decoration: none;
 		color: #ccc;
 	}
+
 	#students {
 		background-color: #00274c;
 	}
@@ -220,13 +215,11 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 	#adults_article a .readMore {
 		font-size: .75em;
 		color: #ccc;
-		text-decoration: none;
 		float: right;
 	}
 	a.readMore {
 		font-size: .75em;
 		color: #ccc;
-		text-decoration: none;
 		float: right;
 		margin: 15px;
 	}
@@ -247,13 +240,15 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 		width: 100%;
 		height: 300px;
 	}
+	h1 {
+		margin: 10px;
+	}
+	#wrapper {
+		margin-top: 0;
+	}
 }
 
 @media screen and (max-width: 767px) {
-	#wrapper {
-		width: 100%;
-		margin-top: 0;
-	}
 	nav.navbar.navbar-inverse {
 		margin-top: 200px;
 	}
@@ -276,14 +271,6 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 	header {
 		height: 200px;
 	}
-	h1 {
-		background: rgba(0, 0, 0, 0.5);
-		background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		background: -o-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		background: -moz-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		margin: 10px;
-	}
 	div#homeSections.row {
 		width: 100%;
 		margin: 0;
@@ -292,7 +279,6 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 	div#students_article.col-sm-4,
 	div#youth_article.col-sm-4,
 	div#adults_article.col-sm-4 {
-		display: block;
 		margin-top: 10px;
 	}
 	#students_article p,
@@ -300,17 +286,10 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 	#adults_article p {
 		font-size: 1.25em;
 	}
-	a.readMore {
-		margin: 15px;
-	}
 }
 /*tablet portrait*/
 
 @media screen and (min-width: 768px) and (max-width: 959px) {
-	#wrapper {
-		width: 100%;
-		margin-top: 0;
-	}
 	nav.navbar.navbar-inverse {
 		margin-top: 300px;
 	}
@@ -326,34 +305,17 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 	a#donate.dropdown-toggle {
 		width: 100%;
 	}
-	h1 {
-		background: rgba(0, 0, 0, 0.5);
-		background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		background: -o-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		background: -moz-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		margin: 10px;
-	}
 	div#homeSections.row {
 		width: 100%;
 		margin: 0;
 		padding: 10px;
 	}
-	div#students_article.col-sm-4,
-	div#youth_article.col-sm-4,
-	div#adults_article.col-sm-4 {
-		display: block;
-	}
 	form {
 		width: 100%;
-	}
-	a.readMore {
-		margin: 15px;
 	}
 	#students_article,
 	#youth_article,
 	#adults_article {
-		display: block;
 		margin: 0;
 		padding: 25px;
 		width: 100%;
@@ -378,7 +340,6 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 	}
 	nav ul {
 		width: 100%;
-		margin: 0 auto;
 	}
 	nav ul li {
 		width: 15%;
@@ -389,37 +350,16 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 		border-radius: 0;
 	}
 	h1 {
-		background: rgba(0, 0, 0, 0.5);
-		background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		background: -o-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		background: -moz-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
-		margin: 10px;
 		font-size: 1.5em;
 	}
 	#homeSections {
 		width: 90%;
 		padding: 20px;
 	}
-	a.readMore {
-		margin: 15px;
-	}
 }
 
 /*desktop*/
 @media screen and (min-width: 1024px) {
-	body {
-		background: url("../images/torah_star.jpg") no-repeat #999;
-		background-size: cover;
-	}
-	#wrapper {
-		width: 100%;
-		margin: 0 auto;
-		position: relative;
-	}
-	.nav ul {
-		margin: 0 auto;
-	}
 	.nav ul li {
 		padding: 0;
 		text-align: center;
@@ -431,36 +371,13 @@ nav, header, main, section, article, footer, h1, h2, h3, h4, p {
 		padding: 0 15px 5px;
 	}
 	#students_article {
-		float: left;
-		color: #fbcb07;
 		margin: 0 20px 0 15px;
-		background: #00274c;
 	}
 	#youth_article {
-		float: left;
-		color: #fff;
 		margin: 0 20px 0;
-		background: #336666;
 	}
 	#adults_article {
-		float: left;
-		color: #fff;
 		margin: 0 0 0 20px;
-		background: #7a1501;
-	}
-	#students_article a:hover,
-	#youth_article a:hover,
-	#adults_article a:hover {
-		text-decoration: none;
-	}
-	a:hover.readMore {
-		color: #fff;
-		text-decoration: underline;
-	}
-	footer {
-		padding: 50px;
-	}
-	footer p {
-		text-align: center;
 	}
 }
+
