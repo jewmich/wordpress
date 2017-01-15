@@ -85,26 +85,8 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		margin-bottom: 20px;
 	}
 
-	nav {
-		background-color: #333;
-		width: 100%;
-	}
-	nav ul {
-		margin: 0 auto;
-		padding: 0;
-	}
-	nav ul li {
-		float: left;
-		border: 0;
-		margin: 0;
-		list-style: none;
-	}
-	nav ul li a {
-		color: #ffc;
-		font-size: 1.25em;
-	}
-	nav ul li a:active {
-		color: #ccc;
+	.nav > li li a {
+		border-bottom: 1px solid #777;
 	}
 
 	#students {
@@ -252,13 +234,11 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	nav.navbar.navbar-inverse {
 		margin-top: 200px;
 	}
-	nav ul li {
-		width: 100%;
-		padding: 10px;
+	#navBar .nav .dropdown-menu {
+		padding: 0;
 	}
-	div#navBar.navbar-collapse.collapse {
-		width: 100%;
-		margin: 0;
+	#navBar .nav .dropdown-menu a {
+		padding: 15px;
 	}
 	a#students.dropdown-toggle,
 	a#youth.dropdown-toggle,
@@ -293,10 +273,6 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	nav.navbar.navbar-inverse {
 		margin-top: 300px;
 	}
-	nav ul li {
-		width: 100%;
-		padding: 10px;
-	}
 	a#students.dropdown-toggle,
 	a#youth.dropdown-toggle,
 	a#adults.dropdown-toggle,
@@ -325,6 +301,14 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#adults_article p {
 		font-size: 1.25em;
 	}
+	.navbar .navbar-collapse .navbar-nav {
+		display: inline-block;
+		float: none;
+	}
+	.navbar .navbar-collapse {
+		text-align: center;
+		margin-bottom: -5px;
+	}
 }
 /*tablet landscape*/
 
@@ -337,14 +321,6 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	}
 	nav.navbar.navbar-inverse {
 		margin-top: 300px;
-	}
-	nav ul {
-		width: 100%;
-	}
-	nav ul li {
-		width: 15%;
-		padding: 0;
-		text-align: center;
 	}
 	.dropdown-menu {
 		border-radius: 0;
@@ -360,10 +336,6 @@ nav, header, section, article, h1, h2, h3, h4, p {
 
 /*desktop*/
 @media screen and (min-width: 1024px) {
-	.nav ul li {
-		padding: 0;
-		text-align: center;
-	}
 	.dropdown-menu {
 		border-radius: 0;
 	}
@@ -378,6 +350,9 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	}
 	#adults_article {
 		margin: 0 0 0 20px;
+	}
+	nav ul li a {
+		font-size: 1.25em;
 	}
 }
 

@@ -53,7 +53,7 @@
 	<header>
 		<h1><a href="/">C<small>HABAD OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
 	</header>
-	<nav class="navbar navbar-inverse" role="navigaton">
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigaton">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navBar">
