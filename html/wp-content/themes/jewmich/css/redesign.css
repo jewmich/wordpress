@@ -110,22 +110,11 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#content {
 		padding: 50px 0;
 	}
-	#homeSections {
-		width: 80%;
-		margin: 0 auto;
-		margin-top: 50px;
-		margin-bottom: 50px;
-		padding: 40px 30px 40px 40px;
-		background: rgba(255, 255, 255, 0.6);
-		border: 1px solid #ababab;
-	}
+
 	#pageContent {
 		padding: 20px 20px 20px 30px;
 		background: #fff;
 		border: 1px solid #ababab;
-	}
-	#students_header {
-		color: #00274c;
 	}
 	#pageContent p {
 		padding-bottom: 20px;
@@ -135,9 +124,22 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		padding: 0 20px 20px 0;
 		float: left;
 	}
+
 	#sideColumn {
 		margin-top: 30px;
 		padding: 10px 10px 10px 50px;
+	}
+
+	#homeSections {
+		margin: 50px auto;
+		background: rgba(255, 255, 255, 0.6);
+		border: 1px solid #ababab;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	#homeSections img {
+		width: 100%;
 	}
 	#homeSections p {
 		font-size: 1em;
@@ -146,17 +148,26 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		overflow: hidden;
 		margin: 0;
 	}
+
+	#students_article,
+	#youth_article,
+	#adults_article {
+		display: flex;
+		flex-direction: column;
+		margin: 5px;
+	}
+
 	#students_article h3 {
 		color: #fbcb07;
 		font-size: 1.5em;
+	}
+	#students_article p {
+		color: #fbcb07;
 	}
 	#youth_article h3,
 	#adults_article h3 {
 		color: #fff;
 		font-size: 1.5em;
-	}
-	#students_article p {
-		color: #fbcb07;
 	}
 	#youth_article p,
 	#adults_article p {
@@ -164,16 +175,32 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	}
 	#youth_article {
 		background-color: #336666;
-		padding: 0;
 	}
 	#students_article {
 		background-color: #00274c;
-		padding: 0;
 	}
 	#adults_article {
 		background-color: #7a1501;
-		padding: 0;
 	}
+	#students_article,
+	#youth_article,
+	#adults_article {
+		padding: 0;
+		padding-bottom: 20px;
+	}
+	a.readMore {
+		font-size: .75em;
+		color: #ccc;
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+	}
+
+	a:hover.readMore {
+		color: #fff;
+		text-decoration: underline;
+	}
+
 	.ad {
 		margin: 0 0 50px;
 		padding: 0;
@@ -181,34 +208,15 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	.bottom {
 		background-color: #333;
 	}
-	.bottom .container {
+	.bottom .col-xs-8 {
 		background-color: #373737;
-		min-height: 150px;
 	}
-	.bottom .container p {
+	.bottom p {
 		color: #ccc;
 		text-align: center;
 		margin-top: 20px;
 		font-size: 1em;
 		line-height: 1.75em;
-	}
-	#students_article a .readMore,
-	#youth_article a .readMore,
-	#adults_article a .readMore {
-		font-size: .75em;
-		color: #ccc;
-		float: right;
-	}
-	a.readMore {
-		font-size: .75em;
-		color: #ccc;
-		float: right;
-		margin: 15px;
-	}
-	a:hover.readMore {
-
-		color: #fff;
-		text-decoration: underline;
 	}
 }
 
@@ -271,10 +279,23 @@ nav, header, section, article, h1, h2, h3, h4, p {
 }
 
 /* medium phones and tablet portrait */
-@media screen and (min-width: 768px) and (max-width: 959px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	form {
+		width: 100%;
+	}
+
 	nav.navbar.navbar-inverse {
 		margin-top: 300px;
 	}
+	nav.navbar .navbar-collapse .navbar-nav {
+		display: inline-block;
+		float: none;
+	}
+	nav.navbar .navbar-collapse {
+		text-align: center;
+		margin-bottom: -5px;
+	}
+
 	a#students.dropdown-toggle,
 	a#youth.dropdown-toggle,
 	a#adults.dropdown-toggle,
@@ -283,33 +304,10 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	a#donate.dropdown-toggle {
 		width: 100%;
 	}
-	div#homeSections.row {
-		width: 100%;
-		margin: 0;
-		padding: 10px;
-	}
-	form {
-		width: 100%;
-	}
-	#students_article,
-	#youth_article,
-	#adults_article {
-		margin: 0;
-		padding: 25px;
-		width: 100%;
-	}
 	#students_article p,
 	#youth_article p,
 	#adults_article p {
 		font-size: 1.25em;
-	}
-	.navbar .navbar-collapse .navbar-nav {
-		display: inline-block;
-		float: none;
-	}
-	.navbar .navbar-collapse {
-		text-align: center;
-		margin-bottom: -5px;
 	}
 }
 
@@ -321,17 +319,13 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	h3, p {
 		padding: 0 15px 5px;
 	}
-	#students_article {
-		margin: 0 20px 0 15px;
-	}
-	#youth_article {
-		margin: 0 20px 0;
-	}
-	#adults_article {
-		margin: 0 0 0 20px;
-	}
 	nav ul li a {
 		font-size: 1.25em;
+	}
+	#students_article,
+	#youth_article,
+	#adults_article {
+		margin: 8px;
 	}
 }
 

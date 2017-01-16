@@ -1,11 +1,14 @@
-	<!-- Site footer -->
-	<div class="bottom" role="footer">
-		<div class="container">
-			<div class="col-md-2"></div>
-			<div class="col-md-8">
-				<p><a href="/studentcenter">Student Center</a> | <a href="/cong">Congregation Chabad</a> | <a href="/tep">Torah Enrichment Program</a> | <a href="/studycenter">Study Center</a><br><a href="/camp">Camp Gan Israel</a> | <a href="/donation">Donate</a> | <a href="/faq">Faq</a> | <a href="/contact">Contact Us</a><br><a href="">Chabad House at the University of Michigan</a><br>715 Hill • Ann Arbor, MI • 48104<br>734-99- LEARN (5-3276)
+	</div>
+<!-- Site footer -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 bottom" role="footer">
+				<div class="row">
+					<div class="col-xs-8 col-xs-offset-2">
+						<p><a href="/studentcenter">Student Center</a> | <a href="/cong">Congregation Chabad</a> | <a href="/tep">Torah Enrichment Program</a> | <a href="/studycenter">Study Center</a><br><a href="/camp">Camp Gan Israel</a> | <a href="/donation">Donate</a> | <a href="/faq">Faq</a> | <a href="/contact">Contact Us</a><br><a href="">Chabad House at the University of Michigan</a><br>715 Hill • Ann Arbor, MI • 48104<br>734-99- LEARN (5-3276)
+					</div>
+				</div>
 			</div>
-			<div class="col-md-2"></div>
 		</div>
 	</div>
 
