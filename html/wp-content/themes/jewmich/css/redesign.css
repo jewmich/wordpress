@@ -38,9 +38,6 @@ nav, header, section, article, h1, h2, h3, h4, p {
 
 /*all @media screens*/
 @media screen {
-	.clr {
-		clear: both;
-	}
 	body {
 		background: url("../images/torah_star.jpg") no-repeat #999;
 		background-size: cover;
@@ -111,18 +108,12 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		padding: 50px 0;
 	}
 
-	#pageContent {
-		padding: 20px 20px 20px 30px;
-		background: #fff;
+	#pageContent > .row {
+		margin: 50px auto;
+	}
+	#pageContentCol {
+		background: rgba(255, 255, 255, 0.6);
 		border: 1px solid #ababab;
-	}
-	#pageContent p {
-		padding-bottom: 20px;
-		float: left;
-	}
-	#pageContent img {
-		padding: 0 20px 20px 0;
-		float: left;
 	}
 
 	#sideColumn {
@@ -131,9 +122,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	}
 
 	#homeSections {
-		margin: 50px auto;
-		background: rgba(255, 255, 255, 0.6);
-		border: 1px solid #ababab;
+		padding: 30px 15px 30px 15px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -154,7 +143,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#adults_article {
 		display: flex;
 		flex-direction: column;
-		margin: 5px;
+		margin: 0 5px;
 	}
 
 	#students_article h3 {
@@ -205,6 +194,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		margin: 0 0 50px;
 		padding: 0;
 	}
+
 	.bottom {
 		background-color: #333;
 	}
@@ -237,6 +227,12 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#wrapper {
 		margin-top: 0;
 	}
+	#pageContentCol {
+		padding: 0;
+	}
+	#pageContent > .row {
+		margin: 20px auto;
+	}
 }
 
 /* small phones */
@@ -264,12 +260,12 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	div#homeSections.row {
 		width: 100%;
 		margin: 0;
-		padding: 10px;
+		padding: 0;
 	}
 	div#students_article.col-sm-4,
 	div#youth_article.col-sm-4,
 	div#adults_article.col-sm-4 {
-		margin-top: 10px;
+		margin: 0;
 	}
 	#students_article p,
 	#youth_article p,
@@ -316,16 +312,18 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	.dropdown-menu {
 		border-radius: 0;
 	}
+
 	h3, p {
 		padding: 0 15px 5px;
 	}
+
 	nav ul li a {
 		font-size: 1.25em;
 	}
+
 	#students_article,
 	#youth_article,
 	#adults_article {
-		margin: 8px;
+		margin: 0 8px;
 	}
 }
-

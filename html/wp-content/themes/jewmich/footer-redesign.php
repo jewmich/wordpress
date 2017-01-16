@@ -1,3 +1,5 @@
+			</div>
+		</div>
 	</div>
 <!-- Site footer -->
 	<div class="container-fluid">
