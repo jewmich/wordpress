@@ -27,10 +27,9 @@ add_action( 'after_setup_theme', 'jewmich_setup' );
  * Enqueues scripts and styles for front-end.
  */
 function jewmich_scripts_styles() {
-	// Loads Bootstrap CSS, the redesign CSS, and the legacy (jewmich.com) CSS
+	// Loads Bootstrap CSS and our CSS
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css');
-	wp_enqueue_style( 'redesign', get_stylesheet_directory_uri() . '/css/redesign.css');
-	wp_enqueue_style( 'old', get_stylesheet_directory_uri() . '/css/old.css');
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 	// Loads Bootstrap JS and Jewmich-custom JS
 	wp_deregister_script('jquery'); // we have our own version of jQuery

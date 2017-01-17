@@ -1,0 +1,498 @@
+body {
+	color: #666;
+	background: #fff;
+	margin: 0;
+}
+nav, header, section, article, h1, h2, h3, h4, p {
+	display: block;
+	margin: 0;
+}
+
+/*print*/
+@media print {
+	body {
+		font: 12pt Times New Roman, serif;
+		color: #333;
+		margin: 10px;
+	}
+	h1 {
+		font-size: 24pt;
+		font-weight: bold;
+		margin: 20px 0;
+	}
+	h2 {
+		font-size: 18pt;
+		font-weight: bold;
+	}
+	h3 {
+		font-size: 16pt;
+		font-weight: bold;
+	}
+	nav, img, ul, a, article span, aside {
+		display: none;
+	}
+	article p {
+		margin-top: 15px;
+	}
+}
+
+/*all @media screens*/
+@media screen {
+	body {
+		background: url("images/torah_star.jpg") no-repeat #999;
+		background-size: cover;
+	}
+	#wrapper {
+		width: 100%;
+		position: relative;
+	}
+	#wrapper .carousel-inner img {
+		margin: 0 auto;
+	}
+	header {
+		width: 100%;
+		position: absolute;
+		top: 0;
+	}
+	h1 {
+		background: rgba(0, 0, 0, 0.5);
+		background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
+		background: -o-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
+		background: -moz-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
+		background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
+		margin: 0;
+		padding: 25px;
+	}
+	h1 a {
+		color: #fff;
+		text-shadow: 1px 1px 1px black, 0 0 50px black, 0 0 5px black;
+		font-family: 'Perpetua Titling', serif;
+		letter-spacing: 1px;
+	}
+	h1 a:hover {
+		color: #fff;
+	}
+	h2 {
+		color: #333;
+	}
+	h3 {
+		font-family: 'Alef', Arial, sans-serif;
+		letter-spacing: 1px;
+		font-size: 1.5em;
+		padding: 0 15px;
+		margin-bottom: 20px;
+	}
+
+	.nav > li li a {
+		border-bottom: 1px solid #777;
+	}
+	.nav > li li:last-child a {
+		border-bottom: none;
+	}
+
+	#students {
+		background-color: #00274c;
+	}
+	#adults {
+		background-color: #7a1501;
+	}
+	#youth {
+		background-color: #336666;
+	}
+	#events {
+		background-color: #cf7019;
+	}
+	#contact_us {
+		background-color: #7b7000;
+	}
+	#donate {
+		background-color: #514e86;
+	}
+	#content {
+		padding: 50px 0;
+	}
+
+	#pageContent > .row {
+		margin: 50px auto;
+	}
+	#pageContent .pageContentWrapperCol {
+		border: 1px solid #ababab;
+		padding: 30px;
+		background: white;
+	}
+
+	#pageContent .sidebar {
+		border-left: 1px solid #ababab;
+		text-align: center;
+		width: 230px;
+	}
+	#pageContent.has-sidebar .pageContentCol {
+		width: calc(100% - 230px);
+	}
+
+	.home .pageContentWrapperCol {
+		background: rgba(255, 255, 255, 0.6);
+	}
+	#homeSections {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	#homeSections img {
+		width: 100%;
+	}
+	#homeSections p {
+		font-size: 1em;
+		line-height: 1.5;
+		padding: 10px 15px 0;
+		overflow: hidden;
+		margin: 0;
+	}
+
+	#students_article,
+	#youth_article,
+	#adults_article {
+		display: flex;
+		flex-direction: column;
+		margin: 0 5px;
+	}
+
+	#students_article h3 {
+		color: #fbcb07;
+		font-size: 1.5em;
+	}
+	#students_article p {
+		color: #fbcb07;
+	}
+	#youth_article h3,
+	#adults_article h3 {
+		color: #fff;
+		font-size: 1.5em;
+	}
+	#youth_article p,
+	#adults_article p {
+		color: #fff;
+	}
+	#youth_article {
+		background-color: #336666;
+	}
+	#students_article {
+		background-color: #00274c;
+	}
+	#adults_article {
+		background-color: #7a1501;
+	}
+	#students_article,
+	#youth_article,
+	#adults_article {
+		padding: 0;
+		padding-bottom: 30px;
+	}
+	a.readMore {
+		font-size: .75em;
+		color: #ccc;
+		position: absolute;
+		bottom: 15px;
+		right: 15px;
+	}
+
+	a:hover.readMore {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	.ad {
+		margin: 0 0 50px;
+		padding: 0;
+	}
+
+	.bottom {
+		background-color: #333;
+	}
+	.bottom .col-xs-8 {
+		background-color: #373737;
+	}
+	.bottom p {
+		color: #ccc;
+		text-align: center;
+		margin-top: 20px;
+		font-size: 1em;
+		line-height: 1.75em;
+	}
+}
+
+/*small-to-medium devices (phones) */
+@media screen and (max-width: 1023px) {
+	.jumbotron {
+		display: none;
+	}
+	header {
+		background: url("images/chabad_small2.jpg") no-repeat left bottom #333;
+		background-size: cover;
+		width: 100%;
+		height: 300px;
+	}
+	h1 {
+		margin: 10px;
+	}
+	#wrapper {
+		margin-top: 0;
+	}
+	#pageContent .pageContentWrapperCol {
+		padding: 15px;
+	}
+	#pageContent > .row {
+		margin: 20px auto;
+	}
+}
+
+/* small phones */
+@media screen and (max-width: 767px) {
+	nav.navbar.navbar-inverse {
+		margin-top: 200px;
+	}
+	#navBar .nav .dropdown-menu {
+		padding: 0;
+	}
+	#navBar .nav .dropdown-menu a {
+		padding: 15px;
+	}
+	a#students.dropdown-toggle,
+	a#youth.dropdown-toggle,
+	a#adults.dropdown-toggle,
+	a#events.dropdown-toggle,
+	a#contact_us.dropdown-toggle,
+	a#donate.dropdown-toggle {
+		width: 100%;
+	}
+	header {
+		height: 200px;
+	}
+	div#homeSections.row {
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	.home #pageContent .pageContentWrapperCol {
+		padding: 0;
+	}
+	div#students_article.col-sm-4,
+	div#youth_article.col-sm-4,
+	div#adults_article.col-sm-4 {
+		margin: 0;
+	}
+	#students_article p,
+	#youth_article p,
+	#adults_article p {
+		font-size: 1.25em;
+	}
+}
+
+/* medium phones and tablet portrait */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+	form {
+		width: 100%;
+	}
+
+	nav.navbar.navbar-inverse {
+		margin-top: 300px;
+	}
+	nav.navbar .navbar-collapse .navbar-nav {
+		display: inline-block;
+		float: none;
+	}
+	nav.navbar .navbar-collapse {
+		text-align: center;
+		margin-bottom: -5px;
+	}
+
+	a#students.dropdown-toggle,
+	a#youth.dropdown-toggle,
+	a#adults.dropdown-toggle,
+	a#events.dropdown-toggle,
+	a#contact_us.dropdown-toggle,
+	a#donate.dropdown-toggle {
+		width: 100%;
+	}
+	#students_article p,
+	#youth_article p,
+	#adults_article p {
+		font-size: 1.25em;
+	}
+}
+
+/*tablet landscape or desktop */
+@media screen and (min-width: 1024px) {
+	.dropdown-menu {
+		border-radius: 0;
+	}
+
+	.home h3, .home p {
+		padding: 0 15px 5px;
+	}
+
+	nav ul li a {
+		font-size: 1.25em;
+	}
+
+	#students_article,
+	#youth_article,
+	#adults_article {
+		margin: 0 8px;
+	}
+}
+
+
+/**
+ * BEGIN LEGACY jewmich.COM CSS
+ * This CSS is solely for backwards-compatibility with old pages
+ */
+.chabad {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	color: #4C4C4C; 
+	text-decoration: none;
+	text-align: left;
+}
+.chabad a:link {	color: #4C4C4C; text-decoration: underline; }
+.chabad a:visited {	color: #4C4C4C; text-decoration: underline; }
+.chabad a:hover {	color: #727272; }
+table.chabad .label { white-space: nowrap }
+
+#table1 { width: 100%; }
+
+.successmsg {
+	color: #2f4f2f;
+}
+
+.sidebar p {
+	margin-bottom: 10px;
+}
+
+.chabad-header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+	color: #4C4C4C;
+}
+
+.main-content {
+	width: 520px;
+}
+
+.texter {
+	display: none;
+}
+
+@media print {
+	.texter { display: block }
+}
+
+.chabad-sub-info {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #727272;
+}
+.chabad-sub-info a:link {	color: #727272; text-decoration: none; }
+.chabad-sub-info a:visited {	color: #727272; text-decoration: none; }
+.chabad-sub-info a:hover {	color: #727272; text-decoration: underline; }
+
+.chabad-small
+{
+    font-family: Arial, Helvetica, sans-serif;
+    FONT-SIZE: 10.5px;
+    COLOR: #000000;
+    line-height: 13px;
+}
+
+.verdana10pxGray {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #727272; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.chabad-med {
+    FONT-SIZE: 11px;
+    COLOR: #4C4C4C;
+	text-align: left;
+}
+
+.linknoline {	font-family: Arial, Helvetica, sans-serif;	font-size: 12px; line-height: 18px;	color: #4C4C4C;}
+.linknoline a:link {	color: #4C4C4C; text-decoration: none; font-weight:none }
+.linknoline a:visited {	color: #4C4C4C;text-decoration: none; font-weight:none }
+.linknoline a:hover {	text-decoration: underline; color: #727272;}
+
+.linkyesline {	font-family: Arial, Helvetica, sans-serif;	font-size: 12px;	line-height: 18px;	color: #4C4C4C;}
+.linkyesline a:link {	color: #4C4C4C; text-decoration: underline; font-weight:none }
+.linkyesline a:visited {	color: #4C4C4C;text-decoration: underline; font-weight:none }
+.linkyesline a:hover {	text-decoration: none; color: #727272;}
+
+/* honeypot for spam bots */
+form[name="form"] input[name="username"] {
+	display: none;
+}
+
+/* CANDLE LIGHTING TIMES */
+.CLTable {  
+	Background-Color: #E6E7E8;
+	Border-Color: #A0C6E5;
+	Font-Size: 11px;
+}
+.CLHeadingBold {
+	Font-Family: Tahoma, Arial, Verdana;
+	Font-Size: 11px;
+	Text-Align: center;
+	Font-Weight: bold;    
+}
+.CLheading {  
+	Font-Family: Tahoma, Arial, Verdana;
+	Font-Size: 11px;
+	Text-Align: center;
+	Color: #4C4C4C;
+}
+A.CLLink {
+	Font-Family: Tahoma, Arial, Verdana;
+	Font-Size: 9px;
+	Text-Align: center;
+	Color: #4C4C4C;
+	Text-Decoration: none;
+}
+A.CLLink:Hover {
+	Font-Family: Tahoma, Arial, Verdana;
+	Font-Size: 9px;
+	Text-Align: center;
+	Color: #4C4C4C;
+	Text-Decoration: underline;
+}
+
+.CLTable A {
+	color: #4c4c4c;
+}
+
+.CLdate {  
+	Font-Family: Tahoma, Arial, Verdana;
+	Font-Size: 10px;
+	Text-Align: left;
+	Font-Weight: bold;
+	text-decoration: none;    
+}
+.CLTime {  
+	Font-Family: Tahoma, Arial, Verdana;
+	Font-Size: 10px;
+	Text-Align: left;
+	Font-Weight: normal;
+	Margin-Bottom: 0px;
+}
+.CLhr {
+	color: #4C4C4C;
+	height: 1px;
+	height: 1px;
+	width: 50%;
+}
+.CLHolName {
+	font-weight:normal;
+}	
+/**
+ * END LEGACY jewmich.COM CSS
+ */
