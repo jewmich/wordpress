@@ -8,10 +8,14 @@
 /html/wp-blog-header.php
 /html/wp-comments-post.php
 /html/wp-config-sample.php
+/html/wp-content/plugins/akismet/
+/html/wp-content/plugins/hello.php
 /html/wp-content/themes/index.php
 /html/wp-content/themes/twentyfifteen/
 /html/wp-content/themes/twentyfourteen/
 /html/wp-content/themes/twentysixteen/
+/html/wp-content/themes/twentyseventeen/
+/html/wp-content/uploads/
 /html/wp-cron.php
 /html/wp-includes/
 /html/wp-links-opml.php
