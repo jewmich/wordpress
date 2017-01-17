@@ -135,6 +135,8 @@
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container -->
 	</nav>
-	<div class="container-fluid" id="pageContent">
+	<div class="container" id="pageContent">
 		<div class="row">
 			<div class="col-xs-10 col-xs-offset-1" id="pageContentCol">
+				<div class="row">
+					<div class="col-xs-<?= get_post_meta(get_the_ID(), 'no_sidebar', true) ? '12' : '10' ?>">

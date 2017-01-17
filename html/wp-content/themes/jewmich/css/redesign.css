@@ -118,6 +118,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#pageContentCol {
 		background: rgba(255, 255, 255, 0.6);
 		border: 1px solid #ababab;
+		padding: 30px;
 	}
 
 	#sideColumn {
@@ -126,7 +127,6 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	}
 
 	#homeSections {
-		padding: 30px 15px 30px 15px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
@@ -199,6 +199,10 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		padding: 0;
 	}
 
+	.sidebar {
+		border-left: 1px solid #ababab;
+	}
+
 	.bottom {
 		background-color: #333;
 	}
@@ -232,7 +236,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		margin-top: 0;
 	}
 	#pageContentCol {
-		padding: 0;
+		padding: 15px;
 	}
 	#pageContent > .row {
 		margin: 20px auto;
@@ -264,6 +268,9 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	div#homeSections.row {
 		width: 100%;
 		margin: 0;
+		padding: 0;
+	}
+	.home #pageContentCol {
 		padding: 0;
 	}
 	div#students_article.col-sm-4,
