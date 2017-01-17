@@ -85,6 +85,9 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	.nav > li li a {
 		border-bottom: 1px solid #777;
 	}
+	.nav > li li:last-child a {
+		border-bottom: none;
+	}
 
 	#students {
 		background-color: #00274c;
