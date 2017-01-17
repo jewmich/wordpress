@@ -8,6 +8,7 @@
 	<title>Chabad House of Ann Arbor</title>
 	<!-- Include bootstrap CSS -->
 	<link href="<?= get_template_directory_uri() ?>/css/redesign.css" rel="stylesheet" />
+	<link href="<?= get_template_directory_uri() ?>/css/old.css" rel="stylesheet" />
 	<link href="<?= get_template_directory_uri() ?>/css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Alef" rel='stylesheet' type='text/css'>
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->

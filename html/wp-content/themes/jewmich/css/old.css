@@ -11,11 +11,6 @@
 .chabad a:hover {	color: #727272; }
 table.chabad .label { white-space: nowrap }
 
-body {
-	text-align: left;
-}
-p { margin: 0; }
-
 .successmsg {
 	color: #2f4f2f;
 }
@@ -85,84 +80,6 @@ p { margin: 0; }
 /* honeypot for spam bots */
 form[name="form"] input[name="username"] {
 	display: none;
-}
-
-/* NAVIGATION */
-#nav, #nav ul { /* all lists */
-	list-style: none;
-	line-height: 1;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	background-color: white;
-	font-size: 13px;
-	padding: 0;
-	margin: 0;
-}
-
-#nav {
-	width: 100%;
-	display: table;
-}
-
-#nav ul {
-	border: 1px solid #ccc;
-	border-width: 0 1px 1px 1px;
-}
-
-#nav a {
-	display: block;
-	color: #858585;
-	text-decoration: none;
-	white-space: nowrap;
-	width: 100%;
-	height: 100%;
-	line-height: 1.3;
-}
-
-#nav a:visited, #nav a:hover {
-	color: #858585;
-}
-
-#nav li { /* all list items */
-	display: table-cell;
-	white-space: nowrap;
-	text-align: center;
-	border-left: 1px solid #ccc;
-}
-
-#nav li:first-child {
-	border-left: 0;
-}
-
-#nav li li a {
-	padding: 5px;
-	line-height: 1;
-}
-
-#nav li div {
-	position: relative;
-}
-
-#nav li ul { /* second-level lists */
-	position: absolute;
-	font-size: 12px;
-	margin: 0;
-	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
-}
-
-#nav li:hover ul, #nav li.sfhover ul { /* lists nested under hovered list items */
-	left: -1px;
-}
-
-#nav ul li {
-	clear: left;
-	float: left;
-	border: 0;
-	width: 100%;
-	text-align: left;
-}
-
-#nav li:hover {
-	background-color: #e6e6e6;
 }
 
 /* CANDLE LIGHTING TIMES */
