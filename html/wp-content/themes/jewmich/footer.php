@@ -32,12 +32,6 @@
 		</div>
 	</div>
 
-	<!-- Include jQuery and bootstrap JS plugins -->
-	<script src="<?= get_template_directory_uri() ?>/js/jquery-2.1.0.min.js"></script>
-	<script src="<?= get_template_directory_uri() ?>/js/bootstrap.min.js"></script>
-	<!-- Include Chabad-specific JS -->
-	<script src="<?= get_template_directory_uri() ?>/js/kdate.js"></script>
-	<script src="<?= get_template_directory_uri() ?>/js/chabad.js"></script>
 	<?php wp_footer(); ?>
 </body>
 </html>
