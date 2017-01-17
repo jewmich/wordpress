@@ -45,8 +45,9 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#wrapper {
 		width: 100%;
 		position: relative;
+	}
+	#wrapper .carousel-inner img {
 		margin: 0 auto;
-		background: #333;
 	}
 	header {
 		width: 100%;
