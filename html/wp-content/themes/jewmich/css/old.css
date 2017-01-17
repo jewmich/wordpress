@@ -11,6 +11,8 @@
 .chabad a:hover {	color: #727272; }
 table.chabad .label { white-space: nowrap }
 
+#table1 { width: 100%; }
+
 .successmsg {
 	color: #2f4f2f;
 }

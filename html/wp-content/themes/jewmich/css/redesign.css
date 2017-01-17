@@ -115,17 +115,24 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#pageContent > .row {
 		margin: 50px auto;
 	}
-	#pageContentCol {
-		background: rgba(255, 255, 255, 0.6);
+	#pageContent .pageContentWrapperCol {
 		border: 1px solid #ababab;
 		padding: 30px;
+		background: white;
 	}
 
-	#sideColumn {
-		margin-top: 30px;
-		padding: 10px 10px 10px 50px;
+	#pageContent .sidebar {
+		border-left: 1px solid #ababab;
+		text-align: center;
+		width: 230px;
+	}
+	#pageContent.has-sidebar .pageContentCol {
+		width: calc(100% - 230px);
 	}
 
+	.home .pageContentWrapperCol {
+		background: rgba(255, 255, 255, 0.6);
+	}
 	#homeSections {
 		display: flex;
 		flex-wrap: wrap;
@@ -199,10 +206,6 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		padding: 0;
 	}
 
-	.sidebar {
-		border-left: 1px solid #ababab;
-	}
-
 	.bottom {
 		background-color: #333;
 	}
@@ -235,7 +238,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#wrapper {
 		margin-top: 0;
 	}
-	#pageContentCol {
+	#pageContent .pageContentWrapperCol {
 		padding: 15px;
 	}
 	#pageContent > .row {
@@ -270,7 +273,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		margin: 0;
 		padding: 0;
 	}
-	.home #pageContentCol {
+	.home #pageContent .pageContentWrapperCol {
 		padding: 0;
 	}
 	div#students_article.col-sm-4,
@@ -324,7 +327,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		border-radius: 0;
 	}
 
-	h3, p {
+	.home h3, .home p {
 		padding: 0 15px 5px;
 	}
 
