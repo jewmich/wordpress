@@ -18,8 +18,9 @@
  * the Jewmich theme supports.
  */
 function jewmich_setup() {
-   // This theme uses wp_nav_menu() in one location.
-   register_nav_menu( 'primary', __( 'Primary Menu', 'jewmich' ) );
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menu( 'primary', __( 'Primary Menu', 'jewmich' ) );
+	add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'jewmich_setup' );
 
