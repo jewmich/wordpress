@@ -15,9 +15,7 @@
  */
 
 // Load sensitive data, which is stored outside the webroot for security.
-foreach (parse_ini_file(__DIR__ . '/../secrets/secrets.env', false, INI_SCANNER_RAW) as $option => $value) {
-	define(str_replace('WORDPRESS_', '', $option), $value);
-}
+require_once(__DIR__ . '/../secrets/secrets.php');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
