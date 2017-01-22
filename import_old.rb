@@ -9,8 +9,7 @@ source = ARGF.read
 source.sub!(/^<\?\n.*?\?>/m) do |match|
 	lines = match.split("\n")
 	if lines.length != 5 && lines.length != 6
-		puts "Irregular file (#{lines.length} header lines)"
-		exit
+		abort "Irregular file (#{lines.length} header lines)"
 	end
 
 	#binding.pry
@@ -18,8 +17,7 @@ source.sub!(/^<\?\n.*?\?>/m) do |match|
 		if line =~ /^require_once/
 			next
 		elsif !line.match(/^define\('(TITLE|BANNER|NO_SIDEBAR)', (?:true|'([^']*)')\);$/)
-			puts "Irregular file (failed to find defines)"
-			exit
+			abort "Irregular file (failed to find defines)"
 		end
 		custom_fields[$1.downcase] = ($1 == 'NO_SIDEBAR' ? true : $2)
 	end
@@ -27,8 +25,7 @@ source.sub!(/^<\?\n.*?\?>/m) do |match|
 end
 
 if !source.sub!(/^<\?\nrequire_once\(['"]files\/footer\.php['"]\);\n\?>$/m, '')
-	puts "Irregular file (failed to find footer)"
-	exit
+	abort "Irregular file (failed to find footer)"
 end
 
 #puts source, custom_fields
@@ -36,7 +33,7 @@ end
 post_id, status = Open3.capture2e(
 	"./wp-cli.phar",
 	"--path=html",
- "post", "create",
+	"post", "create",
 	"--porcelain",
 	"--post_type=page",
 	"--post_title=#{custom_fields['title']}",
