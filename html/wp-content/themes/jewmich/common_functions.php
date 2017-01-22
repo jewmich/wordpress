@@ -1,4 +1,4 @@
-<?
+<?php
 // Common functions shared by PHP pages
 
 function turnErrorsIntoExceptions($code, $message, $file, $line) {
