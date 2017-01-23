@@ -62,6 +62,22 @@ function generateUmSchoolYearDropDown($atts) {
 }
 add_shortcode('generate_um_school_year_dropdown', 'generateUmSchoolYearDropDown');
 
+//can't use the mail() function, because the server jewmich is on (tablot.dreamhost.com)
+//is in some spam blacklists. The SMTP server (mail.jewmich.com) is not, though.
+function getMailer() {
+	require_once ABSPATH . WPINC . '/class-phpmailer.php';
+	require_once ABSPATH . WPINC . '/class-smtp.php';
+	$mailer = new PHPMailer(true);
+	$mailer->IsSMTP();
+	$mailer->XMailer = ' '; // don't include X-Mailer for security
+	$mailer->Host = 'mail.jewmich.com';
+	$mailer->SMTPAuth = true;
+	$mailer->Port = 25;
+	$mailer->Username = SMTP_USERNAME;
+	$mailer->Password = SMTP_PASSWORD;
+	return $mailer;
+}
+
 // Don't automatically insert <br> and <p> tags
 remove_filter( 'the_content', 'wpautop' );
 
@@ -111,6 +127,5 @@ if (PRODUCTION_MODE) {
 define('LATITUDE_ANNARBOR', 42.22);
 define('LONGITUDE_ANNARBOR', -83.75);
 
-require_once('common_functions.php');
 require_once('Person.php');
 require_once('User.php');
