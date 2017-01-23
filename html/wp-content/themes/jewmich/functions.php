@@ -41,6 +41,27 @@ function jewmich_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'jewmich_scripts_styles' );
 
+function generateUmSchoolYearDropDown($atts) {
+	$options = array('');
+	for ($i = 0; $i < 5; $i++) {
+		$options[] = date('Y') + $i;
+	}
+	for ($i = 0; $i < 4; $i++) {
+		$options[] = 'Grad ' . (date('Y') + $i);
+	}
+	$options[] = 'Other';
+
+	$selectName = isset($atts['name']) ? $atts['name'] : 'student';
+	$selectedValue = isset($atts['value']) ? $atts['value'] : null;
+	$html = "<select size='1' name='$selectName'>";
+	foreach ($options as $option) {
+		$html .= "\n<option" . (($option == $selectedValue) ? ' selected' : '') . ">$option</option>\n";
+	}
+	$html .= '</select>';
+	return $html;
+}
+add_shortcode('generate_um_school_year_dropdown', 'generateUmSchoolYearDropDown');
+
 // Don't automatically insert <br> and <p> tags
 remove_filter( 'the_content', 'wpautop' );
 

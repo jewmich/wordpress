@@ -16,21 +16,3 @@ function getMailer() {
 	$mailer->Password = SMTP_PASSWORD;
 	return $mailer;
 }
-
-function generateUmSchoolYearDropDown($selectedValue = null, $selectName = 'student') {
-	$options = array('');
-	for ($i = 0; $i < 5; $i++) {
-		$options[] = date('Y') + $i;
-	}
-	for ($i = 0; $i < 4; $i++) {
-		$options[] = 'Grad ' . (date('Y') + $i);
-	}
-	$options[] = 'Other';
-
-	$html = "<select size='1' name='$selectName'>";
-	foreach ($options as $option) {
-		$html .= "\n<option" . (($option == $selectedValue) ? ' selected' : '') . ">$option</option>\n";
-	}
-	$html .= '</select>';
-	return $html;
-}
