@@ -60,7 +60,7 @@ function generateUmSchoolYearDropDown($atts) {
 	$html .= '</select>';
 	return $html;
 }
-add_shortcode('generate_um_school_year_dropdown', 'generateUmSchoolYearDropDown');
+add_shortcode('um_school_year_dropdown', 'generateUmSchoolYearDropDown');
 
 //can't use the mail() function, because the server jewmich is on (tablot.dreamhost.com)
 //is in some spam blacklists. The SMTP server (mail.jewmich.com) is not, though.
