@@ -8,12 +8,16 @@
 # Shared DB data
 /.data/
 
+# PHP error log
+/php-errors.log
+
 # Credentials stored outside version control
 /secrets/
 
 # Plugins installed by Composer
 /html/wp-content/plugins/custom-permalinks/
 /html/wp-content/plugins/insert-php/
+/html/wp-content/plugins/error-log-monitor/
 
 # Files installed by Wordpress automatically
 /html/.htaccess

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "eed2182b3c64af93a0cad02cafb0f833",
+    "content-hash": "e7420ca1d6607d1282806483711d40a7",
     "packages": [
         {
             "name": "composer/installers",
@@ -132,6 +132,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/custom-permalinks/"
+        },
+        {
+            "name": "wpackagist-plugin/error-log-monitor",
+            "version": "1.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/error-log-monitor/",
+                "reference": "tags/1.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/error-log-monitor.1.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/error-log-monitor/"
         },
         {
             "name": "wpackagist-plugin/insert-php",

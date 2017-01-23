@@ -1,35 +1,6 @@
 <?php
 // Common functions shared by PHP pages
 
-function turnErrorsIntoExceptions($code, $message, $file, $line) {
-	if (0 == error_reporting()) return; // 0 means the error was suppressed by the @ operator
-	throw new ErrorException($message, 0, $code, $file, $line);
-}
-
-function emailExceptionDetails($exception) {
-	echo "Sorry, an error occurred while processing this page.";
-	$subject = "Uncaught exception at {$_SERVER['SERVER_NAME']}{$_SERVER['PHP_SELF']}";
-	$message = "Exception: {$exception}\n\nServer: " . print_r($_SERVER, true);
-	if (!PRODUCTION_MODE) {
-		echo "$message";
-		die;
-	}
-	try {
-		$mailer = getMailer();
-		$mailer->Subject = $subject;
-		$mailer->Body = $message;
-		foreach (explode(',', ERROR_EMAIL_RECIPIENTS) as $recipient) {
-			$mailer->AddAddress($recipient);
-		}
-		$mailer->SetFrom(WEBFORM_EMAIL);
-		$mailer->Send();
-		echo " The site administrators have been notified.";
-	} catch (Exception $e) {
-		echo " Please notify " . CHABAD_EMAIL;
-	}
-	die;
-}
-
 //can't use the mail() function, because the server jewmich is on (tablot.dreamhost.com)
 //is in some spam blacklists. The SMTP server (mail.jewmich.com) is not, though.
 function getMailer() {
