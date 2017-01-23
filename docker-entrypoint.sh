@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+apt-get update
+apt-get install -qq -y unzip git subversion # needed by composer
+
 # Custom entrypoint that only handles installing Wordpress. We don't need any of the environment
 # setting stuff (we have our own version of wp-config.php that stores secrets outside Git) or the DB
 # creation logic (which the Docker MySQL image handles for us).
@@ -31,5 +34,26 @@ if ! [ -e index.php -a -e wp-includes/version.php ]; then
 		chown www-data:www-data .htaccess
 	fi
 fi
+
+cd ..
+if ! [ -e composer.phar ]; then
+	# Install composer (taken from https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md)
+	EXPECTED_SIGNATURE=$(curl -s https://composer.github.io/installer.sig)
+	php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+	ACTUAL_SIGNATURE=$(php -r "echo hash_file('SHA384', 'composer-setup.php');")
+
+	if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ]
+	then
+	    >&2 echo 'ERROR: Invalid installer signature'
+	    exit 1
+	fi
+
+	php composer-setup.php --quiet
+	rm composer-setup.php
+fi
+
+
+php composer.phar install
+cd -
 
 exec "$@"

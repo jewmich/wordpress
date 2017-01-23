@@ -1,5 +1,21 @@
+# Misc binaries
+/composer.phar
+/wp-cli.phar
+
+# Composer data
+/vendor/
+
+# Shared DB data
 /.data/
+
+# Credentials stored outside version control
 /secrets/
+
+# Plugins installed by Composer
+/html/wp-content/plugins/custom-permalinks/
+/html/wp-content/plugins/insert-php/
+
+# Files installed by Wordpress automatically
 /html/.htaccess
 /html/license.txt
 /html/readme.html

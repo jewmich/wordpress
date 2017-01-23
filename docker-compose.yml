@@ -18,8 +18,8 @@ services:
      depends_on:
        - db
      volumes:
+       - ".:/var/www/"
        - "./html/:/var/www/html"
-       - "./secrets:/var/www/secrets"
      build:
         context: .
         dockerfile: Dockerfile-wordpress
