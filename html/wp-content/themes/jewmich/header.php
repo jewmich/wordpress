@@ -15,6 +15,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<header>
+		<h1><a href="/">C<small>HABAD OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
 		<?php if (is_front_page()): ?>
 		<div class="jumbotron text-center">
 			<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
@@ -47,7 +48,6 @@
 			</div> <!-- Carousel -->
 		</div> <!-- end jumbotron -->
 		<?php endif ?>
-		<h1><a href="/">C<small>HABAD OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
 	</header>
 	<nav class="navbar navbar-inverse navbar-static-top" role="navigaton">
 		<div class="container">
