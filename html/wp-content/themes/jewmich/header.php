@@ -14,38 +14,36 @@
 	<![endif]-->
 </head>
 <body <?php body_class(); ?>>
-	<div id="wrapper">
-		<div class="jumbotron text-center">
-			<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-				<!-- Indicators -->
-				<ol class="carousel-indicators">
-					<li data-target="#carousel" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel" data-slide-to="1"></li>
-					<li data-target="#carousel" data-slide-to="2"></li>
-				</ol>
-				<!-- Wrapper for slides -->
-				<div class="carousel-inner">
-					<div class="item active">
-						<img src="<?= get_template_directory_uri() ?>/images/carousel/header.jpg" alt="chabad house">
-					</div>
-					<div class="item">
-						<img src="<?= get_template_directory_uri() ?>/images/carousel/header2.jpg" alt="chabad house 2">
-					</div>
-					<div class="item">
-						<img src="<?= get_template_directory_uri() ?>/images/carousel/header3.jpg" alt="chabad house 3">
-					</div>
+	<div class="jumbotron text-center">
+		<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel" data-slide-to="1"></li>
+				<li data-target="#carousel" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+				<div class="item active">
+					<img src="<?= get_template_directory_uri() ?>/images/carousel/header.jpg" alt="chabad house">
 				</div>
+				<div class="item">
+					<img src="<?= get_template_directory_uri() ?>/images/carousel/header2.jpg" alt="chabad house 2">
+				</div>
+				<div class="item">
+					<img src="<?= get_template_directory_uri() ?>/images/carousel/header3.jpg" alt="chabad house 3">
+				</div>
+			</div>
 
-				<!-- Controls -->
-				<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
-					<span class="glyphicon glyphicon-chevron-left"></span>
-				</a>
-				<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
-					<span class="glyphicon glyphicon-chevron-right"></span>
-				</a>
-			</div> <!-- Carousel -->
-		</div>
-	</div><!-- end wrapper -->
+			<!-- Controls -->
+			<a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div> <!-- Carousel -->
+	</div> <!-- end jumbotron -->
 	<header>
 		<h1><a href="/">C<small>HABAD OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
 	</header>
