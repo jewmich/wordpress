@@ -127,5 +127,5 @@ if (PRODUCTION_MODE) {
 define('LATITUDE_ANNARBOR', 42.22);
 define('LONGITUDE_ANNARBOR', -83.75);
 
-require_once('Person.php');
-require_once('User.php');
+require_once('includes/Person.php');
+require_once('includes/User.php');
