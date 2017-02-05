@@ -41,27 +41,6 @@ function jewmich_scripts_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'jewmich_scripts_styles' );
 
-function generateUmSchoolYearDropDown($atts) {
-	$options = array('');
-	for ($i = 0; $i < 5; $i++) {
-		$options[] = date('Y') + $i;
-	}
-	for ($i = 0; $i < 4; $i++) {
-		$options[] = 'Grad ' . (date('Y') + $i);
-	}
-	$options[] = 'Other';
-
-	$selectName = isset($atts['name']) ? $atts['name'] : 'student';
-	$selectedValue = isset($atts['value']) ? $atts['value'] : null;
-	$html = "<select size='1' name='$selectName'>";
-	foreach ($options as $option) {
-		$html .= "\n<option" . (($option == $selectedValue) ? ' selected' : '') . ">$option</option>\n";
-	}
-	$html .= '</select>';
-	return $html;
-}
-add_shortcode('um_school_year_dropdown', 'generateUmSchoolYearDropDown');
-
 //can't use the mail() function, because the server jewmich is on (tablot.dreamhost.com)
 //is in some spam blacklists. The SMTP server (mail.jewmich.com) is not, though.
 function getMailer() {
@@ -127,5 +106,6 @@ if (PRODUCTION_MODE) {
 define('LATITUDE_ANNARBOR', 42.22);
 define('LONGITUDE_ANNARBOR', -83.75);
 
+require_once('includes/shortcodes.php');
 require_once('includes/Person.php');
 require_once('includes/User.php');
