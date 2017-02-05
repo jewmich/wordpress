@@ -29,15 +29,15 @@ add_action( 'after_setup_theme', 'jewmich_setup' );
  */
 function jewmich_scripts_styles() {
 	// Loads Bootstrap CSS and our CSS
-	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css');
+	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
 	// Loads Bootstrap JS and Jewmich-custom JS
 	wp_deregister_script('jquery'); // we have our own version of jQuery
-	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery-2.1.0.min.js', [], '2.1.0', true);
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', ['jquery'], '3.3.6', true);
-	wp_enqueue_script( 'kdate', get_template_directory_uri() . '/js/kdate.js', ['jquery'], '1', true);
-	wp_enqueue_script( 'chabad', get_template_directory_uri() . '/js/chabad.js', ['jquery'], '1', true);
+	wp_enqueue_script( 'jquery', get_template_directory_uri() . '/assets/js/jquery-2.1.0.min.js', [], '2.1.0', true);
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', ['jquery'], '3.3.6', true);
+	wp_enqueue_script( 'kdate', get_template_directory_uri() . '/assets/js/kdate.js', ['jquery'], '1', true);
+	wp_enqueue_script( 'chabad', get_template_directory_uri() . '/assets/js/chabad.js', ['jquery'], '1', true);
 }
 add_action( 'wp_enqueue_scripts', 'jewmich_scripts_styles' );
 

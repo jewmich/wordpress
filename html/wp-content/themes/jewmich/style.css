@@ -42,7 +42,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 /*all @media screens*/
 @media screen {
 	body {
-		background: url("images/torah_star.jpg") no-repeat #999;
+		background: url("assets/images/torah_star.jpg") no-repeat #999;
 		background-size: cover;
 	}
 	header {
