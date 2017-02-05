@@ -5,50 +5,84 @@
 require 'open3'
 require 'pry'
 
-fields = {}
+def run_wpcli(*args)
+	out, status = Open3.capture2e("./wp-cli.phar", "--path=html", *args)
+	abort "failed to run #{args}.\nOut = #{out}" unless status.success?
+	out.strip
+end
 
-source = IO.read(ARGV[0])
-source.sub!(/^<\?\n.*?\?>/m) do |match|
-	lines = match.split("\n")
-	if lines.length != 5 && lines.length != 6
-		abort "Irregular file (#{lines.length} header lines)"
+def upload_media_if_not_exists(file_path)
+	file_name = File.basename(file_path)
+	# check if already uploaded
+	media_id = run_wpcli("eval", 'global $wpdb; echo $wpdb->get_col("SELECT id FROM {$wpdb->posts} WHERE guid LIKE \"%' + file_name + '\"")[0];')
+	if media_id.empty?
+		# nope, need to upload it
+		media_id = run_wpcli("media", "import", "--porcelain", file_path)
 	end
+	full_url = run_wpcli("eval", "echo wp_get_attachment_url(#{media_id});")
+	site_url = run_wpcli("eval", "echo get_site_url();")
+	full_url.sub(site_url, '')
+end
 
-	#binding.pry
-	lines[1..-2].each do |line|
-		if line =~ /^require_once/
-			next
-		elsif !line.match(/^define\('(TITLE|BANNER|NO_SIDEBAR)', (?:true|'([^']*)')\);$/)
-			abort "Irregular file (failed to find defines)"
+def insert_page(file_path)
+	source = IO.read(file_path)
+
+	fields = {}
+	# remove header and record config params (TITLE, BANNER, NO_SIDEBAR)
+	source.sub!(/^<\?\n.*?\?>/m) do |match|
+		lines = match.split("\n")
+		if lines.length != 5 && lines.length != 6
+			abort "Irregular file (#{lines.length} header lines)"
 		end
-		fields[$1.downcase] = ($1 == 'NO_SIDEBAR' ? true : $2)
+
+		lines[1..-2].each do |line|
+			if line =~ /^require/
+				next
+			elsif !line.match(/^define\('(TITLE|BANNER|NO_SIDEBAR)', (?:true|'([^']*)')\);$/)
+				abort "Irregular file (failed to find defines)"
+			end
+			fields[$1] = ($1 == 'NO_SIDEBAR') ? true : $2
+		end
+		""
 	end
-	""
+
+	# remove footer
+	if !source.sub!(/^<\?\nrequire(_once)?\(['"]files\/footer\.php['"]\);\n\?>$/m, '')
+		abort "Irregular file (failed to find footer)"
+	end
+
+	# replace image references
+	source.gsub!(/(?:pic|holpic|eventpic|links)\/[^\.\/]*\.(gif|jpg|png)/) do |match|
+		image_file_path = File.dirname(file_path) + "/" + match
+		if File.exists?(image_file_path) # need to check this as some files reference non-existent images
+			upload_media_if_not_exists(image_file_path)
+		else
+			puts "Warning: image file does not exist: #{image_file_path}"
+			match
+		end
+	end
+
+	title = fields['TITLE'].sub(/( - )?Chabad House.*/, '')
+	title = File.basename(file_path).sub(/.php/, '') if title.empty?
+
+	post_id = run_wpcli(
+		"post", "create",
+		"--porcelain",
+		"--post_type=page",
+		"--post_title=#{title}",
+		"--post_status=publish",
+		"--post_content=#{source}",
+	)
+	return post_id, fields
 end
 
-if !source.sub!(/^<\?\nrequire_once\(['"]files\/footer\.php['"]\);\n\?>$/m, '')
-	abort "Irregular file (failed to find footer)"
+post_id, fields = insert_page(ARGV[0])
+
+if fields['BANNER']
+	url = upload_media_if_not_exists(File.dirname(ARGV[0]) + "/" + fields['BANNER'])
+	run_wpcli("post", "meta", "set", post_id, 'banner', url)
 end
 
-
-title = fields['title'].sub(/( - )?Chabad House.*/, '')
-title = File.basename(ARGV[0]).sub(/.php/, '') if title.empty?
-
-post_id, status = Open3.capture2e(
-	"./wp-cli.phar",
-	"--path=html",
-	"post", "create",
-	"--porcelain",
-	"--post_type=page",
-	"--post_title=#{title}",
-	"--post_status=publish",
-	"--post_content=#{source}",
-)
-
-abort "failed to create post. Out = #{post_id}" unless status.success?
-
-fields.each do |field, value|
-	next if field == 'title'
-	system("./wp-cli.phar", "--path=html", "post", "meta", "set", post_id, field, value)
-	abort "failed to set meta for post #{post_id}" unless $?.success?
+if fields['NO_SIDEBAR']
+	run_wpcli("post", "meta", "set", post_id, 'no_sidebar', 'true')
 end
