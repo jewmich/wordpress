@@ -20,6 +20,9 @@ ini_set('error_log', dirname(__DIR__) . '/php-errors.log');
 // Load sensitive data, which is stored outside the webroot for security.
 require_once(__DIR__ . '/../secrets/secrets.php');
 
+// Force SSL for all logins and wp-admin access, except in development
+if ($_SERVER['SERVER_NAME'] !== '127.0.0.1') define('FORCE_SSL_ADMIN', true);
+
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
