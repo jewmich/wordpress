@@ -62,8 +62,25 @@ def insert_page(file_path)
 		end
 	end
 
+	# replace generateUmSchoolYearDropDown() calls with shortcode
+	source.gsub!(/<\?=\s*generateUmSchoolYearDropDown\(([^,]*)?,?(?:\s*'([^'\)]*)')?\)\s*\?>/) do
+		string = "[um_school_year_dropdown"
+		if $1 && $1 != "null"
+			string += " value=#{$1}"
+		end
+		if $2 && $2 != 'null'
+			string += " name=#{$2}"
+		end
+		string + "]"
+	end
+
+	# replace pluginpay success links with shortcode
+	source.gsub!(/<input name="success-link" type="hidden" value="[^"]*successredirect\?type=([^\"]*)"\/>/, '[plugnpay_success_link type=\1]')
+
+	file_name = File.basename(file_path).sub(/.php/, '')
+
 	title = fields['TITLE'].sub(/( - )?Chabad House.*/, '')
-	title = File.basename(file_path).sub(/.php/, '') if title.empty?
+	title = file_name if title.empty?
 
 	post_id = run_wpcli(
 		"post", "create",
@@ -73,6 +90,12 @@ def insert_page(file_path)
 		"--post_status=publish",
 		"--post_content=#{source}",
 	)
+
+	slug = run_wpcli('post', 'get', post_id, '--field=name')
+	if slug != file_name
+		run_wpcli("post", "meta", "set", post_id, "custom_permalink", file_name)
+	end
+
 	return post_id, fields
 end
 

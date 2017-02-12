@@ -1,6 +1,6 @@
 <?php
 
-function generateUmSchoolYearDropDown($atts = []) {
+add_shortcode('um_school_year_dropdown', function ($atts = []) {
 	$options = array('');
 	for ($i = 0; $i < 5; $i++) {
 		$options[] = date('Y') + $i;
@@ -18,5 +18,10 @@ function generateUmSchoolYearDropDown($atts = []) {
 	}
 	$html .= '</select>';
 	return $html;
-}
-add_shortcode('um_school_year_dropdown', 'generateUmSchoolYearDropDown');
+});
+
+add_shortcode('plugnpay_success_link', function($atts = []) {
+	$protocol = isset($_SERVER['HTTPS']) ? "https" : "http";
+	$url = "$protocol://{$_SERVER['SERVER_NAME']}/successredirect?type={$atts['type']}";
+	return '<input name="success-link" type="hidden" value="' . $url . '">';
+});

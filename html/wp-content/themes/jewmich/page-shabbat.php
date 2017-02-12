@@ -272,7 +272,7 @@ Secure on-line from</a>.&nbsp;
       <tr>
          <td width="43%" class="chabad">U of M School year</td>
          <td width="52%" class="chabad">
-					<?= generateUmSchoolYearDropDown() ?>
+					<?= do_shortcode('um_school_year_dropdown') ?>
          </td>
       </tr>
 <? endif ?>
