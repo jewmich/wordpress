@@ -1,6 +1,6 @@
 <?php
 
-function generateUmSchoolYearDropDown($atts) {
+function generateUmSchoolYearDropDown($atts = []) {
 	$options = array('');
 	for ($i = 0; $i < 5; $i++) {
 		$options[] = date('Y') + $i;
