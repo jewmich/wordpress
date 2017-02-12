@@ -27,69 +27,78 @@ end
 def insert_page(file_path)
 	source = IO.read(file_path)
 
+	is_regular = true
 	fields = {}
 	# remove header and record config params (TITLE, BANNER, NO_SIDEBAR)
 	source.sub!(/^<\?\n.*?\?>/m) do |match|
 		lines = match.split("\n")
 		if lines.length != 5 && lines.length != 6
-			abort "Irregular file (#{lines.length} header lines)"
+			is_regular = false
+			puts "Irregular file (#{lines.length} header lines)"
 		end
 
 		lines[1..-2].each do |line|
 			if line =~ /^require/
 				next
 			elsif !line.match(/^define\('(TITLE|BANNER|NO_SIDEBAR)', (?:true|'([^']*)')\);$/)
-				abort "Irregular file (failed to find defines)"
+				next
 			end
 			fields[$1] = ($1 == 'NO_SIDEBAR') ? true : $2
 		end
 		""
 	end
 
-	# remove footer
-	if !source.sub!(/^<\?\nrequire(_once)?\(['"]files\/footer\.php['"]\);\n\?>$/m, '')
-		abort "Irregular file (failed to find footer)"
-	end
-
-	# replace image references
-	source.gsub!(/(?:pic|holpic|eventpic|links)\/[^\.\/]*\.(gif|jpg|png)/) do |match|
-		image_file_path = File.dirname(file_path) + "/" + match
-		if File.exists?(image_file_path) # need to check this as some files reference non-existent images
-			upload_media_if_not_exists(image_file_path)
-		else
-			puts "Warning: image file does not exist: #{image_file_path}"
-			match
+	if is_regular
+		# remove footer
+		if !source.sub!(/^<\?\nrequire(_once)?\(['"]files\/footer\.php['"]\);\n\?>$/m, '')
+			abort "Irregular file (failed to find footer)"
 		end
-	end
 
-	# replace generateUmSchoolYearDropDown() calls with shortcode
-	source.gsub!(/<\?=\s*generateUmSchoolYearDropDown\(([^,]*)?,?(?:\s*'([^'\)]*)')?\)\s*\?>/) do
-		string = "[um_school_year_dropdown"
-		if $1 && $1 != "null"
-			string += " value=#{$1}"
+		# replace image references
+		source.gsub!(/(?:pic|holpic|eventpic|links)\/[^\.\/]*\.(gif|jpg|png)/) do |match|
+			image_file_path = File.dirname(file_path) + "/" + match
+			if File.exists?(image_file_path) # need to check this as some files reference non-existent images
+				upload_media_if_not_exists(image_file_path)
+			else
+				puts "Warning: image file does not exist: #{image_file_path}"
+				match
+			end
 		end
-		if $2 && $2 != 'null'
-			string += " name=#{$2}"
-		end
-		string + "]"
-	end
 
-	# replace pluginpay success links with shortcode
-	source.gsub!(/<input name="success-link" type="hidden" value="[^"]*successredirect\?type=([^\"]*)"\/>/, '[plugnpay_success_link type=\1]')
+		# replace generateUmSchoolYearDropDown() calls with shortcode
+		source.gsub!(/<\?=\s*generateUmSchoolYearDropDown\(([^,]*)?,?(?:\s*'([^'\)]*)')?\)\s*\?>/) do
+			string = "[um_school_year_dropdown"
+			if $1 && $1 != "null"
+				string += " value=#{$1}"
+			end
+			if $2 && $2 != 'null'
+				string += " name=#{$2}"
+			end
+			string + "]"
+		end
+
+		# replace pluginpay success links with shortcode
+		source.gsub!(/<input name="success-link" type="hidden" value="[^"]*successredirect\?type=([^\"]*)"\/>/, '[plugnpay_success_link type=\1]')
+	else
+		source = "This page cannot be edited in Wordpress due to embedded PHP. To update it, edit the file #{Dir.pwd}/html/wp-content/themes/jewmich/page-#{file_name}.php"
+	end
 
 	file_name = File.basename(file_path).sub(/.php/, '')
 
 	title = fields['TITLE'].sub(/( - )?Chabad House.*/, '')
 	title = file_name if title.empty?
 
-	post_id = run_wpcli(
-		"post", "create",
+	post_args = [
 		"--porcelain",
 		"--post_type=page",
 		"--post_title=#{title}",
 		"--post_status=publish",
 		"--post_content=#{source}",
-	)
+	]
+	if !is_regular
+		post_args.push("--page_template=#{file_name}")
+	end
+	post_id = run_wpcli("post", "create", *post_args)
 
 	slug = run_wpcli('post', 'get', post_id, '--field=name')
 	if slug != file_name
