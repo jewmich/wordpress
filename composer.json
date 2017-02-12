@@ -7,7 +7,6 @@
 	],
 	"require": {
 		"wpackagist-plugin/custom-permalinks": "*",
-		"wpackagist-plugin/insert-php": "*",
 		"wpackagist-plugin/error-log-monitor": "*"
 	},
 	"extra": {
