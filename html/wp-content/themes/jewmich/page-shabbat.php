@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Shabbat Template
+ * Template Name: shabbat Template
  */
 
 if (isset($_GET['wronguser'])) {
@@ -272,7 +272,7 @@ Secure on-line from</a>.&nbsp;
       <tr>
          <td width="43%" class="chabad">U of M School year</td>
          <td width="52%" class="chabad">
-					<?= do_shortcode('um_school_year_dropdown') ?>
+					<?= do_shortcode('[um_school_year_dropdown]') ?>
          </td>
       </tr>
 <? endif ?>
