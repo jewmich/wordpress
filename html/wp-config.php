@@ -25,6 +25,9 @@ if (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] !== '127.0.0.1' &&
   	define('FORCE_SSL_ADMIN', true);
 }
 
+// Don't allow editing files in admin because it's too big of a security risk
+define('DISALLOW_FILE_EDIT', true);
+
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
 
