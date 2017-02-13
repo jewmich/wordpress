@@ -41,6 +41,7 @@ def insert_page(file_path)
 			if line =~ /^require/
 				next
 			elsif !line.match(/^define\('(TITLE|BANNER|NO_SIDEBAR)', (?:true|'([^']*)')\);$/)
+				is_regular = false
 				next
 			end
 			fields[$1] = ($1 == 'NO_SIDEBAR') ? true : $2
@@ -84,19 +85,17 @@ def insert_page(file_path)
 	end
 
 	file_name = File.basename(file_path).sub(/.php/, '')
-
-	title = fields['TITLE'].sub(/( - )?Chabad House.*/, '')
-	title = file_name if title.empty?
+	title = fields['TITLE'] ? fields['TITLE'].sub(/( - )?Chabad House.*/, '') : ''
 
 	post_args = [
 		"--porcelain",
 		"--post_type=page",
-		"--post_title=#{title}",
+		"--post_title=" + title.empty? ? file_name : title,
 		"--post_status=publish",
 		"--post_content=#{source}",
 	]
 	if !is_regular
-		post_args.push("--page_template=#{file_name}")
+		post_args.push("--page_template=page-templates/page-#{file_name}.php")
 	end
 	post_id = run_wpcli("post", "create", *post_args)
 

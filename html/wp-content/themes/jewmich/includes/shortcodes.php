@@ -21,7 +21,6 @@ add_shortcode('um_school_year_dropdown', function ($atts = []) {
 });
 
 add_shortcode('plugnpay_success_link', function($atts = []) {
-	$protocol = isset($_SERVER['HTTPS']) ? "https" : "http";
-	$url = "$protocol://{$_SERVER['SERVER_NAME']}/successredirect?type={$atts['type']}";
+	$url = get_site_url(null, "/successredirect?type={$atts['type']}");
 	return '<input name="success-link" type="hidden" value="' . $url . '">';
 });
