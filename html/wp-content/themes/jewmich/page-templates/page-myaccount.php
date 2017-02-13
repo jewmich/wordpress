@@ -34,18 +34,18 @@ if (!empty($_POST['email'])) {
 
 get_header();
 ?>
-<? if (!empty($errors)): ?>
+<?php if (!empty($errors)): ?>
 Please correct the errors below:
 <ul class="errors">
-	<? foreach ($errors as $error): ?>
+	<?php foreach ($errors as $error): ?>
 	<li><font color='red'><?= $error ?></font></li>
-	<? endforeach ?>
+	<?php endforeach ?>
 </ul>
-<? endif ?>
-<? if ($success): ?>
+<?php endif ?>
+<?php if ($success): ?>
 <span class="successmsg">Your account has been updated successfully</span>
 <br><br>
-<? endif ?>
+<?php endif ?>
 <form action="/myaccount" method="post" name="form" class="chabad">
 	<table background="./pic/chabad-bg.gif" border="0" id="table2" width="98%">
 		<tr>

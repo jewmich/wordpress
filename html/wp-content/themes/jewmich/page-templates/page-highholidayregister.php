@@ -381,7 +381,7 @@ return false;
 									<td width="14%">
 									</td>
 								</tr>
-<?
+<?php
 $firstMorningRoshHashanah = strtotime('tomorrow 9:45 AM', $nextRoshHoshanahUnix);
 ?>
 								<tr>
@@ -398,7 +398,7 @@ $firstMorningRoshHashanah = strtotime('tomorrow 9:45 AM', $nextRoshHoshanahUnix)
 										<input name="1dymel" type="checkbox" value="y"/>
 									</td>
 								</tr>
-<?
+<?php
 // check if it's on shabbat. If so, skip shofar blowing
 $nextRoshHoshanahStartInfo = cal_from_jd($nextRoshHoshanahStart, CAL_JEWISH);
 if ($nextRoshHoshanahStartInfo['dow'] !== 6): ?>
@@ -415,7 +415,7 @@ if ($nextRoshHoshanahStartInfo['dow'] !== 6): ?>
 									<td width="14%">
 									</td>
 								</tr>
-<?  endif ?>
+<?php  endif ?>
 								<tr>
 									<td width="53%">
 										Evening Services
@@ -430,7 +430,7 @@ if ($nextRoshHoshanahStartInfo['dow'] !== 6): ?>
 										<input name="2ntmel" type="checkbox" value="y"/>
 									</td>
 								</tr>
-<?
+<?php
 $finalRoshHashanahService = strtotime('tomorrow	9:45AM', jdtounix($nextRoshHoshanahEnd));
 ?>
 								<tr>
@@ -447,7 +447,7 @@ $finalRoshHashanahService = strtotime('tomorrow	9:45AM', jdtounix($nextRoshHosha
 										<input name="2dymel" type="checkbox" value="y"/>
 									</td>
 								</tr>
-<?
+<?php
 // check if it's on shabbat. If so, skip shofar blowing
 $nextRoshHoshanahEndInfo = cal_from_jd($nextRoshHoshanahEnd, CAL_JEWISH);
 if ($nextRoshHoshanahEndInfo['dow'] !== 6): ?>
@@ -464,7 +464,7 @@ if ($nextRoshHoshanahEndInfo['dow'] !== 6): ?>
 									<td width="14%">
 									</td>
 								</tr>
-<? endif ?>
+<?php endif ?>
 								<tr>
 									<td bgcolor="#FFFFFF" colspan="4" height="31" valign="middle">
 										<strong>

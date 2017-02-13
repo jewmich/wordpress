@@ -1,4 +1,4 @@
-<?
+<?php
 function jdToDb($julianDay) {
 	$d = cal_from_jd($julianDay, CAL_GREGORIAN);
 	return $d['year'] . '-' . str_pad($d['month'], 2, '0', STR_PAD_LEFT) . '-' . str_pad($d['day'], 2, '0', STR_PAD_LEFT);

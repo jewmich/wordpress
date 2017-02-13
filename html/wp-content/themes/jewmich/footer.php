@@ -1,17 +1,17 @@
 							</div>
-							<? if (!get_post_meta(get_the_ID(), 'no_sidebar', true)): ?>
+							<?php if (!get_post_meta(get_the_ID(), 'no_sidebar', true)): ?>
 							<div class="col-xs-1 sidebar">
-								<? if ($user = User::getLoggedInUser()): ?>
+								<?php if ($user = User::getLoggedInUser()): ?>
 								<div class="chabad" style="text-align: center; padding-bottom: 5px;">
 									Welcome, <?= $user->getName() ?> <br>
 									<a href="myaccount">My Account</a> &ndash; <a href="logout?return=<?= $_SERVER['PHP_SELF'] ?>">Logout</a>
 								</div>
-								<? endif ?>
+								<?php endif ?>
 								<?= do_shortcode('[sidebar]') ?>
 								<script type="text/javascript" language="javascript" src="//beta.chabad.org/tools/shared/candlelighting/candlelighting.js.asp?z=48104"></script>
 								<br>&nbsp;</p>
 							</div>
-							<? endif ?>
+							<?php endif ?>
 						</div>
 					</div>
 				</div>

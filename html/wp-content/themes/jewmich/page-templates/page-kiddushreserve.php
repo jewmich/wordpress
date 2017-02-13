@@ -40,9 +40,9 @@ function verify() {
 	<table align="left" border="0" width="100%" id="table1" background="pic/chabad-bg.gif" height="118">
 		<tr>
 			<td>
-<? if (isset($_POST['form']) && $_POST['form'] == "submitted"): ?>
+<?php if (isset($_POST['form']) && $_POST['form'] == "submitted"): ?>
 	<p align="center" class="chabad-header"><?= reserveDate($_POST) ?><br></p>
-<?
+<?php
 //if they need to fill out the form to sign up for a Kiddush
 elseif(!isset($_POST['change'])): ?>
 			</td>
@@ -130,7 +130,7 @@ elseif(!isset($_POST['change'])): ?>
 			<td colspan="2">
 				<p align="center">
 				<input type="button" value="Reserve Kiddush" onclick="verify();"> 
-<? else: // if the "Change" button was clicked
+<?php else: // if the "Change" button was clicked
 	$reservation = getReservation($_POST['originalJd']);
 	if ($reservation): ?>
 			</td>
@@ -153,9 +153,9 @@ elseif(!isset($_POST['change'])): ?>
 			<td width="43%" class="chabad"><font color="#FF0000">*</font> New Date</td>
 			<td width="51%" class="chabad">
 				<select NAME="newJd">
-					<? foreach(getAllowedChangeDays($_POST['originalJd']) as $day): ?>
+					<?php foreach(getAllowedChangeDays($_POST['originalJd']) as $day): ?>
 					<option value="<?= $day ?>"><?= date("M j, Y", jdtounix($day + 1)) ?></option>
-					<? endforeach ?>
+					<?php endforeach ?>
 				</select>
 			</td>
 		</tr>
@@ -163,10 +163,10 @@ elseif(!isset($_POST['change'])): ?>
 			<td colspan="2">
 				<p align="center">
 				<input type="submit" name="change" value="Reserve Kiddush"> 
-	<? else: ?>
+	<?php else: ?>
 				<font color='red'>Could not find reservation</font>
-	<? endif ?>
-<? endif ?>
+	<?php endif ?>
+<?php endif ?>
 			</td>
 		</tr>
 	</table>

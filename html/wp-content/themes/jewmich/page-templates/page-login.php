@@ -17,9 +17,9 @@ get_header();
 <form name="form" action="/login" method="post" class="chabad">
 <div style="background-image: url(/pic/chabad-bg.gif); width: 100%; padding: 5px 0" align="center">
 	<p class="chabad-header">Login here</p>
-	<? if ($loginError): ?>
+	<?php if ($loginError): ?>
 	<font color='red'><?= $loginError ?></font>
-	<? endif ?>
+	<?php endif ?>
 	<table border="0" id="logintable">
 		<tr>
 			<td>

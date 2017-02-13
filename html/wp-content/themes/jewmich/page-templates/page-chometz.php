@@ -43,9 +43,9 @@ get_header();
 	<?= date('l F j, Y h:iA', $closeDate) ?>.
 </p>
 <br/>
-<? if (time() < $openDate || time() > $closeDate): ?>
+<?php if (time() < $openDate || time() > $closeDate): ?>
 <p class="chabad">Sorry, we are closed</p>
-<? else: ?>
+<?php else: ?>
 <form action="https://pay1.plugnpay.com/payment/annarborchapay.cgi" method="post">
 	<input name="taxstate" type="hidden" value="all"/>
 	<input name="publisher-email" type="hidden" value="info-nospam@jewmich.com"/>
@@ -509,7 +509,7 @@ get_header();
 		</tr>
 	</table>
 </form>
-<? endif ?>
+<?php endif ?>
 <?php
 get_footer();
 ?>

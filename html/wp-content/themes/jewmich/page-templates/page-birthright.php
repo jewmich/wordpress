@@ -123,10 +123,10 @@ themessage = themessage + " -  School Year";
 									AND THE EXPERIENCE
 									IS PRICELESS<br>
 									&nbsp;</font></b>
-							<? if (time() > PREREG_CUTOFF_DATE): ?>
+							<?php if (time() > PREREG_CUTOFF_DATE): ?>
 								<br>
 								<span class="pp_heading"><a href="http://register.birthrightisrael.com/index.cfm?org=63&ref=rabbialter">Apply for the trip</a></span><br>&nbsp;</font>
-							<? endif ?>
+							<?php endif ?>
 							</p>
 						</td>
 					</tr>
@@ -183,7 +183,7 @@ themessage = themessage + " -  School Year";
 					  &nbsp;</font></td>
 					</tr>
 				</table></td>
-			<? if (time() < PREREG_CUTOFF_DATE): ?>
+			<?php if (time() < PREREG_CUTOFF_DATE): ?>
 			<td width="25%" bgcolor="#9900CC" height="579" valign="top">
 				<table border="0" width="90%" id="table4">
 					<tr>
@@ -354,7 +354,7 @@ themessage = themessage + " -  School Year";
                     </tr>
 				</table>
 			</td>
-			<? else: ?>
+			<?php else: ?>
 			<td bgcolor="#FFFF00">
 				<p align="center"><br>
                 
@@ -375,7 +375,7 @@ themessage = themessage + " -  School Year";
 				<img border="0" src="eventpic/birthmarg1.jpg" width="225" height="125"><br>
 				<br>
           </td>
-			<? endif ?>
+			<?php endif ?>
 		</tr>
 		<tr>
 			<td width="83%" bgcolor="#9900CC" height="237" valign="top" align="center" colspan="2">

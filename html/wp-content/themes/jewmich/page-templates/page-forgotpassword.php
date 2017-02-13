@@ -30,13 +30,13 @@ $success = true;
 }
 get_header();
 ?>
-<? if ($error): ?>
+<?php if ($error): ?>
 <font color='red'><?= $error ?></font>
 <br><br>
-<? elseif ($success): ?>
+<?php elseif ($success): ?>
 <span class="successmsg">An e-mail has been sent with instructions on resetting your password.</span>
 <br><br>
-<? endif ?>
+<?php endif ?>
 <form action="/forgotpassword" method="post" name="form" class="chabad">
 <div style="background-image: url(/pic/chabad-bg.gif); width: 100%; padding: 5px 0" align="center">
 	<table border="0">

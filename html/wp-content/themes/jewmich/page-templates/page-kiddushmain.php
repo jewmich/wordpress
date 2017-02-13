@@ -21,41 +21,41 @@ get_header();
 		<td class="chabad-small">
 			<p class="chabad-header"><span style="font-weight: 400"><b>Hebrew Date</b></span>
 		</td>
-		<? if ($isCoordinator): ?>
+		<?php if ($isCoordinator): ?>
 		<td class="chabad-small"><p class="chabad-header"><span style="font-weight: 400"><b>E-mail</b></span></td>
 		<td class="chabad-small"><p class="chabad-header"><span style="font-weight: 400"><b>Name</b></span></td>
-		<? endif ?>
+		<?php endif ?>
 	</tr>
-<? foreach(getDaysToShow() as $jd): ?>
-	<? $reservation = getReservation($jd) ?>
+<?php foreach(getDaysToShow() as $jd): ?>
+	<?php $reservation = getReservation($jd) ?>
 	<tr class="chabad" bgcolor="<?= $reservation ? '#fbc080' : '#7cfc00' ?>">
 		<td align="center" class="chabad-small" width="83">
 			<form action="/kiddushreserve" method=post>
 				<input type="hidden" name="originalJd" value="<?= $jd ?>">
-			<? if ($reservation): ?>
+			<?php if ($reservation): ?>
 				<b>Kiddush Taken</b>
 				<br>
 				<input type="submit" name="change" value="Change">
-			<? else: ?>
+			<?php else: ?>
 				<input type="submit" name="reserveButton" caption="Available" value="Reserve">
 				<input type="hidden" name="date" value="<?= $reservation['date'] ?>">
-			<? endif ?>
+			<?php endif ?>
 			</form>
 		</td>
 		<td class="chabad-small" width="140"><?= date("M j, Y", jdtounix($jd + 1)) ?></td>
-		<? $jewishDetails = cal_from_jd($jd, CAL_JEWISH) ?>
+		<?php $jewishDetails = cal_from_jd($jd, CAL_JEWISH) ?>
 		<td class="chabad-small"><?= $jewishDetails['day'] . " " . $jewishDetails['monthname'] . ", " . $jewishDetails['year'] ?></td>
-		<? if ($isCoordinator): ?>
+		<?php if ($isCoordinator): ?>
 		<td class="chabad-small"><?= $reservation ? $reservation['email'] : ''?></td>
 		<td class="chabad-small"><?= $reservation ? $reservation['name'] : ''?></td>
-		<? endif ?>
+		<?php endif ?>
 	</tr>
 	<!-- spacer row between months -->
-	<? if ($curMonth !== jdmonthname($jd, CAL_MONTH_JEWISH)): ?>
+	<?php if ($curMonth !== jdmonthname($jd, CAL_MONTH_JEWISH)): ?>
 		<tr><td colspan="5"></td></tr>
-		<? $curMonth = jdmonthname($jd, CAL_MONTH_JEWISH); ?>
-	<? endif ?>
-<? endforeach ?>
+		<?php $curMonth = jdmonthname($jd, CAL_MONTH_JEWISH); ?>
+	<?php endif ?>
+<?php endforeach ?>
 </table>
 <form action="kiddushmain.php" method="post" name="coordinatorform">
 	<p>Coordinator Password: <input type="text" name="coordinatorpassword"><br></p>

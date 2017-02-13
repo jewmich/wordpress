@@ -31,13 +31,13 @@ if (!empty($_POST['password'])) {
 
 get_header();
 ?>
-<? if ($error): ?>
+<?php if ($error): ?>
 <font color='red'><?= $error ?></font>
 <br><br>
-<? elseif ($success): ?>
+<?php elseif ($success): ?>
 <span class="successmsg">Your password has been reset</span>
 <br><br>
-<? endif ?>
+<?php endif ?>
 <form action="/resetpassword" method="post" name="form" class="chabad">
 	<input type="hidden" name="token" value="<?= $_REQUEST['token'] ?>">
 	<input type="hidden" name="expire" value="<?= $_REQUEST['expire'] ?>">

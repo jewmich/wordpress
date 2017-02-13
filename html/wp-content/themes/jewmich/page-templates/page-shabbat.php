@@ -194,18 +194,18 @@ If
 you know someone who would like to be a proud sponsor of a Shabbat dinner <a href="/sponsorshabbat">please use our 
 Secure on-line from</a>.&nbsp;
 <br>
-<? if (!isset($person)): ?>
+<?php if (!isset($person)): ?>
 <form name="login_form" action="shabbat" method="post" action="">                     
 <div style="background-image: url(/pic/chabad-bg.gif); width: 100%; padding: 5px 0">
 	<p class="chabad-header">
 		Have you RSVP'd in the past? <br />
      Enter your phone number here!
-<? if ($phoneNotFound): ?>
+<?php if ($phoneNotFound): ?>
 		<br>
 		<font color='red'>
 		Your phone number isn't in our system yet. Please fill out the form below to add it.
 		</font>
-		<? endif ?>
+		<?php endif ?>
 	</p>
    <p align="center">
 		<label for="phone" class="chabad">*</label>
@@ -217,26 +217,26 @@ Secure on-line from</a>.&nbsp;
 </div>
 <br>
 </form>
-<? endif ?>
+<?php endif ?>
 
 <form name="register_form" action="files/shabbat" method="post" action="">                     
 <input type=hidden name="subject" value="Shabbat Dinner Web Submission">
 
 <div id="shabatContainer">
 	<p class="chabad-header">
-<? if (!isset($person)): ?>
+<?php if (!isset($person)): ?>
 	Don't have an account yet? <br />
 	Fill out this form to reserve a space at our Shabbat Dinner!
-<? else: ?>
+<?php else: ?>
 	Welcome <?= $person->getName() ?>!
-	<? if (is_null(User::getLoggedInUser())): ?>(<a href="/shabbat?wronguser">Not you?</a>)<? endif ?>
+	<?php if (is_null(User::getLoggedInUser())): ?>(<a href="/shabbat?wronguser">Not you?</a>)<?php endif ?>
 	<br>
 	Fill out this form to reserve a space at our Shabbat Dinner, or <a href="/myaccount">click here to change your contact information</a>.
 	<input type=hidden name="person_id" value="<?= $person->id ?>">
-<? endif ?>
+<?php endif ?>
 	</p>
    <table border="0" width="72%" id="registertable">
-<? if (!isset($person)): ?>
+<?php if (!isset($person)): ?>
       <tr>
          <td width="43%" class="chabad">* Your Full Name</td>
 			<td width="51%">
@@ -275,7 +275,7 @@ Secure on-line from</a>.&nbsp;
 					<?= do_shortcode('[um_school_year_dropdown]') ?>
          </td>
       </tr>
-<? endif ?>
+<?php endif ?>
       <tr>
         <td width="43%" class="chabad">How many people ?</td>
         <td width="51%">
