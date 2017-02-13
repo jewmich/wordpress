@@ -160,7 +160,7 @@ get_header();
 <input type="hidden" name="card-allowed" value="Visa,Mastercard"> 
 <input type="hidden" name="shipinfo" value="0"> 
 <input type="hidden" name="easycart" value="1"> 
-<input name="success-link" type="hidden" value="http://<?= $_SERVER['SERVER_NAME'] ?>/successredirect?type=passover"/>
+<?= do_shortcode('[plugnplay_success_link type=passover]'); ?>
 <input type=hidden name="subject" value="Seder reservation">
 <input type="hidden" name="subacct" value="seder">
 
@@ -249,7 +249,7 @@ get_header();
                  </tr>
                <tr>
                  <td width="141" class="chabad"> Student Year</td>
-                 <td width="275" class="chabad"><?= generateUmSchoolYearDropDown(null, 'year') ?></td>
+                 <td width="275" class="chabad"><?= do_shortcode('[um_school_year_dropdown name=year]') ?></td>
                  </tr>
                <tr>
                  <td class="chabad">How did you find us? </font></td>

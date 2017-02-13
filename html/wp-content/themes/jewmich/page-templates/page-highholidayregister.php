@@ -312,7 +312,7 @@ return false;
 									Year
 								</td>
 								<td class="chabad">
-                           <?= generateUmSchoolYearDropDown(null, 'year') ?>
+                           <?= do_shortcode('[um_school_year_dropdown name=year]') ?>
 								</td>
 							</tr>
 							<tr>

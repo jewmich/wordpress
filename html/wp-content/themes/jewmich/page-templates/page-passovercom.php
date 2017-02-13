@@ -186,7 +186,7 @@ Matzah and a delicious, festive meal.
 <input type="hidden" name="card-allowed" value="Visa,Mastercard"> 
 <input type="hidden" name="shipinfo" value="0"> 
 <input type="hidden" name="easycart" value="1"> 
-<input name="success-link" type="hidden" value="http://<?= $_SERVER['SERVER_NAME'] ?>/successredirect?type=passover"/>
+<?= do_shortcode('[plugnplay_success_link type=passover]'); ?>
 <input type=hidden name="subject" value="Seder reservation">
 <input type="hidden" name="subacct" value="seder">
 
