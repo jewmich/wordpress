@@ -25,10 +25,15 @@ def upload_media_if_not_exists(file_path)
 end
 
 def insert_page(file_path)
-	source = IO.read(file_path)
+	page_name = File.basename(file_path).sub(/.php/, '')
+	if File.dirname(file_path) == "files"
+		page_name = "form-process-#{page_name}"
+	end
 
 	is_regular = true
 	fields = {}
+	source = IO.read(file_path)
+
 	# remove header and record config params (TITLE, BANNER, NO_SIDEBAR)
 	source.sub!(/^<\?\n.*?\?>/m) do |match|
 		lines = match.split("\n")
@@ -80,28 +85,30 @@ def insert_page(file_path)
 
 		# replace pluginpay success links with shortcode
 		source.gsub!(/<input name="success-link" type="hidden" value="[^"]*successredirect\?type=([^\"]*)"\/>/, '[plugnpay_success_link type=\1]')
+
+		# replace form post actions with proper page
+		source.gsub!(/files\/(birthright|brazil|culinary|forms|highholiday|shabbat|trip)(?:.php)?/, 'form-process-\1')
 	else
-		source = "This page cannot be edited in Wordpress due to embedded PHP. To update it, edit the file #{Dir.pwd}/html/wp-content/themes/jewmich/page-#{file_name}.php"
+		source = "This page cannot be edited in Wordpress due to embedded PHP. To update it, edit the file #{Dir.pwd}/html/wp-content/themes/jewmich/page-#{page_name}.php"
 	end
 
-	file_name = File.basename(file_path).sub(/.php/, '')
 	title = fields['TITLE'] ? fields['TITLE'].sub(/( - )?Chabad House.*/, '') : ''
 
 	post_args = [
 		"--porcelain",
 		"--post_type=page",
-		"--post_title=" + title.empty? ? file_name : title,
+		"--post_title=" + title.empty? ? page_name : title,
 		"--post_status=publish",
 		"--post_content=#{source}",
 	]
 	if !is_regular
-		post_args.push("--page_template=page-templates/page-#{file_name}.php")
+		post_args.push("--page_template=page-templates/page-#{page_name}.php")
 	end
 	post_id = run_wpcli("post", "create", *post_args)
 
 	slug = run_wpcli('post', 'get', post_id, '--field=name')
-	if slug != file_name
-		run_wpcli("post", "meta", "set", post_id, "custom_permalink", file_name)
+	if slug != page_name
+		run_wpcli("post", "meta", "set", post_id, "custom_permalink", page_name)
 	end
 
 	return post_id, fields
