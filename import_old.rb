@@ -13,12 +13,20 @@ end
 
 def upload_media_if_not_exists(file_path)
 	post_name = File.basename(file_path).sub(/\..*$/, '')
+
 	# check if already uploaded
-	media_id = run_wpcli("eval", 'global $wpdb; echo $wpdb->get_col("SELECT id FROM {$wpdb->posts} WHERE post_name = \"' + post_name + '\"")[0];')
+	media_id = run_wpcli("eval", 'echo $GLOBALS["wpdb"]->get_col("
+		SELECT id
+		FROM {$GLOBALS["wpdb"]->posts}
+		WHERE post_type = \"attachment\"
+		AND post_name IN (\"' + post_name + '\", \"media-' + post_name + '\")
+	")[0];')
 	if media_id.empty?
 		# nope, need to upload it
 		puts "\tUploading media #{file_path}"
 		media_id = run_wpcli("media", "import", "--porcelain", file_path)
+		# prepend "media-" to prevent slug collisions
+		run_wpcli("post", "update", media_id, "--post_name=media-#{post_name}")
 	end
 	full_url = run_wpcli("eval", "echo wp_get_attachment_url(#{media_id});")
 	site_url = run_wpcli("eval", "echo get_site_url();")
@@ -103,16 +111,12 @@ def insert_page(file_path)
 		"--post_title=" + (title.empty? ? page_name : title),
 		"--post_status=publish",
 		"--post_content=#{source}",
+		"--post_name=#{page_name}",
 	]
 	if !is_regular
 		post_args.push("--page_template=page-templates/page-#{page_name}.php")
 	end
 	post_id = run_wpcli("post", "create", *post_args)
-
-	slug = run_wpcli('post', 'get', post_id, '--field=name')
-	if slug != page_name
-		run_wpcli("post", "meta", "set", post_id, "custom_permalink", page_name)
-	end
 
 	return post_id, fields
 end

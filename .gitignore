@@ -15,7 +15,7 @@
 /secrets/
 
 # Plugins installed by Composer
-/html/wp-content/plugins/custom-permalinks/
+/html/wp-content/plugins/debug-this/
 /html/wp-content/plugins/error-log-monitor/
 
 # Files installed by Wordpress automatically

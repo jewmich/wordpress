@@ -6,7 +6,7 @@
 		{ "type": "composer", "url": "https://wpackagist.org" }
 	],
 	"require": {
-		"wpackagist-plugin/custom-permalinks": "*",
+		"wpackagist-plugin/debug-this": "*",
 		"wpackagist-plugin/error-log-monitor": "*"
 	},
 	"extra": {
