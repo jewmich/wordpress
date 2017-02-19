@@ -188,7 +188,7 @@ themessage = themessage + " -  School Year";
 				<table border="0" width="90%" id="table4">
 					<tr>
 						<td bgcolor="#FFFF00">
-							<form name="form" action="/files/birthright.php" method="post" action=""> 
+							<form name="form" action="/page-form-process-birthright" method="post">
 								<input type="text" name="username" size="20" maxsize="30"/>
 								<input type=hidden name="subject" value="pre app birth">
 								<div align="center">

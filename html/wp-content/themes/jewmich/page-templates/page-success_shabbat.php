@@ -32,7 +32,7 @@ get_header();
 If you'd like to make make future reservations simpler, register an account below:
 </p>
 <br>
-<form action="success_shabbat.php" method="post" action="">
+<form action="/success_shabbat" method="post">
 	<input type="hidden" name="person_id" value="<?= $person->id ?>">
 <div style="background-image: url(/pic/chabad-bg.gif); width: 100%; padding: 5px 0" align="center">
    <p align="center" class="chabad-header">Register an account (optional)</p>

@@ -195,7 +195,7 @@ you know someone who would like to be a proud sponsor of a Shabbat dinner <a hre
 Secure on-line from</a>.&nbsp;
 <br>
 <?php if (!isset($person)): ?>
-<form name="login_form" action="shabbat" method="post" action="">                     
+<form name="login_form" method="post">
 <div style="background-image: url(/pic/chabad-bg.gif); width: 100%; padding: 5px 0">
 	<p class="chabad-header">
 		Have you RSVP'd in the past? <br />
@@ -219,7 +219,7 @@ Secure on-line from</a>.&nbsp;
 </form>
 <?php endif ?>
 
-<form name="register_form" action="files/shabbat" method="post" action="">                     
+<form name="register_form" action="/form-process-shabbat" method="post">
 <input type=hidden name="subject" value="Shabbat Dinner Web Submission">
 
 <div id="shabatContainer">

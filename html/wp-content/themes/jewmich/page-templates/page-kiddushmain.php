@@ -57,7 +57,7 @@ get_header();
 	<?php endif ?>
 <?php endforeach ?>
 </table>
-<form action="kiddushmain.php" method="post" name="coordinatorform">
+<form action="/kiddushmain" method="post" name="coordinatorform">
 	<p>Coordinator Password: <input type="text" name="coordinatorpassword"><br></p>
 </form>
 </div>

@@ -72,7 +72,7 @@
 							<li><a href="/birthright">Free Trip to Israel</a></li>
 							<li><a href="/mythandfact">Myths & Facts</a></li>
 							<li><a href="/studycenter">Judaic Classes</a></li>
-							<li><a href="/shabat">Shabbat Dinner</a></li>
+							<li><a href="/shabbat">Shabbat Dinner</a></li>
 							<li><a href="/candlelighting">Candle Lighting Times</a></li>
 							<li><a href="/ask">Ask the Rabbi</a></li>
 							<li><a href="/kosher">Kosher in Ann Arbor</a></li>
