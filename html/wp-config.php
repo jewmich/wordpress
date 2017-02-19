@@ -21,7 +21,7 @@ ini_set('error_log', dirname(__DIR__) . '/php-errors.log');
 require_once(__DIR__ . '/../secrets/secrets.php');
 
 // Force SSL for all logins and wp-admin access, except in development/testing
-if (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] !== '127.0.0.1' && $_SERVER['SERVER_NAME'] !== 'wordpress.jewmich.com') {
+if (ENVIRONMENT !== 'development' && ENVIRONMENT !== 'testing') {
   	define('FORCE_SSL_ADMIN', true);
 }
 
