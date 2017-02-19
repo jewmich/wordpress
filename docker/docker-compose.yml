@@ -14,9 +14,16 @@ services:
        MYSQL_USER: wordpress
        MYSQL_PASSWORD: wordpress
 
+   mailcatcher:
+      image: schickling/mailcatcher
+      restart: always
+      ports:
+         - "1080:1080"
+
    wordpress:
      depends_on:
        - db
+       - mailcatcher
      volumes:
        - "..:/var/www/"
        - "../html/:/var/www/html"

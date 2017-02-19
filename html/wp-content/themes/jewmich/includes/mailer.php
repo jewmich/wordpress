@@ -8,11 +8,13 @@ function getMailer() {
 	$mailer = new PHPMailer(true);
 	$mailer->IsSMTP();
 	$mailer->XMailer = ' '; // don't include X-Mailer for security
-	$mailer->Host = 'mail.jewmich.com';
-	$mailer->SMTPAuth = true;
-	$mailer->Port = 25;
-	$mailer->Username = SMTP_USERNAME;
-	$mailer->Password = SMTP_PASSWORD;
+	$mailer->Host = SMTP_HOST;
+	$mailer->Port = SMTP_PORT;
+	if (SMTP_USERNAME) {
+		$mailer->SMTPAuth = true;
+		$mailer->Username = SMTP_USERNAME;
+		$mailer->Password = SMTP_PASSWORD;
+	}
 	return $mailer;
 }
 

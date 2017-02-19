@@ -22,6 +22,8 @@ define('LOGGED_IN_SALT',   'u3[gV.k(g1hiGpeokYv?-c$z=G7;!.qF(WihlSqAW B%:dcM6^kY
 define('NONCE_SALT',       '`fIBz`@WOy$-9PO^LNU9G-=?.f[!3R1_93Yo%YklY88]|W(xMT]~?,I#7az7%!(G');
 
 // Jewmich-specific secrets
-define('SMTP_USERNAME', 'localhost');
+define('SMTP_HOST', 'mailcatcher');
+define('SMTP_PORT', 1025);
+define('SMTP_USERNAME', '');
 define('SMTP_PASSWORD', '');
 define('RESET_LINK_SALT', 'foobar');
