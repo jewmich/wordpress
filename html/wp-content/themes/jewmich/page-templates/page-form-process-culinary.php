@@ -4,17 +4,9 @@
  */
 
 $paramKeys = array('firstname', 'lastname', 'email', 'phone', 'student', 'year', 'foundus', 'involvedwith', 'suggestion');
-$placeholders = array_fill(0, count($paramKeys), '?');
-$query = "
-	INSERT INTO `Culinary` (firstname, lastname, email, phone, student, year, ` foundus`, ` involvedwith`, suggestion, signed_up_at)
-	VALUES (" . implode(', ', $placeholders) . ", DATE_ADD(NOW(), INTERVAL 3 HOUR))
-";
-
-$params = array();
+$params = array('signed_up_at' => date('Y-m-d H:i:s', strtotime('+3 hours')));
 foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
-
-global $wpdb;
-$wpdb->query($wpdb->prepare($query, $params));
+$GLOBALS['wpdb']->insert('Culinary', $params);
 
 $mailer = getMailer();
 $mailer->Subject = $_POST['subject'];

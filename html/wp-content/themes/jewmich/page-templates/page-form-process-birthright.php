@@ -13,17 +13,10 @@ if (empty($_POST['subject'])) {
 	exit;
 }
 
+$params = array('signed_up_at' => date('Y-m-d H:i:s', strtotime('+3 hours')));
 $paramKeys = array('firstname', 'lastname', 'email', 'phone', 'foundus', 'year', 'isstudent', 'datpref', 'suggestion');
-$placeholders = array_fill(0, count($paramKeys), '?');
-$query = '
-	INSERT INTO `Birthright` (' . implode(', ', $paramKeys) . ', signed_up_at)
-	VALUES (' . implode(', ', $placeholders) . ', DATE_ADD(NOW(), INTERVAL 3 HOUR))
-';
-$params = array();
 foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
-
-global $wpdb;
-$wpdb->query($wpdb->prepare($query, $params));
+$GLOBALS['wpdb']->insert('Birthright', $params);
 
 $mailer = getMailer();
 $mailer->Subject = $_POST['subject'];

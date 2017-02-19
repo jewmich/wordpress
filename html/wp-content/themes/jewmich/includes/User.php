@@ -13,10 +13,8 @@ class User {
 	public function getName() { return $this->person->getName(); }
 
 	public function updatePassword($password) {
-		global $wpdb;
 		$this->passwordHash = self::hashPassword($password);
-		$sql = $wpdb->prepare('UPDATE Users SET password = ? WHERE person_id = ?', $this->passwordHash, $this->person->id);
-		$wpdb->query($sql);
+		$GLOBALS['wpdb']->update('Users', ['password' => $this->passwordHash], ['person_id' => $this->person->id]);
 	}
 
 	public function generatePasswordResetToken($expireTime) {
@@ -36,7 +34,7 @@ class User {
 
 	public static function getByEmail($email) {
 		global $wpdb;
-		$sql = $wpdb->prepare("SELECT person_id, password FROM Users JOIN People ON (person_id = id) WHERE email = ?", $email);
+		$sql = $wpdb->prepare("SELECT person_id, password FROM Users JOIN People ON (person_id = id) WHERE email = %s", $email);
 		if (!$row = $wpdb->get_row($sql, ARRAY_A)) return null;
 		return new self(Person::getFromId($row['person_id']), $row['password']);
 	}
@@ -63,11 +61,11 @@ class User {
 	}
 
 	public static function create(Person $person, $password) {
-		global $wpdb;
-		$passwordHash = self::hashPassword($password);
-		$sql = $wpdb->prepare('INSERT INTO Users SET person_id = ?, password = ?, created = NOW()', $person->id, $passwordHash);
-		$wpdb->query($sql);
-		return new self($person, $passwordHash);
+		$GLOBALS['wpdb']->insert('Users', [
+			'person_id' => $person->id,
+			'password' => $passwordHash,
+			'created' => date('Y-m-d H:i:s'),
+		]);
 	}
 
 	public static function isEmailTaken($email) {

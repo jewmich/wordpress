@@ -19,15 +19,10 @@ get_header();
                   
  <p align="center" class="chabad-header">
                   <?php
+$params = array('date_time' => date('Y-m-d H:i:s', strtotime('+2 hours')));
 $paramKeys = array('firstname', 'lastname', 'email', 'phone', 'year', 'attending', 'comment', '1ntser', '1ntmel', '1dyser', '1dymel', 'shfr1', '2ntser', '2ntmel', '2dyser', '2dymel', 'shfr2', '3ntser', '3ntmel', 'yk1nt', 'ykdy', 'yk2nt', 'address', 'city', 'state', 'zip');
-$placeholders = array_fill(0, count($paramKeys), '?');
-$query = 'INSERT INTO `High Holiday` VALUES (' . implode(',', $placeholders) . ', DATE_ADD(NOW(), INTERVAL 2 HOUR))';
-
-$params = array();
 foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
-
-global $wpdb;
-$wpdb->query($wpdb->prepare($query, $params));
+$GLOBALS['wpdb']->insert('High Holiday', $params);
 
 $mailer = getMailer();
 $mailer->Subject = $_POST['subject'];

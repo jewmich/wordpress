@@ -7,7 +7,7 @@ function jdToDb($julianDay) {
 function getReservation($julianDay) {
 	//echo "$julianDay = " . jdToDb($julianDay) . "<br>";
 	global $wpdb;
-	$sql = $wpdb->prepare("SELECT * FROM `Kiddush` WHERE `date` = ? AND name != '' LIMIT 1", jdToDb($julianDay));
+	$sql = $wpdb->prepare("SELECT * FROM `Kiddush` WHERE `date` = %s AND name != '' LIMIT 1", jdToDb($julianDay));
 	return $wpdb->get_row($sql, ARRAY_A);
 }
 
@@ -66,14 +66,14 @@ function reserveDate($params) {
 		$emailSubject = "Kiddush Change Web Submission";
 
 		$originalDate = jdToDb($params['originalJd']);
-		$sql = $wpdb->prepare('UPDATE `Kiddush` SET `date` = ? WHERE `date` = ?', $reservedDate, $originalDate);
+		$sql = $wpdb->prepare('UPDATE `Kiddush` SET `date` = %s WHERE `date` = %s', $reservedDate, $originalDate);
 	} else { // comes here after signing up for the first time (i.e. not a change)
 		$reservedJd = $originalJd;
 		$message = "Thank you<br><br>Your kiddush reservation has been submitted.";
 		$emailSubject = "Kiddush Web Submission";
 		$sql = $wpdb->prepare(' 
 			INSERT INTO `Kiddush` (`date`, `phone`, `email`, `name`, `inhonorof`, `foundus`, `added`)
-			VALUES (?, ?, ?, ?, ?, ?, DATE_ADD(NOW(), INTERVAL 2 HOUR))
+			VALUES (%s, %s, %s, %s, %s, %s, DATE_ADD(NOW(), INTERVAL 2 HOUR))
 		', jdToDb($reservedJd), $params['phone'], $params['email'], $params['realname'], $params['honor'], $params['foundus']);
 	}
 	$wpdb->query($sql);

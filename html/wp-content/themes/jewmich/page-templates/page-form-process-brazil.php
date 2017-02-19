@@ -4,16 +4,9 @@
  */
 
 $paramKeys = array('realname', 'email', 'cellphone', 'address', 'year', 'major', 'interest', 'involvement', 'experience', 'whythistrip', 'idealday', 'bringback', 'medical', 'otherprogram', 'extend');
-$placeholders = array_fill(0, count($paramKeys), '?');
-$query = "
-	INSERT INTO `BrazilTrips` (" . implode(', ', $paramKeys) . ", signed_up_at)
-	VALUES (" . implode(', ', $placeholders) . ", NOW())
-";
-
-$params = array();
+$params = array('signed_up_at' => date('Y-m-d H:i:s'));
 foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
-global $wpdb;
-$wpdb->query($wpdb->prepare($query, $params));
+$GLOBALS['wpdb']->insert('BrazilTrips', $params);
 
 $mailer = getMailer();
 $mailer->Subject = "Brazil Spring Break Application";
