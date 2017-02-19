@@ -68,16 +68,16 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" id="students" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">STUDENTS <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">About U of M Chabad</a></li>
-							<li><a href="#">Free Trip to Israel</a></li>
-							<li><a href="#">Myths & Facts</a></li>
-							<li><a href="#">Judaic Classes</a></li>
-							<li><a href="#">Shabbat Dinner</a></li>
-							<li><a href="#">Candle Lighting Times</a></li>
-							<li><a href="#">Ask the Rabbi</a></li>
-							<li><a href="#">Kosher in Ann Arbor</a></li>
-							<li><a href="#">Map</a></li>
-							<li><a href="#">Visiting & Living</a></li>
+							<li><a href="/aboutus">About U of M Chabad</a></li>
+							<li><a href="/trip">Free Trip to Israel</a></li>
+							<li><a href="/mythandfact">Myths & Facts</a></li>
+							<li><a href="/studycenter">Judaic Classes</a></li>
+							<li><a href="/shabat">Shabbat Dinner</a></li>
+							<li><a href="/candlelighting">Candle Lighting Times</a></li>
+							<li><a href="/ask">Ask the Rabbi</a></li>
+							<li><a href="/kosher">Kosher in Ann Arbor</a></li>
+							<li><a href="/map">Map</a></li>
+							<li><a href="/visiting&amp;living">Visiting & Living</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
