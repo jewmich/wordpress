@@ -12,11 +12,12 @@ def run_wpcli(*args)
 end
 
 def upload_media_if_not_exists(file_path)
-	file_name = File.basename(file_path)
+	post_name = File.basename(file_path).sub(/\..*$/, '')
 	# check if already uploaded
-	media_id = run_wpcli("eval", 'global $wpdb; echo $wpdb->get_col("SELECT id FROM {$wpdb->posts} WHERE guid LIKE \"%' + file_name + '\"")[0];')
+	media_id = run_wpcli("eval", 'global $wpdb; echo $wpdb->get_col("SELECT id FROM {$wpdb->posts} WHERE post_name = \"' + post_name + '\"")[0];')
 	if media_id.empty?
 		# nope, need to upload it
+		puts "\tUploading media #{file_path}"
 		media_id = run_wpcli("media", "import", "--porcelain", file_path)
 	end
 	full_url = run_wpcli("eval", "echo wp_get_attachment_url(#{media_id});")
@@ -26,7 +27,7 @@ end
 
 def insert_page(file_path)
 	page_name = File.basename(file_path).sub(/.php/, '')
-	if File.dirname(file_path) == "files"
+	if File.basename(File.dirname(file_path)) == "files"
 		page_name = "form-process-#{page_name}"
 	end
 
@@ -39,13 +40,14 @@ def insert_page(file_path)
 		lines = match.split("\n")
 		if lines.length != 5 && lines.length != 6
 			is_regular = false
-			puts "Irregular file (#{lines.length} header lines)"
+			puts "\tIrregular file (#{lines.length} header lines)"
 		end
 
 		lines[1..-2].each do |line|
 			if line =~ /^require/
 				next
-			elsif !line.match(/^define\('(TITLE|BANNER|NO_SIDEBAR)', (?:true|'([^']*)')\);$/)
+			elsif !line.match(/^define\('(TITLE|BANNER|NO_SIDEBAR)', (?:true|'(.*)')\);$/)
+				puts "\tFailed to match header line against define: #{line}"
 				is_regular = false
 				next
 			end
@@ -54,19 +56,20 @@ def insert_page(file_path)
 		""
 	end
 
-	if is_regular
-		# remove footer
-		if !source.sub!(/^<\?\nrequire(_once)?\(['"]files\/footer\.php['"]\);\n\?>$/m, '')
-			abort "Irregular file (failed to find footer)"
-		end
+	# remove footer
+	if is_regular && !source.sub!(/^<\?\nrequire(_once)?\(['"]files\/footer\.php['"]\);\n\?>$/m, '')
+		puts "\tIrregular file (failed to find footer)"
+		is_regular = false
+	end
 
+	if is_regular
 		# replace image references
 		source.gsub!(/(?:pic|holpic|eventpic|links)\/[^\.\/]*\.(gif|jpg|png)/) do |match|
 			image_file_path = File.dirname(file_path) + "/" + match
 			if File.exists?(image_file_path) # need to check this as some files reference non-existent images
 				upload_media_if_not_exists(image_file_path)
 			else
-				puts "Warning: image file does not exist: #{image_file_path}"
+				puts "\tWarning: image file does not exist: #{image_file_path}"
 				match
 			end
 		end
@@ -89,15 +92,15 @@ def insert_page(file_path)
 		# replace form post actions with proper page
 		source.gsub!(/files\/(birthright|brazil|culinary|forms|forms_alt_email|highholiday|shabbat|trip)(?:.php)?/, 'form-process-\1')
 	else
-		source = "This page cannot be edited in Wordpress due to embedded PHP. To update it, edit the file #{Dir.pwd}/html/wp-content/themes/jewmich/page-#{page_name}.php"
+		source = "This page cannot be edited in Wordpress due to embedded PHP. To update it, you will need to manually edit the page template, which is located at #{Dir.pwd}/html/wp-content/themes/jewmich/page-#{page_name}.php on the server"
 	end
 
-	title = fields['TITLE'] ? fields['TITLE'].sub(/( - )?Chabad House.*/, '') : ''
+	title = fields['TITLE'] ? fields['TITLE'].sub(/(\s*-\s*)?Chabad House.*/, '') : ''
 
 	post_args = [
 		"--porcelain",
 		"--post_type=page",
-		"--post_title=" + title.empty? ? page_name : title,
+		"--post_title=" + (title.empty? ? page_name : title),
 		"--post_status=publish",
 		"--post_content=#{source}",
 	]
@@ -117,7 +120,6 @@ end
 files = [
 	'aboutus.php',
 	'ask.php',
-	'badpage.php',
 	'birthright.php',
 	'brazildep.php',
 	'brazilfaq.php',
@@ -187,7 +189,8 @@ files = [
 ]
 
 files.each do |file|
-	file_path = "../jewmich.com/#{file}"
+	file_path = File.realpath("../jewmich.com/#{file}")
+	puts "Importing #{file_path}"
 	post_id, fields = insert_page(file_path)
 
 	if fields['BANNER']
