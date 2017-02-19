@@ -23,8 +23,9 @@ if ($user = User::getLoggedInUser()) {
 	$_SESSION['person_id'] = $person->id;
 }
 
+global $wpdb;
 $query = "INSERT INTO `Shabbat` SET person_id = ?, people = ?, week = ?, suggestion = ?, signedup = DATE_ADD(NOW(), INTERVAL 3 HOUR)";
-getDb()->prepare($query)->execute(array($person->id, $_POST['people'], $_POST['week'], $_POST['suggestion']));
+$wpdb->query($wpdb->prepare($query, array($person->id, $_POST['people'], $_POST['week'], $_POST['suggestion'])));
 
 $mailer = getMailer();
 $mailer->Subject = $_POST['subject'];

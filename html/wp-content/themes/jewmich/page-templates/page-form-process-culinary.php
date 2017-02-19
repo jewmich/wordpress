@@ -12,7 +12,9 @@ $query = "
 
 $params = array();
 foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
-getDb()->prepare($query)->execute($params);
+
+global $wpdb;
+$wpdb->query($wpdb->prepare($query, $params));
 
 $mailer = getMailer();
 $mailer->Subject = $_POST['subject'];

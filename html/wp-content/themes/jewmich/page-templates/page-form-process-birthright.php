@@ -12,6 +12,7 @@ if (empty($_POST['subject'])) {
 	header("Location: /birthright");
 	exit;
 }
+
 $paramKeys = array('firstname', 'lastname', 'email', 'phone', 'foundus', 'year', 'isstudent', 'datpref', 'suggestion');
 $placeholders = array_fill(0, count($paramKeys), '?');
 $query = '
@@ -20,7 +21,9 @@ $query = '
 ';
 $params = array();
 foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
-getDb()->prepare($query)->execute($params);
+
+global $wpdb;
+$wpdb->query($wpdb->prepare($query, $params));
 
 $mailer = getMailer();
 $mailer->Subject = $_POST['subject'];

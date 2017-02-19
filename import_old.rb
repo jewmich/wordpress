@@ -87,7 +87,7 @@ def insert_page(file_path)
 		source.gsub!(/<input name="success-link" type="hidden" value="[^"]*successredirect\?type=([^\"]*)"\/>/, '[plugnpay_success_link type=\1]')
 
 		# replace form post actions with proper page
-		source.gsub!(/files\/(birthright|brazil|culinary|forms|highholiday|shabbat|trip)(?:.php)?/, 'form-process-\1')
+		source.gsub!(/files\/(birthright|brazil|culinary|forms|forms_alt_email|highholiday|shabbat|trip)(?:.php)?/, 'form-process-\1')
 	else
 		source = "This page cannot be edited in Wordpress due to embedded PHP. To update it, edit the file #{Dir.pwd}/html/wp-content/themes/jewmich/page-#{page_name}.php"
 	end
@@ -114,13 +114,88 @@ def insert_page(file_path)
 	return post_id, fields
 end
 
-post_id, fields = insert_page(ARGV[0])
+files = [
+	'aboutus.php',
+	'ask.php',
+	'badpage.php',
+	'birthright.php',
+	'brazildep.php',
+	'brazilfaq.php',
+	'brazilinfo.php',
+	'brazil.php',
+	'camp.php',
+	'candlelighting.php',
+	'chaiclub.php',
+	'charitybox.php',
+	'chometz.php',
+	'cong.php',
+	'contact.php',
+	'culinary.php',
+	'donatemiles.php',
+	'donate.php',
+	'donateyourcar.php',
+	'donation.php',
+	'events.php',
+	'forgotpassword.php',
+	'graduation.php',
+	'highholiday.php',
+	'highholidayregister.php',
+	'jli.php',
+	'judiacstore.php',
+	'jwc.php',
+	'kiddushmain.php',
+	'kiddush.php',
+	'kiddushreserve.php',
+	'kosher.php',
+	'login.php',
+	'logout.php',
+	'map.php',
+	'mezuzah.php',
+	'mikvah.php',
+	'myaccount.php',
+	'mythandfact.php',
+	'passovercom.php',
+	'passover.php',
+	'passoverum.php',
+	'payment.php',
+	'purimgift.php',
+	'remove.php',
+	'resetpassword.php',
+	'shabbat.php',
+	'shirt.php',
+	'signup.php',
+	'soup.php',
+	'sponsorshabbat.php',
+	'studentcenter.php',
+	'studycenter.php',
+	'success_birthright.php',
+	'success.php',
+	'successredirect.php',
+	'success_shabbat.php',
+	'tep.php',
+	'visiting&living.php',
+	'volunteer.php',
+	'wishlist.php',
+	'files/birthright.php',
+	'files/brazil.php',
+	'files/culinary.php',
+	'files/forms.php',
+	'files/forms_alt_email.php',
+	'files/highholiday.php',
+	'files/shabbat.php',
+	'files/trip.php',
+]
 
-if fields['BANNER']
-	url = upload_media_if_not_exists(File.dirname(ARGV[0]) + "/" + fields['BANNER'])
-	run_wpcli("post", "meta", "set", post_id, 'banner', url)
-end
+files.each do |file|
+	file_path = "../jewmich.com/#{file}"
+	post_id, fields = insert_page(file_path)
 
-if fields['NO_SIDEBAR']
-	run_wpcli("post", "meta", "set", post_id, 'no_sidebar', 'true')
+	if fields['BANNER']
+		url = upload_media_if_not_exists(File.dirname(file_path) + "/" + fields['BANNER'])
+		run_wpcli("post", "meta", "set", post_id, 'banner', url)
+	end
+
+	if fields['NO_SIDEBAR']
+		run_wpcli("post", "meta", "set", post_id, 'no_sidebar', 'true')
+	end
 end

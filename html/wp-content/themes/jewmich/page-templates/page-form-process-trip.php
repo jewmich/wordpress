@@ -3,6 +3,7 @@
  * Template Name: form-process-trip Template
  */
 
+global $wpdb;
 $paramKeys = array('firstname', 'midlename', 'lastname', 'email', 'phone', 'dob', 'year', 'citizen', 'passnum', 'pissue', 'passdate', 'fatname', 'fatcell', 'fatemail', 'motname', 'motcell', 'motemail', 'othname', 'othcell', 'othemail', 'extend', 'trip');
 $placeholders = array_fill(0, count($paramKeys), '?');
 $query = "
@@ -12,7 +13,7 @@ $query = "
 
 $params = array();
 foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
-getDb()->prepare($query)->execute($params);
+$wpdb->query($wpdb->prepare($query, $params));
 
 #mail(WEBFORM_EMAIL . ", alter@jewmich.com", $_POST['subject'], "'".$_POST['firstname']."', '".$_POST['lastname']."'\n Email:'".$_POST['email']."'\n Phone:'".$_POST['phone']."'\n UM Student:'".$_POST['student']."'\n Year:'".$_POST['year']."'\n Found Us:'".$_POST['foundus']."'\n Involved with:'".$_POST['involvedwith']."'\n Suggestion:'".$_POST['suggestion']."'", "From: ".$_POST['firstname']." ".$_POST['lastname']." <".$_POST['email'].">");
 
