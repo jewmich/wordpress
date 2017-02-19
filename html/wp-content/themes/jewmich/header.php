@@ -69,7 +69,7 @@
 						<a class="dropdown-toggle" id="students" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">STUDENTS <span class="caret"></span></a>
 						<ul class="dropdown-menu">
 							<li><a href="/aboutus">About U of M Chabad</a></li>
-							<li><a href="/trip">Free Trip to Israel</a></li>
+							<li><a href="/birthright">Free Trip to Israel</a></li>
 							<li><a href="/mythandfact">Myths & Facts</a></li>
 							<li><a href="/studycenter">Judaic Classes</a></li>
 							<li><a href="/shabat">Shabbat Dinner</a></li>
@@ -92,7 +92,7 @@
 							<li><a href="/candlelighting">Candle Lighting Times</a></li>
 							<li><a href="/ask">Ask the Rabbi</a></li>
 							<li><a href="/map">Map</a></li>
-							<li><a href="/visiting&living">Visiting & Living</a></li>
+							<li><a href="/visiting&amp;living">Visiting & Living</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -118,7 +118,7 @@
 							<li><a href="/contact">Contact Information</a></li>
 							<li><a href="/map">Map</a></li>
 							<li><a href="/aboutus">About Us</a></li>
-							<li><a href="/visiting&living">Visiting & Living</a></li>
+							<li><a href="/visiting&amp;living">Visiting & Living</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
