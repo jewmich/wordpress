@@ -3,12 +3,14 @@
 # Script to import old jewmich.com pages
 
 require 'open3'
-require 'pry'
+require 'pathname'
+#require 'pry'
 
 def run_wpcli(*args)
-	out, status = Open3.capture2e("./wp-cli.phar", "--path=html", *args)
-	abort "failed to run #{args}.\nOut = #{out}" unless status.success?
-	out.strip
+	stdin, stdout, stderr = Open3.open3("./wp-cli.phar", "--path=html", *args)
+	stdin.close
+	abort "failed to run #{args}.\nErr = #{stderr.read}\nOut = #{stdout.read}" unless $?.success?
+	stdout.read.strip
 end
 
 def upload_media_if_not_exists(file_path)
@@ -193,7 +195,7 @@ files = [
 ]
 
 files.each do |file|
-	file_path = File.realpath("../jewmich.com/#{file}")
+	file_path = Pathname.new("../jewmich.com/#{file}").realpath
 	puts "Importing #{file_path}"
 	post_id, fields = insert_page(file_path)
 
