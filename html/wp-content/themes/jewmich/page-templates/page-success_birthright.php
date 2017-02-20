@@ -95,8 +95,8 @@ if (document.form.phone.value=="") {
 					<tr>
 					  <td align="center" bgcolor="#FFFFFF"><table width="877" border="0">
 						    <tr>
-							    <td width="50%"><a href="http://www.birthrightisrael.com"><img src="/eventpic/britelgohorz.jpg" border="0"></a></td>
-							    <td align="right" valign="top" width="10%"><a href="http://www.mayanotisrael.com"><img src="/eventpic/maya.png" border="0"></a></td>
+							    <td width="50%"><a href="http://www.birthrightisrael.com"><img src="/wp-content/uploads/2017/02/britelgohorz.jpg" border="0"></a></td>
+							    <td align="right" valign="top" width="10%"><a href="http://www.mayanotisrael.com"><img src="/wp-content/uploads/2017/02/maya.png" border="0"></a></td>
 						      </tr>
 				      </table></td>
 					</tr>
@@ -231,13 +231,13 @@ if (document.form.phone.value=="") {
 				<p align="center">
                 
                 <br>
-				<img border="0" src="eventpic/birthmarg.jpg" width="222" height="122"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birthmarg.jpg" width="222" height="122"><br>
 				<br>
-				<img border="0" src="eventpic/birthhike2.jpg" width="223" height="102"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birthhike2.jpg" width="223" height="102"><br>
 				<br>
-				<img border="0" src="eventpic/birthboys.jpg" width="222" height="122"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birthboys.jpg" width="222" height="122"><br>
 				<br>
-				<img border="0" src="eventpic/birthhike.jpg" width="223" height="124"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birthhike.jpg" width="223" height="124"><br>
 				<br>
 			</td>
                     
@@ -252,17 +252,17 @@ if (document.form.phone.value=="") {
 								<span class="pp_heading"><a href="http://register.birthrightisrael.com/index.cfm?org=63&ref=rabbialter">
                                 Apply for the trip</a></span><br>&nbsp;</font><br>
                 
-				<img border="0" src="eventpic/birthmarg.jpg" width="222" height="122"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birthmarg.jpg" width="222" height="122"><br>
 				<br>
-				<img border="0" src="eventpic/birthhike2.jpg" width="223" height="102"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birthhike2.jpg" width="223" height="102"><br>
 				<br>
-				<img border="0" src="eventpic/birthboys.jpg" width="222" height="122"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birthboys.jpg" width="222" height="122"><br>
 				<br>
-				<img border="0" src="eventpic/birththegirls.jpg" width="222" height="122"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birththegirls.jpg" width="222" height="122"><br>
 				<br>
-				<img border="0" src="eventpic/birthhike.jpg" width="223" height="124"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birthhike.jpg" width="223" height="124"><br>
 				<br>
-				<img border="0" src="eventpic/birthmarg1.jpg" width="225" height="125"><br>
+				<img border="0" src="/wp-content/uploads/2017/02/birthmarg1.jpg" width="225" height="125"><br>
 				<br>
           </td>
 			<?php endif ?>

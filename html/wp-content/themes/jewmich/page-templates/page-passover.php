@@ -77,9 +77,9 @@ get_header();
                   <tr>
                      <td align="center"><p>&nbsp;</p>
                      <p>&nbsp;</p>
-                     <p><a href="/passoverum"><img src="pic/sederum.gif" width="300" height="96" /> </a></p>
+                     <p><a href="/passoverum"><img src="/wp-content/uploads/2017/02/sederum.gif" width="300" height="96" /> </a></p>
                      <p>&nbsp;</p>
-                     <p><a href="/passovercom"><img src="pic/sedercom.gif" width="300" height="96"/></a></p>
+                     <p><a href="/passovercom"><img src="/wp-content/uploads/2017/02/sedercom.gif" width="300" height="96"/></a></p>
                      <p>&nbsp;</p></td>
                   </tr>
                </table>

@@ -497,13 +497,13 @@ get_header();
 			<td colspan="3">
 				<p align="center">
 				<span class="chabad">
-					<img border="0" height="24" src="pic/visamaster.gif" width="78"/>
+					<img border="0" height="24" src="/wp-content/uploads/2017/02/visamaster.gif" width="78"/>
 				</span>
 				</p>
 			</td>
 			<td colspan="3">
 				<span class="chabad">
-					<img border="0" src="pic/plugnpay.gif"/>
+					<img border="0" src="/wp-content/uploads/2017/02/plugnpay.jpg"/>
 				</span>
 			</td>
 		</tr>

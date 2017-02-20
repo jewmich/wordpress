@@ -325,9 +325,9 @@ of Passover and&nbsp; make a contribution of<br>
                <table border="0" width="72%" id="table4">
                   <tr>
                      <td width="149">
-                        <img border="0" src="pic/plugnpay.gif" align="center"></td>
+                        <img border="0" src="/wp-content/uploads/2017/02/plugnpay.jpg" align="center"></td>
                      <td>
-                        <img border="0" src="pic/visamaster.gif" width="78" height="24" align="right"></td>
+                        <img border="0" src="/wp-content/uploads/2017/02/visamaster.gif" width="78" height="24" align="right"></td>
                   </tr>
                </table>
             </div>

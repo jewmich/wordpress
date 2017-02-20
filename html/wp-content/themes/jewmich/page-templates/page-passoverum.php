@@ -588,7 +588,7 @@ get_header();
       </tr>
       <tr>
          <td>
-            <img border="0" src="pic/plugnpay.gif" > <img border="0" src="pic/visamaster.gif" width="78" height="24"  /></td>
+            <img border="0" src="/wp-content/uploads/2017/02/plugnpay.jpg" > <img border="0" src="/wp-content/uploads/2017/02/visamaster.gif" width="78" height="24"  /></td>
         </tr>
                
             
