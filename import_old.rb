@@ -100,9 +100,9 @@ def insert_page(file_path)
 		source.gsub!(/<input name="success-link" type="hidden" value="[^"]*successredirect\?type=([^\"]*)"\/>/, '[plugnpay_success_link type=\1]')
 
 		# replace form post actions with proper page
-		source.gsub!(/files\/(birthright|brazil|culinary|forms|forms_alt_email|highholiday|shabbat|trip)(?:.php)?/, 'form-process-\1')
+		source.gsub!(/\/?files\/(birthright|brazil|culinary|forms|forms_alt_email|highholiday|shabbat|trip)(?:.php)?/, '/form-process-\1')
 	else
-		source = "This page cannot be edited in Wordpress due to embedded PHP. To update it, you will need to manually edit the page template, which is located at #{Dir.pwd}/html/wp-content/themes/jewmich/page-#{page_name}.php on the server"
+		source = "This page cannot be edited in Wordpress due to embedded PHP. To update it, you will need to manually edit the page template, which is located at #{Dir.pwd}/html/wp-content/themes/jewmich/page-templates/page-#{page_name}.php on the server"
 	end
 
 	title = fields['TITLE'] ? fields['TITLE'].sub(/(\s*-\s*)?Chabad House.*/, '') : ''
