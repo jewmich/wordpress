@@ -3,11 +3,13 @@
 	"description": "Contains code for www.jewmich.com",
 	"license": "proprietary",
 	"repositories":[
-		{ "type": "composer", "url": "https://wpackagist.org" }
+		{ "type": "composer", "url": "https://wpackagist.org" },
+		{ "type": "vcs", "url": "https://github.com/jewmich/jewmich_sidebar.git" }
 	],
 	"require": {
 		"wpackagist-plugin/debug-this": "*",
-		"wpackagist-plugin/error-log-monitor": "*"
+		"wpackagist-plugin/error-log-monitor": "*",
+		"jewmich/jewmich_sidebar": "*"
 	},
 	"extra": {
 		"installer-paths": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "967f0020b7a29279f1d96817672d6d8d",
+    "content-hash": "4583a0b7fb45e3c4c750bb2a5dfa3ef7",
     "packages": [
         {
             "name": "composer/installers",
@@ -112,6 +112,33 @@
                 "zikula"
             ],
             "time": "2016-08-13T20:53:52+00:00"
+        },
+        {
+            "name": "jewmich/jewmich_sidebar",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jewmich/jewmich_sidebar.git",
+                "reference": "f47f1067bd526100a2e6c23eacd0443793347d5f"
+            },
+            "require": {
+                "composer/installers": "^1.0",
+                "php": ">=5.3.2"
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mason Malone",
+                    "email": "mason.malone@gmail.com",
+                    "homepage": "http://masonm.org"
+                }
+            ],
+            "description": "Sidebar for jewmich.com",
+            "homepage": "https://github.com/jewmich/jewmich_sidebar",
+            "time": "2017-02-21T05:04:20+00:00"
         },
         {
             "name": "wpackagist-plugin/debug-this",

@@ -14,9 +14,8 @@
 # Credentials stored outside version control
 /secrets/
 
-# Plugins installed by Composer
-/html/wp-content/plugins/debug-this/
-/html/wp-content/plugins/error-log-monitor/
+# Plugins are managed by Composer
+/html/wp-content/plugins/
 
 # Files installed by Wordpress automatically
 /html/.htaccess
