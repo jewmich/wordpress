@@ -69,10 +69,7 @@ remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 // No XMLRPC
 add_filter('xmlrpc_enabled', '__return_false');
 
-//whether or not we're running on the live webroot
-define('PRODUCTION_MODE', $_SERVER['SERVER_NAME'] !== 'test.jewmich.com');
-
-if (PRODUCTION_MODE) {
+if (ENVIRONMENT === 'production') {
 	define('WEBFORM_EMAIL', 'webform@jewmich.com');
 	define('CHABAD_EMAIL', 'chabad@jewmich.com');
 	define('USER1_EMAIL', 'ar7gold@gmail.com');
