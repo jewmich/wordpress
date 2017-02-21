@@ -13,6 +13,7 @@
 
 # Credentials stored outside version control
 /secrets/secrets-production.php
+/secrets/secrets-testing.php
 
 # Plugins are managed by Composer
 /html/wp-content/plugins/
