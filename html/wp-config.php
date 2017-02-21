@@ -18,8 +18,17 @@ ini_set('log_errors', 1);
 ini_set('error_log', dirname(__DIR__) . '/php-errors.log');
 ini_set('display_errors', (ENVIRONMENT == 'development') ? 1 : 0);
 
+// Determine environment
+if (__DIR__ === '/var/www/html') {
+	define('ENVIRONMENT', 'development'); // inside docker
+} elseif (__DIR__ === '/home/alterga2/test.jewmich.com/html') {
+	define('ENVIRONMENT', 'testing');
+} else {
+	define('ENVIRONMENT', 'production');
+}
+
 // Load sensitive data, which is stored outside the webroot for security.
-require_once(__DIR__ . '/../secrets/secrets.php');
+require_once(__DIR__ . '/../secrets/secrets-' . ENVIRONMENT . '.php');
 
 // Force SSL for all logins and wp-admin access, except in development/testing
 if (ENVIRONMENT !== 'development' && ENVIRONMENT !== 'testing') {

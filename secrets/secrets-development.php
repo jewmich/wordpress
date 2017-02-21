@@ -2,8 +2,6 @@
 
 // Development-mode secrets. Production-mode are outside version control for security
 
-define('ENVIRONMENT', 'development');
-
 // The name of the database for WordPress
 define('DB_NAME', 'jewmichmainsql');
 // MySQL database username

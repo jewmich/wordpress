@@ -12,7 +12,7 @@
 /php-errors.log
 
 # Credentials stored outside version control
-/secrets/
+/secrets/secrets-production.php
 
 # Plugins are managed by Composer
 /html/wp-content/plugins/
