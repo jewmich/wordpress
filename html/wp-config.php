@@ -21,7 +21,7 @@ ini_set('display_errors', (ENVIRONMENT == 'development') ? 1 : 0);
 // Determine environment
 if (__DIR__ === '/var/www/html') {
 	define('ENVIRONMENT', 'development'); // inside docker
-} elseif (__DIR__ === '/home/alterga2/test.jewmich.com/html') {
+} elseif (true /* @todo remove after release */ || __DIR__ === '/home/alterga2/test.jewmich.com/html') {
 	define('ENVIRONMENT', 'testing');
 } else {
 	define('ENVIRONMENT', 'production');
