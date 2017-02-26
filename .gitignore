@@ -19,7 +19,6 @@
 /html/wp-content/plugins/
 
 # Files installed by Wordpress automatically
-/html/.htaccess
 /html/license.txt
 /html/readme.html
 /html/wp-activate.php
