@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4583a0b7fb45e3c4c750bb2a5dfa3ef7",
+    "content-hash": "d50e4dced419f455d79213c67b55234a",
     "packages": [
         {
             "name": "composer/installers",
@@ -141,6 +141,26 @@
             "time": "2017-02-21T05:04:20+00:00"
         },
         {
+            "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
+            "version": "4.2.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/all-in-one-wp-security-and-firewall/"
+        },
+        {
             "name": "wpackagist-plugin/debug-this",
             "version": "0.5.1",
             "source": {
@@ -151,7 +171,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/debug-this.0.5.1.zip",
-                "reference": null,
+                "reference": "tags/0.5.1",
                 "shasum": null
             },
             "require": {
@@ -171,7 +191,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/error-log-monitor.1.5.2.zip",
-                "reference": null,
+                "reference": "tags/1.5.2",
                 "shasum": null
             },
             "require": {

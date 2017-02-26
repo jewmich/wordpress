@@ -9,6 +9,7 @@
 	"require": {
 		"wpackagist-plugin/debug-this": "*",
 		"wpackagist-plugin/error-log-monitor": "*",
+		"wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
 		"jewmich/jewmich_sidebar": "*"
 	},
 	"extra": {

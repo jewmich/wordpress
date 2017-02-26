@@ -66,9 +66,6 @@ remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 
-// No XMLRPC
-add_filter('xmlrpc_enabled', '__return_false');
-
 if (ENVIRONMENT === 'production') {
 	define('WEBFORM_EMAIL', 'webform@jewmich.com');
 	define('CHABAD_EMAIL', 'chabad@jewmich.com');
