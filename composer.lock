@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d50e4dced419f455d79213c67b55234a",
+    "content-hash": "00bd166d8dad13e396a3e747bdb8f34f",
     "packages": [
         {
             "name": "composer/installers",
@@ -199,6 +199,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/error-log-monitor/"
+        },
+        {
+            "name": "wpackagist-plugin/google-authenticator",
+            "version": "0.48",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/google-authenticator/",
+                "reference": "tags/0.48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/google-authenticator.0.48.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/google-authenticator/"
         }
     ],
     "packages-dev": [],

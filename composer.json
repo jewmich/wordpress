@@ -10,6 +10,7 @@
 		"wpackagist-plugin/debug-this": "*",
 		"wpackagist-plugin/error-log-monitor": "*",
 		"wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
+		"wpackagist-plugin/google-authenticator": "*",
 		"jewmich/jewmich_sidebar": "*"
 	},
 	"extra": {
