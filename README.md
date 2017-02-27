@@ -2,6 +2,9 @@
 
 This repository contains the code for [jewmich.com](http://www.jewmich.com), which is powered by Wordpress. There's a full development environment powered by Docker Compose in the `docker/` subdirectory. Dependencies are managed using [Composer](https://getcomposer.org/).  
 
+The theme at `html/wp-content/themes/jewmich` contains all the custom code for jewmich.com. We
+have one custom plugin, [jewmich_sidebar](https://github.com/jewmich/jewmich_sidebar).
+
 # Development
 
 You will need to install both Docker and Docker Compose.  See [Install Docker Compose](https://docs.docker.com/compose/install/) for instructions.
