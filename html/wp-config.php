@@ -21,7 +21,7 @@ ini_set('display_errors', (ENVIRONMENT == 'development') ? 1 : 0);
 // Determine environment
 if (__DIR__ === '/var/www/html') {
 	define('ENVIRONMENT', 'development'); // inside docker
-} elseif (true /* @todo remove after release */ || __DIR__ === '/home/alterga2/test.jewmich.com/html') {
+} elseif (__DIR__ === '/home/alterga2/wordpress.jewmich.com/html') {
 	define('ENVIRONMENT', 'testing');
 } else {
 	define('ENVIRONMENT', 'production');
@@ -31,12 +31,10 @@ if (__DIR__ === '/var/www/html') {
 require_once(__DIR__ . '/../secrets/secrets-' . ENVIRONMENT . '.php');
 
 // Force SSL for all logins and wp-admin access, except in development/testing
-if (ENVIRONMENT !== 'development' && ENVIRONMENT !== 'testing') {
-  	define('FORCE_SSL_ADMIN', true);
-}
+define('FORCE_SSL_ADMIN', ENVIRONMENT === 'production');
 
 // Don't allow editing files in admin because it's too big of a security risk
-define('DISALLOW_FILE_EDIT', true);
+define('DISALLOW_FILE_EDIT', ENVIRONMENT === 'production');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
