@@ -133,7 +133,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		width: calc(100% - 230px);
 	}
 
-	.home .pageContentWrapperCol {
+	.home #pageContent .pageContentWrapperCol {
 		background: rgba(255, 255, 255, 0.6);
 	}
 	#homeSections {
