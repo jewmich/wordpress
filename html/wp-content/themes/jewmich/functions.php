@@ -66,19 +66,11 @@ remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 
-if (ENVIRONMENT === 'production') {
-	define('WEBFORM_EMAIL', 'webform@jewmich.com');
-	define('CHABAD_EMAIL', 'chabad@jewmich.com');
-	define('USER1_EMAIL', 'ar7gold@gmail.com');
-	define('USER2_EMAIL', 'umchabad@jewmich.com');
-	define('ERROR_EMAIL_RECIPIENTS', 'mason.malone@gmail.com,alter@jewmich.com');
-} else {
-	define('WEBFORM_EMAIL', 'webform@jewmich.com');
-	define('CHABAD_EMAIL', 'chabad@jewmich.com');
-	define('USER1_EMAIL', 'ar7gold@gmail.com');
-	define('USER2_EMAIL', 'umchabad@jewmich.com');
-	define('ERROR_EMAIL_RECIPIENTS', 'mason.malone@gmail.com');
-}
+define('WEBFORM_EMAIL', 'webform@jewmich.com');
+define('CHABAD_EMAIL', 'chabad@jewmich.com');
+define('USER1_EMAIL', 'ar7gold@gmail.com');
+define('USER2_EMAIL', 'umchabad@jewmich.com');
+define('ERROR_EMAIL_RECIPIENTS', 'mason.malone@gmail.com,alter@jewmich.com');
 
 // used for sunset calculations
 define('LATITUDE_ANNARBOR', 42.22);
