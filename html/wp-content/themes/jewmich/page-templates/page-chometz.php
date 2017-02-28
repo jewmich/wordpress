@@ -55,7 +55,7 @@ get_header();
 	<input name="card-allowed" type="hidden" value="Visa,Mastercard,amex"/>
 	<input name="shipinfo" type="hidden" value="0"/>
 	<input name="easycart" type="hidden" value="1"/>
-	<?= do_shortcode('[plugnplay_success_link type=donate]'); ?>
+	<?= do_shortcode('[plugnpay_success_link type=donate]'); ?>
           <input name="suppress_unpw" type="hidden" value="yes"/>
       <input name="currency_symbol" type="hidden" value="$"/>
               <input name="plan20" type="hidden" value="20"/>

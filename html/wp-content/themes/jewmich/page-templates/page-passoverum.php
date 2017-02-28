@@ -160,7 +160,7 @@ get_header();
 <input type="hidden" name="card-allowed" value="Visa,Mastercard"> 
 <input type="hidden" name="shipinfo" value="0"> 
 <input type="hidden" name="easycart" value="1"> 
-<?= do_shortcode('[plugnplay_success_link type=passover]'); ?>
+<?= do_shortcode('[plugnpay_success_link type=passover]'); ?>
 <input type=hidden name="subject" value="Seder reservation">
 <input type="hidden" name="subacct" value="seder">
 
