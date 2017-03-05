@@ -93,13 +93,13 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		border-bottom: none;
 	}
 
-	#students {
+	#students, #students_article {
 		background-color: #00274c;
 	}
-	#adults {
+	#adults, #adults_article {
 		background-color: #7a1501;
 	}
-	#youth {
+	#youth, #youth_article {
 		background-color: #336666;
 	}
 	#events {
@@ -160,37 +160,17 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		margin: 0 5px;
 	}
 
-	#students_article h3 {
-		color: #fbcb07;
-		font-size: 1.5em;
-	}
-	#students_article p {
+	#students_article h3,
+ 	#students_article p {
 		color: #fbcb07;
 	}
 	#youth_article h3,
-	#adults_article h3 {
-		color: #fff;
-		font-size: 1.5em;
-	}
+	#adults_article h3,
 	#youth_article p,
 	#adults_article p {
 		color: #fff;
 	}
-	#youth_article {
-		background-color: #336666;
-	}
-	#students_article {
-		background-color: #00274c;
-	}
-	#adults_article {
-		background-color: #7a1501;
-	}
-	#students_article,
-	#youth_article,
-	#adults_article {
-		padding: 0;
-		padding-bottom: 30px;
-	}
+
 	a.readMore {
 		font-size: .75em;
 		color: #ccc;
