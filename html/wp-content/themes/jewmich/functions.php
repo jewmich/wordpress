@@ -13,21 +13,13 @@
  *
  */
 
-/**
- * Sets up theme defaults and registers the various WordPress features that
- * the Jewmich theme supports.
- */
-function jewmich_setup() {
+add_action( 'after_setup_theme', function() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'jewmich' ) );
 	add_theme_support( 'title-tag' );
-}
-add_action( 'after_setup_theme', 'jewmich_setup' );
+});
 
-/**
- * Enqueues scripts and styles for front-end.
- */
-function jewmich_scripts_styles() {
+add_action( 'wp_enqueue_scripts', function() {
 	// Loads Bootstrap CSS and our CSS
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css');
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
@@ -38,8 +30,12 @@ function jewmich_scripts_styles() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', ['jquery'], '3.3.6', true);
 	wp_enqueue_script( 'kdate', get_template_directory_uri() . '/assets/js/kdate.js', ['jquery'], '1', true);
 	wp_enqueue_script( 'chabad', get_template_directory_uri() . '/assets/js/chabad.js', ['jquery'], '1', true);
-}
-add_action( 'wp_enqueue_scripts', 'jewmich_scripts_styles' );
+});
+
+// Session needed for user handling
+add_action( 'init', function() {
+	if( !session_id() ) { session_start(); }
+});
 
 // Don't automatically insert <br> and <p> tags
 remove_filter( 'the_content', 'wpautop' );
