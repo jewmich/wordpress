@@ -3,6 +3,8 @@
  * Template Name: success Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 get_header();
 $type = isset($_REQUEST['type']) ? $_REQUEST['type'] : '';
 ?>

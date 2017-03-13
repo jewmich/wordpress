@@ -11,6 +11,7 @@
 		"wpackagist-plugin/error-log-monitor": "*",
 		"wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
 		"wpackagist-plugin/google-authenticator": "*",
+		"wpackagist-plugin/wp-super-cache": "*",
 		"jewmich/jewmich_sidebar": "*"
 	},
 	"extra": {

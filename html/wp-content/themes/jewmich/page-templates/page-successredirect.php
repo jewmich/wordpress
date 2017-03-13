@@ -2,6 +2,9 @@
 /**
  * Template Name: successredirect Template
  */
+
+define('DONOTCACHEPAGE', true);
+
 ?>
 <html>
 <head>

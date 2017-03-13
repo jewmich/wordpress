@@ -37,6 +37,13 @@ add_action( 'init', function() {
 	if( !session_id() ) { session_start(); }
 });
 
+// Add WP-Super-Cache cache filter to dynamically generate the sidebar for the footer
+// See example 1 at http://svn.wp-plugins.org/wp-super-cache/trunk/plugins/dynamic-cache-test.php
+add_cacheaction( 'wpsc_cachedata', function(&$cachedata) {
+	return str_replace('<!-- DYNAMIC_CACHE_SIDEBAR -->', do_shortcode('[user_welcome][sidebar]'), $cachedata);
+});
+add_cacheaction( 'wpsc_cachedata_safety', function() { return 1; });
+
 // Don't automatically insert <br> and <p> tags
 remove_filter( 'the_content', 'wpautop' );
 

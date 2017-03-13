@@ -3,6 +3,8 @@
  * Template Name: login Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 $loginError = '';
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
 	if (!User::login($_POST['email'], $_POST['password'])) {

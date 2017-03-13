@@ -2,6 +2,9 @@
 /**
  * Template Name: forgotpassword Template
  */
+
+define('DONOTCACHEPAGE', true);
+
 $error = false;
 $success = false;
 if (!empty($_POST['email'])) {

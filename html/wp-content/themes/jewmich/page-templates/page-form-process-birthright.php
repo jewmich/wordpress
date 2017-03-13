@@ -3,6 +3,8 @@
  * Template Name: form-process-birthright Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 if (!empty($_POST['username'])) {
 	// Honeypot triggered! This must've been submitted by a spam bot, because 
 	// the "username" input is hidden by CSS.

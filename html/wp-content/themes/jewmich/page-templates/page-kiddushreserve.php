@@ -3,6 +3,8 @@
  * Template Name: kiddushreserve Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 if (!isset($_POST['originalJd'])) {
 	// shouldn't be here. Redirect back to kiddushmain.php
 	header('Location: /kiddushmain');

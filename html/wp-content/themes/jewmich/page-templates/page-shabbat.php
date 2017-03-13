@@ -3,6 +3,8 @@
  * Template Name: shabbat Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 if (isset($_GET['wronguser'])) {
 	unset($_SESSION['phone']);
 }

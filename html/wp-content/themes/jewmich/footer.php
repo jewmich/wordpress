@@ -1,13 +1,7 @@
 							</div>
 							<?php if (!get_post_meta(get_the_ID(), 'no_sidebar', true)): ?>
 							<div class="col-xs-1 sidebar">
-								<?php if ($user = User::getLoggedInUser()): ?>
-								<div class="chabad" style="text-align: center; padding-bottom: 5px;">
-									Welcome, <?= $user->getName() ?> <br>
-									<a href="myaccount">My Account</a> &ndash; <a href="logout?return=<?= $_SERVER['PHP_SELF'] ?>">Logout</a>
-								</div>
-								<?php endif ?>
-								<?= do_shortcode('[sidebar]') ?>
+								<!-- DYNAMIC_CACHE_SIDEBAR -->
 								<script type="text/javascript" language="javascript" src="//beta.chabad.org/tools/shared/candlelighting/candlelighting.js.asp?z=48104"></script>
 								<br>&nbsp;</p>
 							</div>

@@ -3,6 +3,8 @@
  * Template Name: chometz Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 $startPassover = getStartOfPassover();
 $openDate = strtotime('-10 weeks', $startPassover);
 $closeDate = strtotime('07:00PM', $startPassover);

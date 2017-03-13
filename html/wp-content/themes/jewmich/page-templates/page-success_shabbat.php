@@ -3,6 +3,8 @@
  * Template Name: success_shabbat Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 $user = User::getLoggedInUser();
 if (!$user && empty($_SESSION['person_id'])) {
 	header("Location: /success");

@@ -3,6 +3,8 @@
  * Template Name: form-process-brazil Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 $paramKeys = array('realname', 'email', 'cellphone', 'address', 'year', 'major', 'interest', 'involvement', 'experience', 'whythistrip', 'idealday', 'bringback', 'medical', 'otherprogram', 'extend');
 $params = array('signed_up_at' => date('Y-m-d H:i:s'));
 foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';

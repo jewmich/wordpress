@@ -3,6 +3,8 @@
  * Template Name: myaccount Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 $user = User::getLoggedInUser();
 if (!$user) {
 	header("Location: /login");

@@ -3,6 +3,8 @@
  * Template Name: resetpassword Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 if (empty($_REQUEST['expire']) || empty($_REQUEST['email']) || empty($_REQUEST['token'])) {
 	header("Location: /");
 	exit;

@@ -3,6 +3,8 @@
  * Template Name: passover Template
  */
 
+define('DONOTCACHEPAGE', true);
+
 $currentJewishYear = cal_from_jd(unixtojd(time()), CAL_JEWISH);
 $currentJewishYear = $currentJewishYear['year'];
 $firstSeder = jdtounix(jewishtojd(8, 15, $currentJewishYear));
