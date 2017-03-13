@@ -69,3 +69,19 @@ RewriteRule ^wp-includes/[^/]+\.php$ - [F,L]
 RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
 RewriteRule ^wp-includes/theme-compat/ - [F,L]
 </IfModule>
+
+# BEGIN Expire headers  
+<ifModule mod_expires.c>  
+ExpiresActive On  
+ExpiresDefault "access plus 5 seconds"  
+ExpiresByType image/x-icon "access plus 1 week"  
+ExpiresByType image/jpeg "access plus 1 week"  
+ExpiresByType image/png "access plus 1 week"  
+ExpiresByType image/gif "access plus 1 week"  
+ExpiresByType application/x-shockwave-flash "access plus 1 week"  
+ExpiresByType text/css "access plus 2 weeks"  
+ExpiresByType text/javascript "access plus 2 weeks"  
+ExpiresByType application/javascript "access plus 2 weeks"  
+ExpiresByType application/x-javascript "access plus 2 weeks"  
+</ifModule>  
+# END Expire headers  
