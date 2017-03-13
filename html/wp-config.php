@@ -14,10 +14,6 @@
  * @package WordPress
  */
 
-ini_set('log_errors', 1);
-ini_set('error_log', dirname(__DIR__) . '/php-errors.log');
-ini_set('display_errors', (ENVIRONMENT == 'development') ? 1 : 0);
-
 // Determine environment
 if (__DIR__ === '/var/www/html') {
 	define('ENVIRONMENT', 'development'); // inside docker
@@ -26,6 +22,10 @@ if (__DIR__ === '/var/www/html') {
 } else {
 	define('ENVIRONMENT', 'production');
 }
+
+ini_set('log_errors', 1);
+ini_set('error_log', dirname(__DIR__) . '/php-errors.log');
+ini_set('display_errors', (ENVIRONMENT == 'development') ? 1 : 0);
 
 // Load sensitive data, which is stored outside the webroot for security.
 require_once(__DIR__ . '/../secrets/secrets-' . ENVIRONMENT . '.php');

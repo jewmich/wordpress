@@ -22,10 +22,10 @@ https://{$_SERVER['HTTP_HOST']}/resetpassword?email=$encodedEmail&expire=$expire
 If you need additional help, please contact the Chabad House. See the following link for contact details:
 http://jewmich.com/contact
 ";
-$mailer->AddAddress($user->person->email);
-$mailer->SetFrom('umchabad@jewmich.com', 'Chabad House at UM');
-$mailer->Send();
-$success = true;
+		$mailer->AddAddress($user->person->email);
+		$mailer->SetFrom('umchabad@jewmich.com', 'Chabad House at UM');
+		$mailer->Send();
+		$success = true;
 	}
 }
 get_header();
