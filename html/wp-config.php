@@ -42,6 +42,9 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
+/* Autoupdate for everything - include major releases. May break things, but worth it for peace of mind */
+define('WP_AUTO_UPDATE_CORE', true);
+
 /**
  * WordPress Database Table prefix.
  *
