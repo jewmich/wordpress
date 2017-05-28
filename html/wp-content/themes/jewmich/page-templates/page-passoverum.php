@@ -89,25 +89,26 @@ get_header();
 <input type="hidden" name="description2" value="1st seder night Grad & non UM Student">
 <input type="hidden" name="description3" value="2nd seder night student">
 <input type="hidden" name="description4" value="2nd seder night Grad & non UM Student">
-<input type="hidden" name="description5" value="Lunch Shabbat. April 23">
-<input type="hidden" name="description7" value="Lunch Sun. April 24">
-<input type="hidden" name="description8" value="Dinner Sun. April 24">
-<input type="hidden" name="description9" value="Lunch & Dinner Sun. April 24">
-<input type="hidden" name="description10" value="Lunch . Mon April 25">
-<input type="hidden" name="description11" value="Dinner Mon. April 25">
-<input type="hidden" name="description12" value="Lunch & Dinner Mon. April 25">
-<input type="hidden" name="description13" value="Lunch Tue. April 26">
-<input type="hidden" name="description14" value="Dinner Tue. April 26">
-<input type="hidden" name="description15" value="Lunch & Dinner Tue. April 26">
-<input type="hidden" name="description16" value="Lunch Wed. April 27">
-<input type="hidden" name="description17" value="Dinner Wed. April 27">
-<input type="hidden" name="description18" value="Lunch & Dinner Wed. April 27">
-<input type="hidden" name="description19" value="Lunch Thurs. April 28">
-<input type="hidden" name="description20" value="Dinner Thurs. April 28">
-<input type="hidden" name="description21" value="Lunch & Dinner Thurs. April 28">
-<input type="hidden" name="description22" value="Lunch Fri. April 29">
-<input type="hidden" name="description23" value="Dinner Shabbat April 29">
-<input type="hidden" name="description24" value="Lunch Shabbat. April 30">
+<input type="hidden" name="description5" value="Lunch Tue. April 11">
+<input type="hidden" name="description7" value="Lunch Wed. April 12">
+<input type="hidden" name="description8" value="Dinner Wed. April 12">
+<input type="hidden" name="description9" value="Lunch & Dinner Wed. April 12">
+<input type="hidden" name="description10" value="Lunch Thur. April 13">
+<input type="hidden" name="description11" value="Dinner Thur. April 13">
+<input type="hidden" name="description12" value="Lunch & Dinner Thur. April 13">
+<input type="hidden" name="description13" value="Lunch Fri. April 14">
+<input type="hidden" name="description14" value="Dinner Shabbat Fri. April 14">
+<input type="hidden" name="description15" value="Lunch & Shabbat Dinner Fri. April 14">
+<input type="hidden" name="description16" value="Lunch Shabbat. April 15">
+<input type="hidden" name="description17" value="Dinner Sat. April 15">
+<input type="hidden" name="description18" value="Lunch & Dinner Shabbat. April 15">
+<input type="hidden" name="description19" value="Lunch Sun. April 16">
+<input type="hidden" name="description20" value="Dinner Sun. April 16">
+<input type="hidden" name="description21" value="Lunch & Dinner Sun. April 16">
+<input type="hidden" name="description22" value="Lunch Mon. April 17">
+<input type="hidden" name="description23" value="Dinner Mon. April 17">
+<input type="hidden" name="description24" value="Lunch & Dinner Mon. April 17">
+<input type="hidden" name="description25" value="Lunch Tue. April 18">
 <input type="hidden" name="description50" value="Donation">
 <input type="hidden" name="item1" value="1stsederstu">
 <input type="hidden" name="item2" value="2stsedergrad">
@@ -131,7 +132,8 @@ get_header();
 <input type="hidden" name="item21" value="6thdaynight">
 <input type="hidden" name="item22" value="7thday">
 <input type="hidden" name="item23" value="7thnight">
-<input type="hidden" name="item24" value="8thday">
+<input type="hidden" name="item24" value="7thdaynight">
+<input type="hidden" name="item25" value="8thday">
 <input type="hidden" name="item50" value="donation"> 
 <input type="hidden" name="cost1" value="18.00">
 <input type="hidden" name="cost2" value="36.00">
@@ -154,8 +156,9 @@ get_header();
 <input type="hidden" name="cost20" value="8.50">
 <input type="hidden" name="cost21" value="13.00">
 <input type="hidden" name="cost22" value="5.50">
-<input type="hidden" name="cost23" value="0.00">
-<input type="hidden" name="cost24" value="5.50">
+<input type="hidden" name="cost23" value="8.50">
+<input type="hidden" name="cost24" value="13.00">
+<input type="hidden" name="cost25" value="5.50">
 <input type="hidden" name="quantity50" value="1">
 <input type="hidden" name="publisher-name" value="annarborcha"> 
 <input type="hidden" name="order-id" value="chabadpassoverseder"> 
@@ -285,9 +288,9 @@ get_header();
            
            <tr>
              <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad"><strong>Friday, April 22</strong></td>
+             <td class="chabad"><strong>Monday, April 10</strong></td>
              <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad"><strong>Wednesday, April 27</strong></td>
+             <td class="chabad"><strong>Shabbat, April 15</strong></td>
              </tr>
            <tr>
              <td colspan="2" class="chabad">&nbsp;</td>
@@ -301,12 +304,12 @@ get_header();
                  <option>5</option>
                  <option>7</option>
                  <option>8</option></select></td>
-             <td class="chabad">Lunch $5.50</td>
+             <td class="chabad">Lunch* $5.50</td>
              </tr>
            
            <tr>
              <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad"><strong>Shabbat, April 23</strong></td>
+             <td class="chabad"><strong>Tuesday, April 11</strong></td>
              <td colspan="2" class="chabad"><select name="quantity17" size="1">
                                 <option></option>
                  <option>1</option>
@@ -345,11 +348,11 @@ get_header();
              <td colspan="2" class="chabad">&nbsp;</td>
              <td class="chabad">Seder Dinner (see above)</td>
              <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad"><strong>Thursday, April 28</strong></td>
+             <td class="chabad"><strong>Sunday, April 16</strong></td>
              </tr>
            <tr>
              <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad"><strong>Sunday, April 24</strong></td>
+             <td class="chabad"><strong>Wednesday, April 12</strong></td>
              <td colspan="2" class="chabad"><select name="quantity19" size="1">
                                 <option></option>
                  <option>1</option>
@@ -381,7 +384,7 @@ get_header();
                  <option>5</option>
                  <option>7</option>
                  <option>8</option></select></td>
-             <td class="chabad">Dinner $8.50</td>
+             <td class="chabad">Dinner* $8.50</td>
              </tr>
            <tr>
              <td colspan="2" class="chabad"><select name="quantity8" size="1">
@@ -417,11 +420,11 @@ get_header();
                  <option>8</option></select></td>
              <td class="chabad">Lunch &amp; Dinner $13.00</td>
              <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad"><strong>Friday, April 29</strong></td>
+             <td class="chabad"><strong>Monday, April 17</strong></td>
              </tr>
            <tr>
              <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad"><strong>Monday, April 25</strong></td>
+             <td class="chabad"><strong>Thursday, April 13</strong></td>
              <td colspan="2" class="chabad"><select name="quantity22" size="1">
                                 <option></option>
                  <option>1</option>
@@ -431,7 +434,7 @@ get_header();
                  <option>5</option>
                  <option>7</option>
                  <option>8</option></select></td>
-             <td class="chabad">Lunch $5.50</td>
+             <td class="chabad">Lunch* $5.50</td>
              </tr>
            <tr>
              <td colspan="2" class="chabad"><select name="quantity10" size="1">
@@ -453,7 +456,7 @@ get_header();
                  <option>5</option>
                  <option>7</option>
                  <option>8</option></select></td>
-             <td class="chabad">Dinner$0.00 Graduation Dnr</td>
+             <td class="chabad">Dinner* $8.50</td>
              </tr>
            <tr>
              <td colspan="2" class="chabad"><select name="quantity11" size="1">
@@ -466,8 +469,17 @@ get_header();
                  <option>7</option>
                  <option>8</option></select></td>
              <td class="chabad">Dinner $8.50</td>
-             <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad">&nbsp;</td>
+             <td colspan="2" class="chabad"><select name="quantity24" size="1">
+               <option></option>
+               <option>1</option>
+               <option>2</option>
+               <option>3</option>
+               <option>4</option>
+               <option>5</option>
+               <option>7</option>
+               <option>8</option>
+             </select></td>
+             <td class="chabad">Lunch &amp; Dinner $13.00</td>
              </tr>
            <tr>
              <td colspan="2" class="chabad"><select name="quantity12" size="1">
@@ -481,21 +493,13 @@ get_header();
                  <option>8</option></select></td>
              <td class="chabad">Lunch &amp; Dinner $13.00</td>
              <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad"><strong>Shabbat, April 30</strong></td>
+             <td class="chabad">&nbsp;</td>
              </tr>
            <tr>
              <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad"><strong>Tuesday, April 26</strong></td>
-             <td colspan="2" class="chabad"><select name="quantity24" size="1">
-                                <option></option>
-                 <option>1</option>
-                 <option>2</option>
-                 <option>3</option>
-                 <option>4</option>
-                 <option>5</option>
-                 <option>7</option>
-                 <option>8</option></select></td>
-             <td class="chabad">Lunch* $5.50</td>
+             <td class="chabad"><strong>Friday, April 14</strong></td>
+             <td colspan="2" class="chabad">&nbsp;</td>
+             <td class="chabad"><strong>Tuesday, April 18</strong></td>
              </tr>
            <tr>
              <td colspan="2" class="chabad"><select name="quantity13" size="1">
@@ -508,8 +512,17 @@ get_header();
                  <option>7</option>
                  <option>8</option></select></td>
              <td class="chabad">Lunch $5.50</td>
-             <td colspan="2" class="chabad">&nbsp;</td>
-             <td class="chabad">&nbsp;</td>
+             <td colspan="2" class="chabad"><select name="quantity25" size="1">
+               <option></option>
+               <option>1</option>
+               <option>2</option>
+               <option>3</option>
+               <option>4</option>
+               <option>5</option>
+               <option>7</option>
+               <option>8</option>
+             </select></td>
+             <td class="chabad">Lunch* $5.50</td>
              </tr>
            <tr>
              <td colspan="2" class="chabad"><select name="quantity14" size="1">
@@ -521,7 +534,7 @@ get_header();
                  <option>5</option>
                  <option>7</option>
                  <option>8</option></select></td>
-             <td class="chabad">Dinner $8.50</td>
+             <td class="chabad">Dinner* $8.50 (Shabbat)</td>
              <td colspan="2" class="chabad">&nbsp;</td>
              <td class="chabad">&nbsp;</td>
              </tr>
@@ -592,10 +605,23 @@ get_header();
          <td>
             <img border="0" src="/wp-content/uploads/2017/02/plugnpay.jpg" > <img border="0" src="/wp-content/uploads/2017/02/visamaster.gif" width="78" height="24"  /></td>
         </tr>
+      <tr>
+        <td bgcolor="#66CC66"><div align="center" class="chabad-header">RSVP with Venmo</div></td>
+      </tr>
+      <tr>
+        <td class="chabad"><div align="center" class="chabad-header">RSVP for Seders or meals Via <a href="https://venmo.com/umchabad">Venmo</a>
+          <br />
+        Please indicate Seder and meals you will be attenting</div>
+        <br /></td>
+      </tr>
                
             
          </td>
       </tr>
+		<tr>
+        <td bgcolor="#66CC66"><div align="center" class="chabad-header">RSVP by phone</div></td>
+      </tr>
+      <tr>
       <tr>
          <td class="chabad" >
             <p align="center" class="chabad-header">You can also place 
