@@ -121,7 +121,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#pageContent .pageContentWrapperCol {
 		border: 1px solid #ababab;
 		padding: 30px;
-		background: white;
+		background: rgba(255,255,255,0.5);
 	}
 
 	#pageContent .sidebar {
@@ -147,7 +147,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#homeSections p {
 		font-size: 1em;
 		line-height: 1.5;
-		padding: 10px 15px 0;
+		padding: 0 15px;
 		overflow: hidden;
 		margin: 0;
 	}
@@ -158,6 +158,8 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		display: flex;
 		flex-direction: column;
 		margin: 0 5px;
+		padding: 0;
+		padding-bottom: 30px;
 	}
 
 	#students_article h3,
@@ -294,7 +296,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	}
 
 	.home h3, .home p {
-		padding: 0 15px 5px;
+		padding: 20px 15px 5px;
 	}
 
 	nav ul li a {
