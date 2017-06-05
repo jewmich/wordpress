@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.2.0",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "d78064c68299743e0161004f2de3a0204e33b804"
+                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/d78064c68299743e0161004f2de3a0204e33b804",
-                "reference": "d78064c68299743e0161004f2de3a0204e33b804",
+                "url": "https://api.github.com/repos/composer/installers/zipball/79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045",
                 "shasum": ""
             },
             "require": {
@@ -59,12 +59,16 @@
             "keywords": [
                 "Craft",
                 "Dolibarr",
+                "Eliasis",
                 "Hurad",
                 "ImageCMS",
+                "Kanboard",
                 "MODX Evo",
                 "Mautic",
+                "Maya",
                 "OXID",
                 "Plentymarkets",
+                "Porto",
                 "RadPHP",
                 "SMF",
                 "Thelia",
@@ -87,9 +91,11 @@
                 "fuelphp",
                 "grav",
                 "installer",
+                "itop",
                 "joomla",
                 "kohana",
                 "laravel",
+                "lavalite",
                 "lithium",
                 "magento",
                 "mako",
@@ -104,6 +110,7 @@
                 "roundcube",
                 "shopware",
                 "silverstripe",
+                "sydes",
                 "symfony",
                 "typo3",
                 "wordpress",
@@ -111,15 +118,21 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13T20:53:52+00:00"
+            "time": "2017-04-24T06:37:16+00:00"
         },
         {
             "name": "jewmich/jewmich_sidebar",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jewmich/jewmich_sidebar.git",
-                "reference": "f47f1067bd526100a2e6c23eacd0443793347d5f"
+                "reference": "de68d486421c52c1bd62e3cee800e1db55d36407"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jewmich/jewmich_sidebar/zipball/de68d486421c52c1bd62e3cee800e1db55d36407",
+                "reference": "de68d486421c52c1bd62e3cee800e1db55d36407",
+                "shasum": ""
             },
             "require": {
                 "composer/installers": "^1.0",
@@ -138,11 +151,15 @@
             ],
             "description": "Sidebar for jewmich.com",
             "homepage": "https://github.com/jewmich/jewmich_sidebar",
-            "time": "2017-02-21T05:04:20+00:00"
+            "support": {
+                "source": "https://github.com/jewmich/jewmich_sidebar/tree/master",
+                "issues": "https://github.com/jewmich/jewmich_sidebar/issues"
+            },
+            "time": "2017-06-05T03:40:45+00:00"
         },
         {
             "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
-            "version": "4.2.5",
+            "version": "4.2.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
@@ -150,8 +167,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1492216430",
+                "reference": "trunk",
                 "shasum": null
             },
             "require": {
@@ -182,16 +199,16 @@
         },
         {
             "name": "wpackagist-plugin/error-log-monitor",
-            "version": "1.5.2",
+            "version": "1.5.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/error-log-monitor/",
-                "reference": "tags/1.5.2"
+                "reference": "tags/1.5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/error-log-monitor.1.5.2.zip",
-                "reference": "tags/1.5.2",
+                "url": "https://downloads.wordpress.org/plugin/error-log-monitor.1.5.4.zip",
+                "reference": "tags/1.5.4",
                 "shasum": null
             },
             "require": {
@@ -211,7 +228,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/google-authenticator.0.48.zip",
-                "reference": null,
+                "reference": "tags/0.48",
                 "shasum": null
             },
             "require": {
@@ -231,7 +248,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.4.9.zip",
-                "reference": null,
+                "reference": "tags/1.4.9",
                 "shasum": null
             },
             "require": {
