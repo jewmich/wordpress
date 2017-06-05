@@ -5,11 +5,8 @@
 
 define('DONOTCACHEPAGE', true);
 
-$currentJewishYear = cal_from_jd(unixtojd(time()), CAL_JEWISH);
-$currentJewishYear = $currentJewishYear['year'];
-$firstSeder = jdtounix(jewishtojd(8, 15, $currentJewishYear));
-$secondSeder = jdtounix(jewishtojd(8, 16, $currentJewishYear));
-$sunsetTimeOnFirstSeder = date_sunset($firstSeder, SUNFUNCS_RET_TIMESTAMP, LATITUDE_ANNARBOR, LONGITUDE_ANNARBOR);
+$passoverDates = passoverDates();
+$sunsetTimeOnFirstSeder = date_sunset($passoverDates['firstSeder'], SUNFUNCS_RET_TIMESTAMP, LATITUDE_ANNARBOR, LONGITUDE_ANNARBOR);
 // round to nearest quarter-hour
 $sunsetTimeOnFirstSeder = round($sunsetTimeOnFirstSeder / (15 * 60)) * (15 * 60);
 
@@ -43,7 +40,7 @@ get_header();
        ON-LINE PASSOVER COMMUNITY RESERVATIONS FORM
       </span>
       <br/>
-		<?= date('F j', $firstSeder) ?> - <?= date('F j', $secondSeder) ?>, <?= idate('Y', $firstSeder) ?> <?= date('g:i A', $sunsetTimeOnFirstSeder) ?>
+		<?= date('F j', $passoverDates['firstSeder']) ?> - <?= date('F j', $passoverDates['secondSeder']) ?>, <?= idate('Y', $passoverDates['firstSeder']) ?> <?= date('g:i A', $sunsetTimeOnFirstSeder) ?>
      </span>
     </p>
    </td>
@@ -216,10 +213,10 @@ Matzah and a delicious, festive meal.
             <table border="0" width="465" id="table8">
                <tr>
                   <td class="chabad" colspan="2">
-							<p class="chabad-header">1st Seder <?= date('D F j, Y', $firstSeder) ?></p>
+							<p class="chabad-header">1st Seder <?= date('D F j, Y', $passoverDates['firstSeder']) ?></p>
 						</td>
                   <td class="chabad" colspan="2">
-							<p class="chabad-header">2nd Seder <?= date('D F j, Y', $secondSeder) ?></p>
+							<p class="chabad-header">2nd Seder <?= date('D F j, Y', $passoverDates['secondSeder']) ?></p>
 						</td>
                </tr>
                

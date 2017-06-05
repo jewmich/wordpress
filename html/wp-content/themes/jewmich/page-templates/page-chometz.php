@@ -5,7 +5,7 @@
 
 define('DONOTCACHEPAGE', true);
 
-$startPassover = getStartOfPassover();
+$startPassover = passoverDates()['start'];
 $openDate = strtotime('-10 weeks', $startPassover);
 $closeDate = strtotime('07:00PM', $startPassover);
 get_header();

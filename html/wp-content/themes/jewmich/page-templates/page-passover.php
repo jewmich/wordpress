@@ -5,11 +5,8 @@
 
 define('DONOTCACHEPAGE', true);
 
-$currentJewishYear = cal_from_jd(unixtojd(time()), CAL_JEWISH);
-$currentJewishYear = $currentJewishYear['year'];
-$firstSeder = jdtounix(jewishtojd(8, 15, $currentJewishYear));
-$secondSeder = jdtounix(jewishtojd(8, 16, $currentJewishYear));
-$sunsetTimeOnFirstSeder = date_sunset($firstSeder, SUNFUNCS_RET_TIMESTAMP, LATITUDE_ANNARBOR, LONGITUDE_ANNARBOR);
+$passoverDates = passoverDates();
+$sunsetTimeOnFirstSeder = date_sunset($passoverDates['firstSeder'], SUNFUNCS_RET_TIMESTAMP, LATITUDE_ANNARBOR, LONGITUDE_ANNARBOR);
 // round to nearest quarter-hour
 $sunsetTimeOnFirstSeder = round($sunsetTimeOnFirstSeder / (15 * 60)) * (15 * 60);
 
@@ -29,11 +26,11 @@ get_header();
         </tr>
         <tr>
           <td background="pic/chabad-bg.gif"><p align="center"> <span class="chabad"> <span class="chabad-header"> ON-LINE PASSOVER RESERVATIONS FORM </span> <br/>
-            <?= date('F j', $firstSeder) ?>
+            <?= date('F j', $passoverDates['firstSeder']) ?>
             -
-            <?= date('F j', $secondSeder) ?>
+            <?= date('F j', $passoverDates['secondSeder']) ?>
             ,
-            <?= idate('Y', $firstSeder) ?>
+            <?= idate('Y', $passoverDates['firstSeder']) ?>
             <?= date('g:i A', $sunsetTimeOnFirstSeder) ?>
           </span> </p></td>
         </tr>
