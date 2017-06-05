@@ -2,10 +2,6 @@
 
 set -euo pipefail
 
-apt-get update
-apt-get install -qq -y unzip git subversion # needed by composer
-apt-get install -qq -y vim-tiny
-
 # Custom entrypoint that only handles installing Wordpress. We don't need any of the environment
 # setting stuff (we have our own version of wp-config.php that stores secrets outside Git) or the DB
 # creation logic (which the Docker MySQL image handles for us).
@@ -35,11 +31,6 @@ if ! [ -e index.php -a -e wp-includes/version.php ]; then
 		chown www-data:www-data .htaccess
 	fi
 fi
-
-# Add xdebug
-pecl install xdebug
-docker-php-ext-enable xdebug
-echo -e "xdebug.profiler_enable_trigger=on\nxdebug.profiler_output_dir=/var/www/html" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 cd ..
 
