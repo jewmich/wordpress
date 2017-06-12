@@ -137,6 +137,6 @@
 	</nav>
 	<div class="container<?= get_post_meta(get_the_ID(), 'no_sidebar', true) ? '' : ' has-sidebar' ?>" id="pageContent">
 		<div class="row">
-			<div class="col-xs-10 col-xs-offset-1 pageContentWrapperCol">
+			<div class="col col-xs-10 col-xs-offset-1 pageContentWrapperCol">
 				<div class="row">
-					<div class="col-xs-12 pageContentCol">
+					<div class="col col-xs-<?= get_post_meta(get_the_ID(), 'no_sidebar', true) ? 12 : 11?> pageContentCol">
