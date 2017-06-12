@@ -12,7 +12,6 @@
 		"wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
 		"wpackagist-plugin/google-authenticator": "*",
 		"wpackagist-plugin/wp-super-cache": "*",
-		"wpackagist-plugin/backupwordpress": "^3.6",
 		"jewmich/jewmich_sidebar": "*"
 	},
 	"extra": {
