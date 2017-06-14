@@ -158,13 +158,6 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		padding: 0;
 		padding-bottom: 30px;
 	}
-	
-	#students_article p,
-	#youth_article p,
-	#adults_article p {
-		color: #fff !important;
-		padding: 0 15px !important;
-	}
 
 	#students_article h3,
  	#students_article p {
