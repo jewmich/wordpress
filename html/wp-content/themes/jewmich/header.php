@@ -15,7 +15,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<header style="background-image: url(<?= header_image() ?>)">
-		<h1><a href="/">C<small>HABAD OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
+		<h1><a href="/">C<small>HABAD</small> H<small>OUSE</small> <small>OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
 		<?php if (is_front_page()): ?>
 		<div class="jumbotron text-center">
 			<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
@@ -64,7 +64,7 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" id="students" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">STUDENTS <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="/aboutus">About U of M Chabad</a></li>
+							<li><a href="/studentcenter">About U of M Chabad</a></li>
 							<li><a href="/birthright">Free Trip to Israel</a></li>
 							<li><a href="/mythandfact">Myths & Facts</a></li>
 							<li><a href="/studycenter">Judaic Classes</a></li>
@@ -94,10 +94,9 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" id="youth" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUTH <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="/tep">Torah Enrichment Program</a></li>
+							<li><a href="/tep">Chabad Hebrew School</a></li>
 							<li><a href="/tep">Programs</a></li>
-							<li><a href="http://www.mycampganisrael.com/about.htm">Camp Gan Israel</a></li>
-							<li><a href="/ask">Ask the Rabbi</a></li>
+							<li><a href="http://www.mycampganisrael.com">Camp Gan Israel</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -120,11 +119,12 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" id="donate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DONATE <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="/donation">About Donations</a></li>
 							<li><a href="/donate">Donate Online</a></li>
-							<li><a href="/wishlist">Shabbat Wish List</a></li>
-							<li><a href="/charitybox">Request a Charity Box</a></li>
+							<li><a href="/donation">About Donations</a></li>
+							<li><a href="/wishlist">Chabad Wish List</a></li>
 							<li><a href="/chaiclub">Chai Club</a></li>
+							<li><a href="/charitybox">Request a Charity Box</a></li>
+
 						</ul>
 					</li>
 				</ul>
@@ -133,6 +133,6 @@
 	</nav>
 	<div class="container<?= get_post_meta(get_the_ID(), 'no_sidebar', true) ? '' : ' has-sidebar' ?>" id="pageContent">
 		<div class="row">
-			<div class="col col-xs-10 col-xs-offset-1 pageContentWrapperCol">
+			<div class="col col-xs-12 pageContentWrapperCol">
 				<div class="row">
 					<div class="col col-xs-<?= get_post_meta(get_the_ID(), 'no_sidebar', true) ? 12 : 11?> pageContentCol">
