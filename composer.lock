@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5120e0a7b0609ac14600466e7588e2a",
+    "content-hash": "2e75cef799656b86d2014c2288fcdf6d",
     "packages": [
         {
             "name": "composer/installers",
@@ -236,6 +236,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/google-authenticator/"
+        },
+        {
+            "name": "wpackagist-plugin/unique-headers",
+            "version": "1.7.11",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/unique-headers/",
+                "reference": "tags/1.7.11"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/unique-headers.1.7.11.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/unique-headers/"
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",

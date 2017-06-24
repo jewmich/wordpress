@@ -14,11 +14,7 @@
 	<![endif]-->
 </head>
 <body <?php body_class(); ?>>
-	<header style="background-image: url(<?=
-		is_front_page()
-			? get_template_directory_uri() . '/assets/images/chabad_small2.jpg'
-			: (get_post_meta(get_the_ID(), 'banner', true) ?: get_template_directory_uri() . '/assets/images/default_subpage_header.jpg')
-	?>)">
+	<header style="background-image: url(<?= header_image() ?>)">
 		<h1><a href="/">C<small>HABAD OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
 		<?php if (is_front_page()): ?>
 		<div class="jumbotron text-center">
