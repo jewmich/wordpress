@@ -9,6 +9,8 @@ have one custom plugin, [jewmich_sidebar](https://github.com/jewmich/jewmich_sid
 
 You will need to install both Docker and Docker Compose.  See [Install Docker Compose](https://docs.docker.com/compose/install/) for instructions.
 
+Use the `docker/import_sql.sh` script to import the www.jewmich.com database into your Docker MySQL container.
+
 Once you have that installed, run `docker-compose up` inside the `docker/` subdirectory. When it finishes starting the containers, you will be able to access the site at [http://127.0.0.1](http://127.0.0.1). You can access the [MailerCatcher](https://mailcatcher.me/) instance for testing e-mails at [http://127.0.0.1:1080](http://127.0.0.1:1080).
 
 # Deployment
