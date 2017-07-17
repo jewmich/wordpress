@@ -70,35 +70,28 @@
 							<li><a href="/studycenter">Judaic Classes</a></li>
 							<li><a href="/shabbat">Shabbat Dinner</a></li>
 							<li><a href="/candlelighting">Candle Lighting Times</a></li>
-							<li><a href="/ask">Ask the Rabbi</a></li>
 							<li><a href="/kosher">Kosher in Ann Arbor</a></li>
 							<li><a href="/map">Map</a></li>
 							<li><a href="/visiting&amp;living">Visiting & Living</a></li>
+							<li><a href="/payment">Make a Payment</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
-						<a class="dropdown-toggle" id="adults" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">ADULTS <span class="caret"></span></a>
+						<a class="dropdown-toggle" id="adults" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">COMMUNITY <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="/cong">About Congregation Chabad</a></li>
+							<li><a href="/cong">Congregation Chabad</a></li>
 							<li><a href="/studycenter">Adult Education</a></li>
+							<li><a href="http://www.mycampganisrael.com">Camp Gan Israel</a></li>
+							<li><a href="/chs">Chabad Hebrew School</a></li>
 							<li><a href="/mikvah">Mikvah</a></li>
 							<li><a href="/kiddush">Sponsor a Shabbat Lunch</a></li>
 							<li><a href="/jwc">Jewish Women's Circle</a></li>
 							<li><a href="/kosher">Kosher in Ann Arbor</a></li>
-							<li><a href="/candlelighting">Candle Lighting Times</a></li>
-							<li><a href="/ask">Ask the Rabbi</a></li>
-							<li><a href="/map">Map</a></li>
 							<li><a href="/visiting&amp;living">Visiting & Living</a></li>
+							<li><a href="/payment">Make a Payment</a></li>
 						</ul>
 					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" id="youth" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">YOUTH <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="/tep">Chabad Hebrew School</a></li>
-							<li><a href="/tep">Programs</a></li>
-							<li><a href="http://www.mycampganisrael.com">Camp Gan Israel</a></li>
-						</ul>
-					</li>
+					
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" id="events" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">EVENTS <span class="caret"></span></a>
 						<ul class="dropdown-menu">
@@ -114,6 +107,12 @@
 							<li><a href="/map">Map</a></li>
 							<li><a href="/aboutus">About Us</a></li>
 							<li><a href="/visiting&amp;living">Visiting & Living</a></li>
+							<li><a href="/payment">Make a Payment</a></li>
+							<li><a href="/ask">Ask the Rabbi</a></li>
+							<li><a href="/candlelighting">Candle Lighting Times</a></li>
+							<li><a href="/map">Map</a></li>
+
+
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -124,6 +123,7 @@
 							<li><a href="/wishlist">Chabad Wish List</a></li>
 							<li><a href="/chaiclub">Chai Club</a></li>
 							<li><a href="/charitybox">Request a Charity Box</a></li>
+							<li><a href="/payment">Make a Payment</a></li>
 
 						</ul>
 					</li>
