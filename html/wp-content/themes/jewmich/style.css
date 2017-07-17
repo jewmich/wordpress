@@ -303,6 +303,12 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		font-size: 1.25em;
 	}
 
+	/* Horizontally center the navbar */
+	nav.navbar {
+		display: flex;
+		justify-content: center;
+	}
+
 	#students_article,
 	#youth_article,
 	#adults_article {
