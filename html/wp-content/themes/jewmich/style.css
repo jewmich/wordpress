@@ -46,7 +46,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		background-size: cover;
 	}
 	header {
-		background: left bottom no-repeat #333;
+		background: center no-repeat #333;
 		background-size: cover;
 		min-height: 300px;
 	}
