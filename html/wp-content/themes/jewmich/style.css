@@ -261,7 +261,11 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#youth_article h3, #adults_article h3, #students_article h3 {
 		padding: 0px 0;
 	}
-    #rc-imageselect, .g-recaptcha {transform:scale(0.57);-webkit-transform:scale(0.67);transform-origin:0 0;-webkit-transform-origin:0 0;
+	#rc-imageselect, .g-recaptcha {
+		transform:scale(0.57);
+		-webkit-transform:scale(0.67);
+		transform-origin:0 0;
+		-webkit-transform-origin:0 0;
 	}
 }
 
@@ -398,12 +402,11 @@ table.chabad .label { white-space: nowrap }
 .chabad-sub-info a:visited {	color: #727272; text-decoration: none; }
 .chabad-sub-info a:hover {	color: #727272; text-decoration: underline; }
 
-.chabad-small
-{
-    font-family: Arial, Helvetica, sans-serif;
-    FONT-SIZE: 10.5px;
-    COLOR: #000000;
-    line-height: 13px;
+.chabad-small {
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 10.5px;
+	COLOR: #000000;
+	line-height: 13px;
 }
 
 .verdana10pxGray {
@@ -411,8 +414,8 @@ table.chabad .label { white-space: nowrap }
 }
 
 .chabad-med {
-    FONT-SIZE: 11px;
-    COLOR: #4C4C4C;
+	FONT-SIZE: 11px;
+	COLOR: #4C4C4C;
 	text-align: left;
 }
 
@@ -432,7 +435,7 @@ form[name="form"] input[name="username"] {
 }
 
 /* CANDLE LIGHTING TIMES */
-.CLTable {  
+.CLTable {
 	Background-Color: #E6E7E8;
 	Border-Color: #A0C6E5;
 	Font-Size: 11px;
@@ -441,9 +444,9 @@ form[name="form"] input[name="username"] {
 	Font-Family: Tahoma, Arial, Verdana;
 	Font-Size: 11px;
 	Text-Align: center;
-	Font-Weight: bold;    
+	Font-Weight: bold;
 }
-.CLheading {  
+.CLheading {
 	Font-Family: Tahoma, Arial, Verdana;
 	Font-Size: 11px;
 	Text-Align: center;
@@ -468,14 +471,14 @@ A.CLLink:Hover {
 	color: #4c4c4c;
 }
 
-.CLdate {  
+.CLdate {
 	Font-Family: Tahoma, Arial, Verdana;
 	Font-Size: 10px;
 	Text-Align: left;
 	Font-Weight: bold;
-	text-decoration: none;    
+	text-decoration: none;
 }
-.CLTime {  
+.CLTime {
 	Font-Family: Tahoma, Arial, Verdana;
 	Font-Size: 10px;
 	Text-Align: left;
@@ -496,7 +499,7 @@ A.CLLink:Hover {
  */
 
 /**
-* FORM-SPECIFIC CSS  
+* FORM-SPECIFIC CSS
 */
 
 div#nf-form-3-cont.nf-form-cont {
@@ -601,7 +604,7 @@ input#nf-field-46:hover {
 	padding-right: 5%;
 }
 
-@media only screen and (min-width: 768px)  {
+@media only screen and (min-width: 768px) {
 	#registration {
 		width: 80%;
 	}
