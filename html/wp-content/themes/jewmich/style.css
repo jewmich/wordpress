@@ -8,6 +8,8 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	margin: 0;
 }
 
+.chabad-header:first-of-type {font-size: 24px !important; margin-bottom: 20px; color: #666; font-family: 'Perpetua Titling', serif;}
+
 /*print*/
 @media print {
 	body {
@@ -46,7 +48,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		background-size: cover;
 	}
 	header {
-		background: left bottom no-repeat #333;
+		background: center no-repeat #333;
 		background-size: cover;
 		min-height: 300px;
 	}
@@ -79,7 +81,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		color: #333;
 	}
 	h3 {
-		font-family: 'Alef', Arial, sans-serif;
+		font-family: 'PT Sans', Arial, sans-serif;
 		letter-spacing: 1px;
 		font-size: 1.5em;
 		padding: 0 15px;
@@ -95,18 +97,21 @@ nav, header, section, article, h1, h2, h3, h4, p {
 
 	#students, #students_article {
 		background-color: #00274c;
+		color: #fbcb07;
 	}
 	#adults, #adults_article {
-		background-color: #7a1501;
+        background-color: #6BA939;
+		color: white;
 	}
 	#youth, #youth_article {
 		background-color: #336666;
+		color: white;
 	}
 	#events {
 		background-color: #cf7019;
 	}
 	#contact_us {
-		background-color: #7b7000;
+        background-color: #7a1501;
 	}
 	#donate {
 		background-color: #514e86;
@@ -119,9 +124,8 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		margin: 50px auto;
 	}
 	#pageContent .pageContentWrapperCol {
-		border: 1px solid #ababab;
 		padding: 30px;
-		background: rgba(255,255,255,0.5);
+		background: rgba(255,255,255,0.75);
 	}
 
 	#pageContent .sidebar {
@@ -131,7 +135,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	}
 
 	.home #pageContent .pageContentWrapperCol {
-		background: rgba(255, 255, 255, 0.6);
+		background: none;
 	}
 	#homeSections {
 		display: flex;
@@ -223,6 +227,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 @media screen and (max-width: 767px) {
 	header {
 		min-height: 200px;
+
 	}
 
 	#navBar .nav .dropdown-menu {
@@ -250,12 +255,17 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	div#students_article.col-sm-4,
 	div#youth_article.col-sm-4,
 	div#adults_article.col-sm-4 {
-		margin: 0;
+		margin: 10px;
 	}
 	#students_article p,
 	#youth_article p,
 	#adults_article p {
 		font-size: 1.25em;
+	}
+	#youth_article h3, #adults_article h3, #students_article h3 {
+		padding: 0px 0;
+	}
+    #rc-imageselect, .g-recaptcha {transform:scale(0.57);-webkit-transform:scale(0.67);transform-origin:0 0;-webkit-transform-origin:0 0;
 	}
 }
 
@@ -317,7 +327,19 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	#pageContent.has-sidebar .pageContentCol {
 		width: calc(100% - 230px);
 	}
+
 }
+
+
+/* CONTACT FORM 7 */
+
+.wpcf7-form input,
+.wpcf7-form textarea,
+.wpcf7-form select {
+	width: 98%;
+}
+
+/* END CONTACT FORM 7 */
 
 
 /**
@@ -475,4 +497,69 @@ A.CLLink:Hover {
 }	
 /**
  * END LEGACY jewmich.COM CSS
+ */
+
+/**
+* FROM ADDITIONAL CSS  
+*/
+
+/* CSS */
+/* header h1 {padding-top: 50px;} */
+/* #youth_article h3, #adults_article h3, #students_article h3 {font-family: PT Sans, sans-serif;} */
+/* p.linknoline, {margin-top: 20px;} */
+
+/* form */
+div#nf-form-3-cont.nf-form-cont {margin-top: 20px;}
+div#nf-form-3-cont.nf-form-cont h3, div#nf-form-2-cont.nf-form-cont h4 {padding: 0;}
+div#nf-form-2-cont.nf-form-cont h3 {font-size: 2em;}
+.nf-form-title h3 {padding: 0; margin-top: 30px; font-weight: bold; font-size: 21px;}
+hr.ninja-forms-field {border-top: 1px solid #ccc;}
+#register_top {text-align: center; padding: 10px 20px 20px;}
+#register_top a {font-size: 21px; font-weight: bold; color: #333;}
+#register_top a:hover {text-decoration: underline;} 
+#board {padding: 50px 20px 20px 15%;}
+#registration {margin-top: 30px;}
+.call_to_action {display: inline-block; width: 28%; height: 6em; margin-top: 10px !important; padding: 0 1%; float: left; text-align: center; font-size: 16px; line-height: 1.2; color: #800925; text-shadow: white 1px 1px 5px, #e8cfa7 0px 0px 15px, #e8cfa7 0px 0px 10px;}
+#registration p {margin: 20px 30% !important;}
+#registration a {color: #4b1709 !important;}
+#registration a:hover {text-decoration: underline !important;}
+#akervall a {color: #104985;}
+#akervall a:hover {color: #f4793c; text-decoration: underline;}
+div#nf-form-3-cont.nf-form-cont {color: black;}
+input#nf-field-46 {color: white; background: #7f0824; font-size: 1.5em; font-weight: bold; padding: 10px 20px; border: 1px solid #7f0824;}
+input#nf-field-46:hover {color: #7f0824; background: white; font-weight: bold; padding: 10px 20px; border: 1px solid #7f0824;}
+.nf-response-msg a:hover {text-decoration: underline;}
+#akervall img, #jcc img, #federation img {float: left; width: 30%; height: auto; display: block; margin-left: 20px;}
+#chabad img {margin: 0 auto; display: block; width: 250px; height: auto;}
+#akervall img, #jcc img {padding-right: 5%;}
+
+
+@media only screen and (max-width: 767px)  {
+div#students_article.col-sm-4, div#adults_article.col-sm-4, div#youth_article.col-sm-4 {margin: 30px;} */
+#youth_article h3, #adults_article h3, #students_article h3 {font-size: 2em; padding: 15px 15px 0;}
+#mcb img {max-width: 100%; height: auto;}
+#challah_bg {background-image: none !important;}
+#challah_bg p, h2, h3 {text-align: center !important;}
+#board {background-image: none !important; margin-top: 20px !important;}
+.call_to_action {color: #e8cfa7 !important; text-shadow: none; display: block; float: none; font-size: 18px; margin: 10px 10px 30px -10px !important; padding: 0 10px 10px !important; text-align: center; width: 100%; height: initial;}
+.call_to_action span {font-size: 1.25em !important;}
+#registration {color: white !important; width: 90%;}
+#registration span {font-size: 18px !important;}
+#registration p {font-size: 16px !important; text-align: center !important; margin: 0 !important;}
+#registration a {color: #e8cfa7 !important;}
+#sponsors img {height: auto; margin: 20px 10px 20px -50px; !important; max-width: 200% !important; margin: 10px !important;}
+#sponsors a:hover {color: #f4793c !important;}
+#chabad img {max-width: 100% !important; height: auto;}
+#akervall img, #jcc img, #federation img {display: block !important; float: none !important; width: 100% !important; margin: 0 auto; padding-bottom: 20px;}
+#akervall div {font-size: 18px !important; padding-left: 20px;}
+.project_of_chabad {color: #e8cfa7 !important;}
+}
+
+@media only screen and (min-width: 768px)  {
+#registration {width: 80%;}
+#registration p.button {margin: 30px 20%;}
+}
+
+/**
+ * END ADDITIONAL CSS
  */

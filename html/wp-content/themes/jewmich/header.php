@@ -12,6 +12,7 @@
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+<script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
 <body <?php body_class(); ?>>
 	<header style="background-image: url(<?= header_image() ?>)">
@@ -100,21 +101,6 @@
 					</ul>
 				</li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" id="contact_us" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CONTACT US <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="/contact">Contact Information</a></li>
-						<li><a href="/map">Map</a></li>
-						<li><a href="/aboutus">About Us</a></li>
-						<li><a href="/visiting&amp;living">Visiting & Living</a></li>
-						<li><a href="/payment">Make a Payment</a></li>
-						<li><a href="/ask">Ask the Rabbi</a></li>
-						<li><a href="/candlelighting">Candle Lighting Times</a></li>
-						<li><a href="/map">Map</a></li>
-
-
-					</ul>
-				</li>
-				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" id="donate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DONATE <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="/donate">Donate Online</a></li>
@@ -123,7 +109,19 @@
 						<li><a href="/chaiclub">Chai Club</a></li>
 						<li><a href="/charitybox">Request a Charity Box</a></li>
 						<li><a href="/payment">Make a Payment</a></li>
-
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" id="contact_us" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">CONTACT US <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="/contact">Contact Us</a></li>
+						<li><a href="/map">Map</a></li>
+						<li><a href="/aboutus">About Us</a></li>
+						<li><a href="/visiting&amp;living">Visiting & Living</a></li>
+						<li><a href="/payment">Make a Payment</a></li>
+						<li><a href="/ask">Ask the Rabbi</a></li>
+						<li><a href="/candlelighting">Candle Lighting Times</a></li>
+						<li><a href="/map">Map</a></li>
 					</ul>
 				</li>
 			</ul>
