@@ -226,6 +226,10 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		min-height: 200px;
 	}
 
+	.home #pageContent .pageContentCol, .home #pageContent .pageContentWrapperCol {
+		padding: 0;
+	}
+
 	#navBar .nav .dropdown-menu {
 		padding: 0;
 	}
@@ -245,13 +249,10 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		margin: 0;
 		padding: 0;
 	}
-	.home #pageContent .pageContentWrapperCol {
-		padding: 0;
-	}
 	div#students_article.col-sm-4,
 	div#youth_article.col-sm-4,
 	div#adults_article.col-sm-4 {
-		margin: 10px;
+		margin: 0 0 20px 0;
 	}
 	#students_article p,
 	#youth_article p,
