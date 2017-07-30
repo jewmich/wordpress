@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e75cef799656b86d2014c2288fcdf6d",
+    "content-hash": "8a39409717c8e195ce455655e75ef8e3",
     "packages": [
         {
             "name": "composer/installers",
@@ -159,7 +159,7 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
-            "version": "4.2.7",
+            "version": "4.2.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
@@ -167,8 +167,8 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1492216430",
-                "reference": "trunk",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1496969531",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -238,6 +238,26 @@
             "homepage": "https://wordpress.org/plugins/google-authenticator/"
         },
         {
+            "name": "wpackagist-plugin/ninja-forms",
+            "version": "3.1.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ninja-forms/",
+                "reference": "tags/3.1.6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.1.6.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ninja-forms/"
+        },
+        {
             "name": "wpackagist-plugin/unique-headers",
             "version": "1.7.11",
             "source": {
@@ -258,17 +278,37 @@
             "homepage": "https://wordpress.org/plugins/unique-headers/"
         },
         {
-            "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.4.9",
+            "name": "wpackagist-plugin/wp-editor",
+            "version": "1.2.6.3",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.4.9"
+                "url": "https://plugins.svn.wordpress.org/wp-editor/",
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.4.9.zip",
-                "reference": "tags/1.4.9",
+                "url": "https://downloads.wordpress.org/plugin/wp-editor.zip?timestamp=1475699144",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-editor/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-super-cache",
+            "version": "1.5.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
+                "reference": "tags/1.5.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.5.3.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
