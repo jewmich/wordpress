@@ -503,11 +503,6 @@ A.CLLink:Hover {
 * FROM ADDITIONAL CSS  
 */
 
-/* CSS */
-/* header h1 {padding-top: 50px;} */
-/* #youth_article h3, #adults_article h3, #students_article h3 {font-family: PT Sans, sans-serif;} */
-/* p.linknoline, {margin-top: 20px;} */
-
 /* form */
 div#nf-form-3-cont.nf-form-cont {margin-top: 20px;}
 div#nf-form-3-cont.nf-form-cont h3, div#nf-form-2-cont.nf-form-cont h4 {padding: 0;}
@@ -532,28 +527,6 @@ input#nf-field-46:hover {color: #7f0824; background: white; font-weight: bold; p
 #akervall img, #jcc img, #federation img {float: left; width: 30%; height: auto; display: block; margin-left: 20px;}
 #chabad img {margin: 0 auto; display: block; width: 250px; height: auto;}
 #akervall img, #jcc img {padding-right: 5%;}
-
-
-@media only screen and (max-width: 767px)  {
-div#students_article.col-sm-4, div#adults_article.col-sm-4, div#youth_article.col-sm-4 {margin: 30px;} */
-#youth_article h3, #adults_article h3, #students_article h3 {font-size: 2em; padding: 15px 15px 0;}
-#mcb img {max-width: 100%; height: auto;}
-#challah_bg {background-image: none !important;}
-#challah_bg p, h2, h3 {text-align: center !important;}
-#board {background-image: none !important; margin-top: 20px !important;}
-.call_to_action {color: #e8cfa7 !important; text-shadow: none; display: block; float: none; font-size: 18px; margin: 10px 10px 30px -10px !important; padding: 0 10px 10px !important; text-align: center; width: 100%; height: initial;}
-.call_to_action span {font-size: 1.25em !important;}
-#registration {color: white !important; width: 90%;}
-#registration span {font-size: 18px !important;}
-#registration p {font-size: 16px !important; text-align: center !important; margin: 0 !important;}
-#registration a {color: #e8cfa7 !important;}
-#sponsors img {height: auto; margin: 20px 10px 20px -50px; !important; max-width: 200% !important; margin: 10px !important;}
-#sponsors a:hover {color: #f4793c !important;}
-#chabad img {max-width: 100% !important; height: auto;}
-#akervall img, #jcc img, #federation img {display: block !important; float: none !important; width: 100% !important; margin: 0 auto; padding-bottom: 20px;}
-#akervall div {font-size: 18px !important; padding-left: 20px;}
-.project_of_chabad {color: #e8cfa7 !important;}
-}
 
 @media only screen and (min-width: 768px)  {
 #registration {width: 80%;}
