@@ -7,7 +7,7 @@ if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
 
 $paramKeys = array('firstname', 'lastname', 'email', 'phone', 'student', 'year', 'foundus', 'involvedwith', 'suggestion');
 $params = array('signed_up_at' => date('Y-m-d H:i:s', strtotime('+3 hours')));
-foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
+foreach ($paramKeys as $paramKey) $params[$paramKey] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
 $GLOBALS['wpdb']->insert('Culinary', $params);
 
 $mailer = getMailer();

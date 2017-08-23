@@ -17,7 +17,7 @@ if (empty($_POST['subject'])) {
 
 $params = array('signed_up_at' => date('Y-m-d H:i:s', strtotime('+3 hours')));
 $paramKeys = array('firstname', 'lastname', 'email', 'phone', 'foundus', 'year', 'isstudent', 'datpref', 'suggestion');
-foreach ($paramKeys as $paramKey) $params[] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
+foreach ($paramKeys as $paramKey) $params[$paramKey] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
 $GLOBALS['wpdb']->insert('Birthright', $params);
 
 $mailer = getMailer();
