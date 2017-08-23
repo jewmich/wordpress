@@ -3,7 +3,7 @@
  * Template Name: successredirect Template
  */
 
-define('DONOTCACHEPAGE', true);
+if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
 
 ?>
 <html>

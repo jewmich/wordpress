@@ -3,7 +3,7 @@
  * Template Name: chometz Template
  */
 
-define('DONOTCACHEPAGE', true);
+if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
 
 $startPassover = passoverDates()['start'];
 $openDate = strtotime('-10 weeks', $startPassover);

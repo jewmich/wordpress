@@ -3,7 +3,7 @@
  * Template Name: form-process-culinary Template
  */
 
-define('DONOTCACHEPAGE', true);
+if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
 
 $paramKeys = array('firstname', 'lastname', 'email', 'phone', 'student', 'year', 'foundus', 'involvedwith', 'suggestion');
 $params = array('signed_up_at' => date('Y-m-d H:i:s', strtotime('+3 hours')));

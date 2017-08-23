@@ -3,7 +3,7 @@
  * Template Name: success_shabbat Template
  */
 
-define('DONOTCACHEPAGE', true);
+if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
 
 $user = User::getLoggedInUser();
 if (!$user && empty($_SESSION['person_id'])) {

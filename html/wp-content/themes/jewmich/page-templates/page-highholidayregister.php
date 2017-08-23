@@ -3,7 +3,7 @@
  * Template Name: highholidayregister Template
  */
 
-define('DONOTCACHEPAGE', true);
+if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
 
 $currentJewishCal = cal_from_jd(unixtojd(time()), CAL_JEWISH);
 $curJewishYear = $currentJewishCal['year'];

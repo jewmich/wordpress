@@ -3,7 +3,7 @@
  * Template Name: logout Template
  */
 
-define('DONOTCACHEPAGE', true);
+if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
 
 unset($_SESSION['user']);
 session_regenerate_id(true);

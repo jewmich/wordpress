@@ -3,7 +3,7 @@
  * Template Name: passovercom Template
  */
 
-define('DONOTCACHEPAGE', true);
+if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
 
 $passoverDates = passoverDates();
 $sunsetTimeOnFirstSeder = date_sunset($passoverDates['firstSeder'], SUNFUNCS_RET_TIMESTAMP, LATITUDE_ANNARBOR, LONGITUDE_ANNARBOR);
