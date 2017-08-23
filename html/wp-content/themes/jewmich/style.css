@@ -268,6 +268,18 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		transform-origin:0 0;
 		-webkit-transform-origin:0 0;
 	}
+	.call_to_action {
+		color: #e8cfa7 !important; 
+		text-shadow: none; 
+		display: block !important; 
+		float: none; 
+		font-size: 18px; 
+		margin: 10px 10px 30px -10px !important; 
+		padding: 0 10px 10px !important; 
+		text-align: center; 
+		width: 100%; 
+		height: initial;
+	}
 }
 
 /* medium phones and tablet portrait */
@@ -341,6 +353,11 @@ nav, header, section, article, h1, h2, h3, h4, p {
 }
 
 /* END CONTACT FORM 7 */
+
+/* Hebrew school registration form */
+#nf-form-6-cont .ninja-forms-field.nf-element, nf-field-73-wrap {
+	width: 50%;
+}
 
 
 /**
@@ -503,6 +520,15 @@ A.CLLink:Hover {
 * FORM-SPECIFIC CSS
 */
 
+/**
+* END Culinary-SPECIFIC CSS
+*/
+
+
+/**
+* FORM-SPECIFIC CSS
+*/
+
 div#nf-form-3-cont.nf-form-cont {
 	margin-top: 20px;
 }
@@ -587,6 +613,14 @@ input#nf-field-46:hover {
 }
 .nf-response-msg a:hover {
 	text-decoration: underline;
+}
+div#nf-form-6-cont.nf-form-cont {
+	padding: 20px; 
+	background: white;
+}
+.#nf-form-6-cont.sectionHeader p {
+	padding: 10px; 
+	border: 1px solid #999;
 }
 #akervall img, #jcc img, #federation img {
 	float: left;

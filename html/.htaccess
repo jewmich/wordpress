@@ -52,6 +52,11 @@ Redirect 301 /sinaischolars http://www.sinaischolars.com/index.html?task=locatio
 Redirect 301 /medinsu https://www.travelinsurancecenter.com/eng/information/cm_quote.cfm?line=tx_max&affiliate=umchabad
 Redirect 301 /medtrvinsu https://www.travelinsurancecenter.com/eng/information/cm_quote.cfm?line=trvsf_clsc&affiliate=umchabad
 
+
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R,L]
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

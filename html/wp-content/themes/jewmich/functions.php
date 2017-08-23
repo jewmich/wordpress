@@ -30,7 +30,7 @@ add_action('after_setup_theme', function() {
 add_action('wp_enqueue_scripts', function() {
 	// Loads Bootstrap CSS and our CSS
 	wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css');
-	wp_enqueue_style('style', get_stylesheet_uri() );
+	wp_enqueue_style('style', get_stylesheet_uri(), [], '1.1');
 
 	// Loads Bootstrap JS and Jewmich-custom JS
 	wp_deregister_script('jquery'); // we have our own version of jQuery
