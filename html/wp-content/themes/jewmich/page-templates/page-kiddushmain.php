@@ -3,7 +3,7 @@
  * Template Name: kiddushmain Template
  */
 
-if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
+if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 require_once(get_template_directory() . '/includes/kiddush.php');
 

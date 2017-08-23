@@ -3,7 +3,7 @@
  * Template Name: form-process-brazil Template
  */
 
-if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
+if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 $paramKeys = array('realname', 'email', 'cellphone', 'address', 'year', 'major', 'interest', 'involvement', 'experience', 'whythistrip', 'idealday', 'bringback', 'medical', 'otherprogram', 'extend');
 $params = array('signed_up_at' => date('Y-m-d H:i:s'));

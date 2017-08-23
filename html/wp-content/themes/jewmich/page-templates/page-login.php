@@ -3,7 +3,7 @@
  * Template Name: login Template
  */
 
-if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
+if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 $loginError = '';
 if (!empty($_POST['email']) && !empty($_POST['password'])) {

@@ -3,7 +3,7 @@
  * Template Name: form-process-shabbat Template
  */
 
-if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
+if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 if (empty($_POST['subject']) || empty($_POST['email']) || empty($_POST['realname'])) {
 	header("Location: /shabbat");

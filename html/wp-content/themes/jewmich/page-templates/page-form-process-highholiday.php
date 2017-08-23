@@ -3,7 +3,7 @@
  * Template Name: form-process-highholiday Template
  */
 
-if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
+if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 if (empty($_POST['subject'])) {
 	header('Location: /highholidayregister');

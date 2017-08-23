@@ -3,7 +3,7 @@
  * Template Name: form-process-forms Template
  */
 
-if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
+if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 if (!empty($_POST['username'])) {
 	// Honeypot triggered! This must've been submitted by a spam bot, because 

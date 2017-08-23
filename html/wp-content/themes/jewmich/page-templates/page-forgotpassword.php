@@ -3,7 +3,7 @@
  * Template Name: forgotpassword Template
  */
 
-if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
+if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 $error = false;
 $success = false;

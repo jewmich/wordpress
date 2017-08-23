@@ -3,7 +3,7 @@
  * Template Name: myaccount Template
  */
 
-if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
+if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 $user = User::getLoggedInUser();
 if (!$user) {

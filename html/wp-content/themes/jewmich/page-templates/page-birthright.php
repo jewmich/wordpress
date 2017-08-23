@@ -3,7 +3,7 @@
  * Template Name: birthright Template
  */
 
-if (!defined('DONOTCACHEPAGE')) define(DONOTCACHEPAGE, true);
+if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 if (time() < strtotime('Aug 25')) {
 	define('NEXT_TRIP_DATE', strtotime('May 1'));
