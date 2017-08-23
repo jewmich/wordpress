@@ -25,7 +25,7 @@ if (__DIR__ === '/var/www/html') {
 
 ini_set('log_errors', 1);
 ini_set('error_log', dirname(__DIR__) . '/php-errors.log');
-ini_set('display_errors', (ENVIRONMENT == 'development') ? 1 : 0);
+ini_set('display_errors', (ENVIRONMENT === 'development') ? 1 : 0);
 
 // Load sensitive data, which is stored outside the webroot for security.
 require_once(__DIR__ . '/../secrets/secrets-' . ENVIRONMENT . '.php');
@@ -57,7 +57,9 @@ $table_prefix  = 'wp_';
  * It is strongly recommended that plugin and theme developers use WP_DEBUG
  * in their development environments.
  */
-define('WP_DEBUG', false);
+define('WP_DEBUG', ENVIRONMENT === 'development');
+
+define('WP_DEBUG_DISPLAY', WP_DEBUG);
 
 /* That's all, stop editing! Happy blogging. */
 
