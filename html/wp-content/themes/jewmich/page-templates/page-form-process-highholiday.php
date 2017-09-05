@@ -33,7 +33,7 @@ Email:'".$params['email']."'\n
 Phone:'".$params['phone']."'\n
 Attending:', '".$params['attending']."'\n
 Address:', '".$params['address']."'\n 
-City/State/Zip:', '".$_POST['city']."', '".$params['state']."', '".$params['zip']."'\n
+City/State/Zip:', '".$params['city']."', '".$params['state']."', '".$params['zip']."'\n
 Comment:'".$params['comment']."' ";
 $mailer->AddAddress('goblue18@gmail.com');
 $mailer->AddReplyTo($_POST['email'], "{$params['firstname']} {$params['lastname']}");
