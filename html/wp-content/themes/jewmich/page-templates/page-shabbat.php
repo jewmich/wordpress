@@ -161,6 +161,9 @@ function verify() {
 	width: 100%;
 	padding: 5px 0
 }
+.chabad-header {
+	line-height: 24px;	
+}
 </style>
 
 <p class="chabad"> 
@@ -209,9 +212,9 @@ Secure on-line from</a>.&nbsp;
 		</font>
 		<?php endif ?>
 	</p>
-   <p align="center">
+   <p>
 		<label for="phone" class="chabad">*</label>
-		<input type="text" size="24" maxsize="50" name="phone" id="phone"/>
+		<input type="text" size="24" maxsize="50" name="phone" id="phone" placeholder="Phone number"/>
 		<br>
       <input class="login" width="50" type="submit" value="Continue >">
 		<br>
@@ -240,47 +243,38 @@ Secure on-line from</a>.&nbsp;
    <table border="0" width="72%" id="registertable">
 <?php if (!isset($person)): ?>
       <tr>
-         <td width="43%" class="chabad">* Your Full Name</td>
-			<td width="51%">
-				<input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="realname">
-			</td>
+		  <label for="realname">Full Name </label>
+		  <input TYPE="text" size="24" maxsize="50" name="realname" id="realname" required>
+		  <br />
       </tr>
       <tr>
-         <td width="43%" class="chabad">* Your Email</td>
-			<td width="51%">
-				<input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="email">
-			</td>
+			<label for="email">Email </label>
+			<input type="text" size="24" maxsize="50" name="email" id="email" required>
+		    <br />
       </tr>
       <tr>
-         <td width="43%" class="chabad">* Re-type Email</td>
-			<td width="51%">
-				<input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="elll0">
-			</td>
+		  <label for="elll0">Retype Email </label>
+		  <input type="text" size="24" maxsize="50" name="elll0" id="elll0" required>
+		  <br />
       </tr>
       <tr>
-         <td width="43%" class="chabad">* Cell Phone</td>
-			<td width="51%" class="chabad">
-				<input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="phone" VALUE="<?=
+		  <label for="phone">Phone Number </label>
+				<input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="phone" id="phone" VALUE="<?=
 					isset($_POST['phone']) ? $_POST['phone'] : ''
 				?>"/>
-			</td>
+		  
+		  <br />
       </tr>
       <tr>
-         <td width="43%" class="chabad">
-            <p class="chabad-small"><font color="#FF0000">*Required Fields </font>
-         </td>
-         <td width="16%" class="chabad">&nbsp;</td>
-      </tr>
-      <tr>
-         <td width="43%" class="chabad">U of M School year</td>
-         <td width="52%" class="chabad">
-					<?= do_shortcode('[um_school_year_dropdown]') ?>
+         <td>U of M School year</td>
+         <td>
+			<?= do_shortcode('[um_school_year_dropdown]') ?>
          </td>
       </tr>
 <?php endif ?>
       <tr>
-        <td width="43%" class="chabad">How many people ?</td>
-        <td width="51%">
+        <td>How many people?</td>
+        <td>
            <select size="1" name="people">
               <option selected value="1">1</option>
               <option>2</option>
@@ -291,8 +285,8 @@ Secure on-line from</a>.&nbsp;
         </td>
       </tr>
       <tr>
-        <td width="43%"><span class="chabad">For which week?</font></td>
-        <td width="51%"><span class="chabad">
+        <td><span class="chabad">For which week?</font></td>
+        <td><span class="chabad">
            <select size="1" name="week">
               <option>Chose one</option><br />
               <option>This Week</option>

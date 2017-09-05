@@ -9,7 +9,7 @@ get_header();
     <p align="center">
      <span class="chabad">
       <span class="chabad-header">
-       Sorry!
+       Oy Vey!
        <br/>
        The page you have requested could not be found.
        <br/>
