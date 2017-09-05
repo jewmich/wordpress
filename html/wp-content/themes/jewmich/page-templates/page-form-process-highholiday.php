@@ -28,21 +28,21 @@ $GLOBALS['wpdb']->insert('High Holiday', $params);
 
 $mailer = getMailer();
 $mailer->Subject = $_POST['subject'];
-$mailer->Body = "'".$_POST['firstname']."', '".$_POST['lastname']."'\n
-Email:'".$_POST['email']."'\n
-Phone:'".$_POST['phone']."'\n
-Attending:', '".$_POST['attending']."'\n
-Address:', '".$_POST['address']."'\n 
-City/State/Zip:', '".$_POST['city']."', '".$_POST['state']."', '".$_POST['zip']."'\n
-Comment:'".$_POST['comment']."'  ";
+$mailer->Body = "'".$params['firstname']."', '".$params['lastname']."'\n
+Email:'".$params['email']."'\n
+Phone:'".$params['phone']."'\n
+Attending:', '".$params['attending']."'\n
+Address:', '".$params['address']."'\n 
+City/State/Zip:', '".$_POST['city']."', '".$params['state']."', '".$params['zip']."'\n
+Comment:'".$params['comment']."' ";
 $mailer->AddAddress('goblue18@gmail.com');
-$mailer->AddReplyTo($_POST['email'], "{$_POST['firstname']} {$_POST['lastname']}");
+$mailer->AddReplyTo($_POST['email'], "{$params['firstname']} {$params['lastname']}");
 $mailer->SetFrom(WEBFORM_EMAIL);
 $mailer->Send();
 
 $mailer = getMailer();
 $mailer->Subject = "High Holiday Reservation";
-$mailer->Body = "Hey ".$_POST['firstname'].",
+$mailer->Body = "Hey ".$params['firstname'].",
 
 This is to confirm that your High Holiday Reservation was received.
 

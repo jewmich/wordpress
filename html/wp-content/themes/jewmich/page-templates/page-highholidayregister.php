@@ -52,7 +52,7 @@ return false;
 }
 //  End -->
 </script>
-<form action="/page-form-process-highholiday" method="post" name="form">
+<form action="/form-process-highholiday" method="post" name="form">
 	<input name="subject" type="hidden" value="High holiday Reservation"/>
 	<table background="pic/chabad-bg.gif" border="0" class="chabad" id="table11" width="448">
 		<tbody>
