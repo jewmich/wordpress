@@ -90,22 +90,7 @@ define('ERROR_EMAIL_RECIPIENTS', 'mason.malone@gmail.com,alter@jewmich.com');
 define('LATITUDE_ANNARBOR', 42.22);
 define('LONGITUDE_ANNARBOR', -83.75);
 
-function passoverDates() {
-	$currentJewishCal = cal_from_jd(unixtojd(time()), CAL_JEWISH);
-	$currentJewishYear = $currentJewishCal['year'];
-
-	$dates = [];
-	foreach ([
-		'start' => 14,
-		'firstSeder' => 15,
-		'secondSeder' => 16
-	] as $name => $day) {
-		$dates[$name] = jdtounix(jewishtojd(8, $day, $currentJewishYear));
-	}
-
-	return $dates;
-}
-
+require_once('includes/calendar.php');
 require_once('includes/mailer.php');
 require_once('includes/shortcodes.php');
 require_once('includes/Person.php');

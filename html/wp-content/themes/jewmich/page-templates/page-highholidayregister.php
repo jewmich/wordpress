@@ -9,7 +9,6 @@ $currentJewishCal = cal_from_jd(unixtojd(time()), CAL_JEWISH);
 $curJewishYear = $currentJewishCal['year'];
 $nextRoshHoshanahStart = jewishtojd(1, 1, $curJewishYear);
 $nextRoshHoshanahEnd = jewishtojd(1, 2, $curJewishYear);
-$nextRoshHoshanahUnix = jdtounix($nextRoshHoshanahStart);
 $nextYomKippurStart = jdtounix(jewishtojd(1, 10, $curJewishYear));
 $nextYomKippurEnd = $nextYomKippurStart + (24 * 60 * 60);
 if ($nextYomKippurEnd < time()) {
@@ -18,8 +17,8 @@ if ($nextYomKippurEnd < time()) {
 	$nextYomKippurEnd = $nextYomKippurStart + (24 * 60 * 60);
 	$nextRoshHoshanahStart = jewishtojd(1, 1, $curJewishYear + 1);
 	$nextRoshHoshanahEnd = jewishtojd(1, 2, $curJewishYear + 1);
-	$nextRoshHoshanahUnix = jdtounix($nextRoshHoshanahStart);
 }
+$nextRoshHoshanahUnix = jdtounix($nextRoshHoshanahStart);
 //echo "CUR JEWISH YEAR: $curJewishYear<br>NEXT ROSH HASHANAH: " . date('r', $nextRoshHoshanahUnix). "<br>NEXT YOM KIPPUR: " . date('r', $nextYomKippurStart) . "<br>";
 get_header();
 ?>
@@ -361,7 +360,7 @@ return false;
 								</tr>
 								<tr>
 									<td width="53%">
-										<?= date('l, F j', $nextRoshHoshanahUnix) ?>
+										<?= get_wordpress_date('l, F j', $nextRoshHoshanahUnix) ?>
 									</td>
 									<td width="19%">
 										7:30 pm
@@ -388,7 +387,7 @@ $firstMorningRoshHashanah = strtotime('tomorrow 9:45 AM', $nextRoshHoshanahUnix)
 ?>
 								<tr>
 									<td width="53%">
-										<?= date('l, F j', $nextRoshHoshanahUnix + (24 * 60 * 60)) ?>
+										<?= get_wordpress_date('l, F j', $nextRoshHoshanahUnix + (24 * 60 * 60)) ?>
 									</td>
 									<td width="19%">
 										9:45 am
@@ -437,10 +436,10 @@ $finalRoshHashanahService = strtotime('tomorrow	9:45AM', jdtounix($nextRoshHosha
 ?>
 								<tr>
 									<td width="53%">
-										<?= date('l, F j', $finalRoshHashanahService) ?>
+										<?= get_wordpress_date('l, F j', $finalRoshHashanahService) ?>
 									</td>
 									<td width="19%">
-										<?= date('g:i a', $finalRoshHashanahService) ?>
+										<?= get_wordpress_date('g:i a', $finalRoshHashanahService) ?>
 									</td>
 									<td width="14%">
 										<input name="2dyser" type="checkbox" value="y"/>
@@ -476,7 +475,7 @@ if ($nextRoshHoshanahEndInfo['dow'] !== 6): ?>
 								</tr>
 								<tr>
 									<td width="53%">
-										<?= date('l, F j', $nextYomKippurStart) ?> - Kol   								Nidrei
+										<?= get_wordpress_date('l, F j', $nextYomKippurStart) ?> - Kol   								Nidrei
 									</td>
 									<td width="19%">
 										7:00 pm
@@ -489,7 +488,7 @@ if ($nextRoshHoshanahEndInfo['dow'] !== 6): ?>
 								</tr>
 								<tr>
 									<td width="53%">
-										<?= date('l, F j', $nextYomKippurEnd) ?>
+										<?= get_wordpress_date('l, F j', $nextYomKippurEnd) ?>
 									</td>
 									<td width="19%">
 										9:45 am
