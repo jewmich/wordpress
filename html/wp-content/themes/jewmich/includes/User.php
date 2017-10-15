@@ -1,5 +1,7 @@
 <?php
 
+require_once ABSPATH . WPINC . '/class-phpass.php';
+
 class User {
 	public $person;
 	public $passwordHash;
