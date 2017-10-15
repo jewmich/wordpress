@@ -5,7 +5,7 @@
 
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
-if (empty($_POST['subject']) || empty($_POST['email']) || empty($_POST['realname'])) {
+if (empty($_POST['subject']) || empty($_POST['people'])) {
 	header("Location: /shabbat");
 	exit;
 }
@@ -19,6 +19,10 @@ if ($user = User::getLoggedInUser()) {
 		exit;
 	}
 } else {
+	if (empty($_POST['realname']) && empty($_POST['email']) || empty($_POST['phone'])) {
+		header("Location: /shabbat");
+		exit;
+	}
 	$person = Person::getOrCreate('', '', $_POST['realname'], $_POST['email'], $_POST['phone'], 1, $_POST['student']);
 	// this is an intermediary variable that tells success_shabbat.php to give the user the option 
 	// to create an account, which should be tied to $person
