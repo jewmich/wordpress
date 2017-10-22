@@ -22,8 +22,37 @@ get_header();
  <p align="center" class="chabad-header">
                   <?php
 $params = array('date_time' => date('Y-m-d H:i:s', strtotime('+2 hours')));
-$paramKeys = array('firstname', 'lastname', 'email', 'phone', 'styear', 'attending', 'comment', '1ntser', '1ntmel', '1dyser', '1dymel', 'shfr1', '2ntser', '2ntmel', '2dyser', '2dymel', 'shfr2', '3ntser', '3ntmel', 'yk1nt', 'ykdy', 'yk2nt', 'address', 'city', 'state', 'zip');
-foreach ($paramKeys as $paramKey) $params[$paramKey] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
+$paramKeys = array(
+	'firstname' => 'firstname',
+	'lastname' => 'lastname',
+	'email' => 'email',
+	'phone' => 'phone',
+	'styear' => 'year',
+	'attending' => 'attending',
+	'comment' => 'comment',
+	'1ntser' => '1ntser',
+	'1ntmel' => '1ntmel',
+	'1dyser' => '1dyser',
+	'1dymel' => '1dymel',
+	'shfr1' => 'shfr1',
+	'2ntser' => '2ntser',
+	'2ntmel' => '2ntmel',
+	'2dyser' => '2dyser',
+	'2dymel' => '2dymel',
+	'shfr2' => 'shfr2',
+	'3ntser' => '3ntser',
+	'3ntmel' => '3ntmel',
+	'yk1nt' => 'yk1nt',
+	'ykdy' => 'ykdy',
+	'yk2nt' => 'yk2nt',
+	'address' => 'address',
+	'city' => 'city',
+	'state' => 'state',
+	'zip' => 'zip'
+);
+foreach ($paramKeys as $postKey => $dbKey) {
+	$params[$dbKey] = isset($_POST[$postKey]) ? $_POST[$postKey] : '';
+}
 $GLOBALS['wpdb']->insert('High Holiday', $params);
 
 $mailer = getMailer();
@@ -32,7 +61,7 @@ $mailer->Body = "".$params['firstname'].", ".$params['lastname']."\n
 Email: ".$params['email']."\n
 Phone: ".$params['phone']."\n
 Attending: ".$params['attending']."\n
-School_Year: ".$params['styear']."\n
+School_Year: ".$params['year']."\n
 Address: ".$params['address']."\n 
 City/State/Zip:, ".$params['city'].", ".$params['state'].", ".$params['zip']."\n
 Attending:
