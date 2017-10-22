@@ -313,7 +313,7 @@ return false;
 									Year
 								</td>
 								<td class="chabad">
-                           <?= do_shortcode('[um_school_year_dropdown name=year]') ?>
+                           <?= do_shortcode('[um_school_year_dropdown name=year name=styear]') ?>
 								</td>
 							</tr>
 							<tr>
@@ -435,11 +435,13 @@ if ($nextRoshHoshanahStartInfo['dow'] !== 6): ?>
 $finalRoshHashanahService = strtotime('tomorrow	9:45AM', jdtounix($nextRoshHoshanahEnd));
 ?>
 								<tr>
-									<td width="53%">
-										<?= get_wordpress_date('l, F j', $finalRoshHashanahService) ?>
+									<td width="53%">     
+                                    Friday, September 22
+                                    <!--  <?= get_wordpress_date('l, F j', $finalRoshHashanahService) ?> -->
 									</td>
 									<td width="19%">
-										<?= get_wordpress_date('g:i a', $finalRoshHashanahService) ?>
+                                    9:45 am
+										<!-- <?= get_wordpress_date('g:i a', $finalRoshHashanahService) ?> -->
 									</td>
 									<td width="14%">
 										<input name="2dyser" type="checkbox" value="y"/>

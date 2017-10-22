@@ -69,7 +69,7 @@ if (document.form.phone.value=="") {
 			if (document.form.datpref.value=="") {
 				themessage = themessage + " -  Depart Date";
 			}
-			if (document.form.year.value=="") {
+			if (document.form.styear.value=="") {
 themessage = themessage + " -  School Year";
 }
 			//alert if fields are empty and cancel form submit
@@ -291,7 +291,7 @@ themessage = themessage + " -  School Year";
 													</tr>
 													<tr>
 														<td>Class of:</td>
-														<td> <?= do_shortcode('[um_school_year_dropdown name=year]') ?>
+														<td> <?= do_shortcode('[um_school_year_dropdown name=year name=styear]') ?>
         
                                                        </td>
 													</tr>

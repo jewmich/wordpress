@@ -43,35 +43,42 @@ function verify() {
 		<tr>
 			<td>
 <?php if (isset($_POST['form']) && $_POST['form'] == "submitted"): ?>
-	<p align="center" class="chabad-header"><?= reserveDate($_POST) ?><br></p>
+	<p align="center" class="font-weight-bold"><?= reserveDate($_POST) ?><br></p>
 <?php
 //if they need to fill out the form to sign up for a Kiddush
 elseif(!isset($_POST['change'])): ?>
 			</td>
 		</tr>
 		<tr>
-			<td align="center" colspan="2" bgcolor="#FFFFFF">
-				<p class="chabad-header">Simply fill out this form&nbsp;
-				<font color="#FF0000"><br>*Required Fields </font>
-			</td>
+			<td align="center" colspan="2">
+            
+            <p><strong>Simply fill out this form</strong></p>
+				
+			
+			  </td>
 		</tr>
 		<tr>
-			<td width="50%" colspan="2"><span class="chabad">
-				<p align="center" class="chabad-header">You are reserving the week of <?= date("M j, Y", jdtounix($_POST['originalJd'] + 1)) ?></p></span>
+		  <td colspan="2" align="center">
+          <p class="text-danger">*Required Fields.</p>
+          
+           </td>
+	  </tr>
+		<tr>
+			<td colspan="2">
+				<p align="center" class="font-weight-bold">You are reserving the week of 
+				<?= get_wordpress_date("M j, Y", jdtounix($_POST['originalJd'] + 1)) ?></p>
 			</td>
 		</tr>
 		<tr>
 			<td><span class="chabad"><font color="#FF0000">*</font> Your
-					Full Name
+					Full Name</span>
 			</td>
 			<td><span class="chabad">
-					<font color="#FFFFFF"><input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="realname"></font>
+					<input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="realname"></span>
 			</td>
 		</tr>
 		<tr>
-			<td><span class="chabad"><font color="#FF0000">*</font> Your
-						Email</span> 
-			</td>
+			<td><font color="#FF0000">*</font> Your Email</td>
 			<td><span class="chabad">
 					<input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="email"></span>
 			</td>
@@ -98,14 +105,14 @@ elseif(!isset($_POST['change'])): ?>
 				</font>
 			</td>
 			<td><span class="chabad">
-					<font color="#FFFFFF"><select size="1" name="foundus">
+					<select size="1" name="foundus">
 							<option>Chose one</option>
 							<option>Advertisement</option>
 							<option>Friend</option>
 							<option>Search engine</option>
 							<option>Family member</option>
 							<option>Other</option>
-				</select></font>
+				</select>
 			</td>
 		</tr>
 		<tr>

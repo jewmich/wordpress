@@ -16,13 +16,13 @@ if (empty($_POST['subject'])) {
 }
 
 $params = array('signed_up_at' => date('Y-m-d H:i:s', strtotime('+3 hours')));
-$paramKeys = array('firstname', 'lastname', 'email', 'phone', 'foundus', 'year', 'isstudent', 'datpref', 'suggestion');
+$paramKeys = array('firstname', 'lastname', 'email', 'phone', 'foundus', 'styear', 'isstudent', 'datpref', 'suggestion');
 foreach ($paramKeys as $paramKey) $params[$paramKey] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
 $GLOBALS['wpdb']->insert('Birthright', $params);
 
 $mailer = getMailer();
 $mailer->Subject = $_POST['subject'];
-$mailer->Body = $_POST['firstname']." ".$_POST['lastname']."\n Email: ".$_POST['email']."\n Phone: ".$_POST['phone']."\n Found us: ".$_POST['foundus']."\n Year: ".$_POST['year']."\n Mich Student:".$_POST['isstudent']."\n Date Pref: ".$_POST['datpref']."\n Suggestion:".$_POST['suggestion'];
+$mailer->Body = $_POST['firstname']." ".$_POST['lastname']."\n Email: ".$_POST['email']."\n Phone: ".$_POST['phone']."\n Found us: ".$_POST['foundus']."\n Year: ".$_POST['styear']."\n Mich Student:".$_POST['isstudent']."\n Date Pref: ".$_POST['datpref']."\n Suggestion:".$_POST['suggestion'];
 $mailer->AddAddress(WEBFORM_EMAIL);
 $mailer->AddReplyTo($_POST['email'], "{$_POST['firstname']} {$_POST['lastname']}");
 $mailer->SetFrom(WEBFORM_EMAIL);

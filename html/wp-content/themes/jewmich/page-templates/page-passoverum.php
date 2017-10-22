@@ -40,7 +40,7 @@ get_header();
        ON-LINE UM STUDENT PASSOVER RESERVATIONS FORM
       </span>
       <br/>
-		<?= date('F j', $passoverDates['firstSeder']) ?> - <?= date('F j', $passoverDates['secondSeder']) ?>, <?= idate('Y', $passoverDates['firstSeder']) ?> <?= date('g:i A', $sunsetTimeOnFirstSeder) ?>
+		<?= get_wordpress_date('F j', $passoverDates['firstSeder']) ?> - <?= get_wordpress_date('F j', $passoverDates['secondSeder']) ?>, <?= idate('Y', $passoverDates['firstSeder']) ?> <?= get_wordpress_date('g:i A', $sunsetTimeOnFirstSeder) ?>
      </span>
     </p>
    </td>
@@ -175,10 +175,10 @@ get_header();
          <table border="0" width="526" id="table8">
            <tr>
              <td class="chabad" colspan="3">
-               <p class="chabad-header">1st Seder <?= date('D F j, Y', $passoverDates['firstSeder']) ?></p>
+               <p class="chabad-header">1st Seder <?= get_wordpress_date('D F j, Y', $passoverDates['firstSeder']) ?></p>
                </td>
              <td class="chabad" colspan="3">
-               <p class="chabad-header">2nd Seder <?= date('D F j, Y', $passoverDates['secondSeder']) ?></p>
+               <p class="chabad-header">2nd Seder <?= get_wordpress_date('D F j, Y', $passoverDates['secondSeder']) ?></p>
                </td>
              </tr>
            <tr>

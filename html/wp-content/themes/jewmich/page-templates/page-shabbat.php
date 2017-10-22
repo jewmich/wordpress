@@ -6,25 +6,25 @@
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 if (isset($_GET['wronguser'])) {
-	unset($_SESSION['phone']);
+  unset($_SESSION['phone']);
 }
 
 $phoneNotFound = false;
 $user = User::getLoggedInUser();
 if (!is_null($user)) {
-	$person = $user->person;
-	unset($user);
+  $person = $user->person;
+  unset($user);
 } else {
-	if (!empty($_POST['phone'])) {
-		$person = Person::getByPhone($_POST['phone']);
-		if (is_null($person)) {
-			$phoneNotFound = true;
-		} else {
-			$_SESSION['phone'] = $_POST['phone'];
-		}
-	} elseif (!empty($_SESSION['phone'])) {
-		$person = Person::getByPhone($_SESSION['phone']);
-	}
+  if (!empty($_POST['phone'])) {
+    $person = Person::getByPhone($_POST['phone']);
+    if (is_null($person)) {
+      $phoneNotFound = true;
+    } else {
+      $_SESSION['phone'] = $_POST['phone'];
+    }
+  } elseif (!empty($_SESSION['phone'])) {
+    $person = Person::getByPhone($_SESSION['phone']);
+  }
 }
 
 function serviceTime(){
@@ -126,28 +126,28 @@ get_header();
 ?>
 <script LANGUAGE="JavaScript" type="text/javascript">
 function verify() {
-	var themessage = "You are required to complete the following fields: ";
-	if (document.register_form.realname.value=="") {
-		themessage = themessage + " - Your full name";
-	}
-	if (document.register_form.email.value=="") {
-		themessage = themessage + " -  Your E-mail";
-	}
-	if (document.register_form.phone.value=="") {
-		themessage = themessage + " -  Your Phone Number";
-	}
+  var themessage = "You are required to complete the following fields: ";
+  if (document.register_form.realname.value=="") {
+    themessage = themessage + " - Your full name";
+  }
+  if (document.register_form.email.value=="") {
+    themessage = themessage + " -  Your E-mail";
+  }
+  if (document.register_form.phone.value=="") {
+    themessage = themessage + " -  Your Phone Number";
+  }
 
-	if (document.register_form.email.value != document.register_form.elll0.value) {
-		themessage = "Emails do not match";
-	}
+  if (document.register_form.email.value != document.register_form.elll0.value) {
+    themessage = "Emails do not match";
+  }
 
-	//alert if fields are empty and cancel form submit
-	if (themessage == "You are required to complete the following fields: ") {
-		document.register_form.submit();
-	}
-	else {
-		alert(themessage);
-		return false;
+  //alert if fields are empty and cancel form submit
+  if (themessage == "You are required to complete the following fields: ") {
+    document.register_form.submit();
+  }
+  else {
+    alert(themessage);
+    return false;
    }
 }
 </script>
@@ -157,12 +157,12 @@ function verify() {
    width: 70px;
 }
 #shabatContainer {
-	background-image: url(/pic/chabad-bg.gif);
-	width: 100%;
-	padding: 5px 0
+  background-image: url(/pic/chabad-bg.gif);
+  width: 100%;
+  padding: 5px 0
 }
 .chabad-header {
-	line-height: 24px;	
+  line-height: 24px;  
 }
 </style>
 
@@ -202,22 +202,22 @@ Secure on-line from</a>.&nbsp;
 <?php if (!isset($person)): ?>
 <form name="login_form" method="post">
 <div style="background-image: url(/pic/chabad-bg.gif); width: 100%; padding: 5px 0">
-	<p class="chabad-header">
-		Have you RSVP'd in the past? <br />
+  <p class="chabad-header">
+    Have you RSVP'd in the past? <br />
      Enter your phone number here!
 <?php if ($phoneNotFound): ?>
-		<br>
-		<font color='red'>
-		Your phone number isn't in our system yet. Please fill out the form below to add it.
-		</font>
-		<?php endif ?>
-	</p>
+    <br>
+    <font color='red'>
+    Your phone number isn't in our system yet. Please fill out the form below to add it.
+    </font>
+    <?php endif ?>
+  </p>
    <p>
-		<label for="phone" class="chabad">*</label>
-		<input type="text" size="24" maxsize="50" name="phone" id="phone" placeholder="Phone number"/>
-		<br>
+    <label for="phone" class="chabad">*</label>
+    <input type="text" size="24" maxsize="50" name="phone" id="phone" placeholder="Phone number"/>
+    <br>
       <input class="login" width="50" type="submit" value="Continue >">
-		<br>
+    <br>
    </p>
 </div>
 <br>
@@ -228,47 +228,47 @@ Secure on-line from</a>.&nbsp;
 <input type=hidden name="subject" value="Shabbat Dinner Web Submission">
 
 <div id="shabatContainer">
-	<p class="chabad-header">
+  <p class="chabad-header">
 <?php if (!isset($person)): ?>
-	Don't have an account yet? <br />
-	Fill out this form to reserve a space at our Shabbat Dinner!
+  Don't have an account yet? <br />
+  Fill out this form to reserve a space at our Shabbat Dinner!
 <?php else: ?>
-	Welcome <?= $person->getName() ?>!
-	<?php if (is_null(User::getLoggedInUser())): ?>(<a href="/shabbat?wronguser">Not you?</a>)<?php endif ?>
-	<br>
-	Fill out this form to reserve a space at our Shabbat Dinner, or <a href="/myaccount">click here to change your contact information</a>.
-	<input type=hidden name="person_id" value="<?= $person->id ?>">
+  Welcome <?= $person->getName() ?>!
+  <?php if (is_null(User::getLoggedInUser())): ?>(<a href="/shabbat?wronguser">Not you?</a>)<?php endif ?>
+  <br>
+  Fill out this form to reserve a space at our Shabbat Dinner, or <a href="/myaccount">click here to change your contact information</a>.
+  <input type=hidden name="person_id" value="<?= $person->id ?>">
 <?php endif ?>
-	</p>
+  </p>
    <table border="0" width="72%" id="registertable">
 <?php if (!isset($person)): ?>
       <tr>
-		  <label for="realname">Full Name </label>
-		  <input TYPE="text" size="24" maxsize="50" name="realname" id="realname" required>
-		  <br />
+      <label for="realname">Full Name </label>
+      <input TYPE="text" size="24" maxsize="50" name="realname" id="realname" required>
+      <br />
       </tr>
       <tr>
-			<label for="email">Email </label>
-			<input type="text" size="24" maxsize="50" name="email" id="email" required>
-		    <br />
+      <label for="email">Email </label>
+      <input type="text" size="24" maxsize="50" name="email" id="email" required>
+        <br />
       </tr>
       <tr>
-		  <label for="elll0">Retype Email </label>
-		  <input type="text" size="24" maxsize="50" name="elll0" id="elll0" required>
-		  <br />
+      <label for="elll0">Retype Email </label>
+      <input type="text" size="24" maxsize="50" name="elll0" id="elll0" required>
+      <br />
       </tr>
       <tr>
-		  <label for="phone">Phone Number </label>
-				<input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="phone" id="phone" VALUE="<?=
-					isset($_POST['phone']) ? $_POST['phone'] : ''
-				?>"/>
-		  
-		  <br />
+      <label for="phone">Phone Number </label>
+        <input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="phone" id="phone" VALUE="<?=
+          isset($_POST['phone']) ? $_POST['phone'] : ''
+        ?>"/>
+      
+      <br />
       </tr>
       <tr>
          <td>U of M School year</td>
          <td>
-			<?= do_shortcode('[um_school_year_dropdown]') ?>
+      <?= do_shortcode('[um_school_year_dropdown]') ?>
          </td>
       </tr>
 <?php endif ?>
@@ -317,9 +317,9 @@ Secure on-line from</a>.&nbsp;
          </td>
       </tr>
    </table>
-	<p align="center">
-		<input type="submit" value="Reserve Shabbat Dinner" <?= isset($person) ? '' : ' onclick="return verify();"'?>>
-	</p>
+  <p align="center">
+    <input type="submit" value="Reserve Shabbat Dinner" <?= isset($person) ? '' : ' onclick="return verify();"'?>>
+  </p>
 </div>
 </form>
 <?php
