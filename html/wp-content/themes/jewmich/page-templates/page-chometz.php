@@ -42,7 +42,7 @@ get_header();
 	<br/>
 	Please fill out the form bellow.  If you are 
 	unable to submit your form on-line you may do it in person until 
-	<?= date('l F j, Y h:iA', $closeDate) ?>.
+	<?= get_wordpress_date('l F j, Y h:iA', $closeDate) ?>.
 </p>
 <br/>
 <?php if (time() < $openDate || time() > $closeDate): ?>

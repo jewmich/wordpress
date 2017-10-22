@@ -291,7 +291,7 @@ themessage = themessage + " -  School Year";
 													</tr>
 													<tr>
 														<td>Class of:</td>
-														<td> <?= do_shortcode('[um_school_year_dropdown name=year name=styear]') ?>
+														<td> <?= do_shortcode('[um_school_year_dropdown name=styear]') ?>
         
                                                        </td>
 													</tr>

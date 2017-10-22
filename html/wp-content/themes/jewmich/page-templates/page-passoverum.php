@@ -40,7 +40,7 @@ get_header();
        ON-LINE UM STUDENT PASSOVER RESERVATIONS FORM
       </span>
       <br/>
-		<?= get_wordpress_date('F j', $passoverDates['firstSeder']) ?> - <?= get_wordpress_date('F j', $passoverDates['secondSeder']) ?>, <?= idate('Y', $passoverDates['firstSeder']) ?> <?= get_wordpress_date('g:i A', $sunsetTimeOnFirstSeder) ?>
+		<?= get_wordpress_date('F j', $passoverDates['firstSeder']) ?> - <?= get_wordpress_date('F j', $passoverDates['secondSeder']) ?>, <?= get_wordpress_date('Y', $passoverDates['firstSeder']) ?> <?= get_wordpress_date('g:i A', $sunsetTimeOnFirstSeder) ?>
      </span>
     </p>
    </td>

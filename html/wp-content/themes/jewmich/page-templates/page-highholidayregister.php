@@ -313,7 +313,7 @@ return false;
 									Year
 								</td>
 								<td class="chabad">
-                           <?= do_shortcode('[um_school_year_dropdown name=year name=styear]') ?>
+                           <?= do_shortcode('[um_school_year_dropdown name=styear]') ?>
 								</td>
 							</tr>
 							<tr>

@@ -14,7 +14,7 @@ function passoverDates() {
 		'firstSeder' => 15,
 		'secondSeder' => 16
 	] as $name => $day) {
-		$dates[$name] = jdtounix_with_timezone(jewishtojd(8, $day, $currentJewishYear));
+		$dates[$name] = jdtounix(jewishtojd(8, $day, $currentJewishYear));
 	}
 
 	return $dates;

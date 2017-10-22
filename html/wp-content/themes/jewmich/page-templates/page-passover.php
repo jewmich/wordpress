@@ -26,12 +26,12 @@ get_header();
         </tr>
         <tr>
           <td background="pic/chabad-bg.gif"><p align="center"> <span class="chabad"> <span class="chabad-header"> ON-LINE PASSOVER RESERVATIONS FORM </span> <br/>
-            <?= date('F j', $passoverDates['firstSeder']) ?>
+            <?= get_wordpress_date('F j', $passoverDates['firstSeder']) ?>
             -
-            <?= date('F j', $passoverDates['secondSeder']) ?>
+            <?= get_wordpress_date('F j', $passoverDates['secondSeder']) ?>
             ,
-            <?= idate('Y', $passoverDates['firstSeder']) ?>
-            <?= date('g:i A', $sunsetTimeOnFirstSeder) ?>
+            <?= get_wordpress_date('Y', $passoverDates['firstSeder']) ?>
+            <?= get_wordpress_date('g:i A', $sunsetTimeOnFirstSeder) ?>
           </span> </p></td>
         </tr>
         <tr>
