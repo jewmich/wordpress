@@ -383,7 +383,7 @@ return false;
 									</td>
 								</tr>
 <?php
-$firstMorningRoshHashanah = strtotime('tomorrow 9:45 AM', $nextRoshHoshanahUnix);
+$firstMorningRoshHashanah = strtotime('tomorrow 9:45 AM EDT', $nextRoshHoshanahUnix);
 ?>
 								<tr>
 									<td width="53%">
@@ -401,8 +401,8 @@ $firstMorningRoshHashanah = strtotime('tomorrow 9:45 AM', $nextRoshHoshanahUnix)
 								</tr>
 <?php
 // check if it's on shabbat. If so, skip shofar blowing
-$nextRoshHoshanahStartInfo = cal_from_jd($nextRoshHoshanahStart, CAL_JEWISH);
-if ($nextRoshHoshanahStartInfo['dow'] !== 6): ?>
+$nextRoshHoshanahStartWeekday = get_wordpress_date('N', $nextRoshHoshanahStart);
+if ($nextRoshHoshanahStartWeekday !== '6'): ?>
 								<tr>
 									<td width="53%">
 										Shofer Blowing
@@ -432,16 +432,14 @@ if ($nextRoshHoshanahStartInfo['dow'] !== 6): ?>
 									</td>
 								</tr>
 <?php
-$finalRoshHashanahService = strtotime('tomorrow	9:45AM', jdtounix($nextRoshHoshanahEnd));
+$finalRoshHashanahService = strtotime('9:45AM EDT', jdtounix($nextRoshHoshanahEnd));
 ?>
 								<tr>
 									<td width="53%">     
-                                    Friday, September 22
-                                    <!--  <?= get_wordpress_date('l, F j', $finalRoshHashanahService) ?> -->
+                              <?= get_wordpress_date('l, F j', $finalRoshHashanahService) ?>
 									</td>
 									<td width="19%">
-                                    9:45 am
-										<!-- <?= get_wordpress_date('g:i a', $finalRoshHashanahService) ?> -->
+										<?= get_wordpress_date('g:i a', $finalRoshHashanahService) ?>
 									</td>
 									<td width="14%">
 										<input name="2dyser" type="checkbox" value="y"/>
@@ -452,8 +450,8 @@ $finalRoshHashanahService = strtotime('tomorrow	9:45AM', jdtounix($nextRoshHosha
 								</tr>
 <?php
 // check if it's on shabbat. If so, skip shofar blowing
-$nextRoshHoshanahEndInfo = cal_from_jd($nextRoshHoshanahEnd, CAL_JEWISH);
-if ($nextRoshHoshanahEndInfo['dow'] !== 6): ?>
+$nextRoshHoshanahEndWeekday = get_wordpress_date('N', $nextRoshHoshanahEnd);
+if ($nextRoshHoshanahEndWeekday !== '6'): ?>
 								<tr>
 									<td width="53%">
 										Shofer Blowing
