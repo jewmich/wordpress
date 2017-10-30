@@ -6,8 +6,8 @@
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 $year = currentJewishYear();
-$openDate = jewishtojdunix(8, 24, $year - 1);
-$closeDate = jewishtojdunix(8, 13, $year);
+$openDate = strtotime('12:00AM America/New_York', jewishtojdunix(8, 24, $year - 1));
+$closeDate = strtotime('12:00AM America/New_York', jewishtojdunix(8, 13, $year));
 get_header();
 ?>
 
