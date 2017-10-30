@@ -34,7 +34,7 @@ $params = array(
 	'people'=> $_POST['people'],
 	'week' => $_POST['week'],
 	'suggestion' => $_POST['suggestion'],
-	'signedup' => date('Y-m-d H:i:s', strtotime('+3 hours')),
+	'signedup' => get_wordpress_date('Y-m-d H:i:s', strtotime('+3 hours')),
 );
 $GLOBALS['wpdb']->insert('Shabbat', $params);
 

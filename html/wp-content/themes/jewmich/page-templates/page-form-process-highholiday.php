@@ -21,7 +21,7 @@ get_header();
                   
  <p align="center" class="chabad-header">
                   <?php
-$params = array('date_time' => date('Y-m-d H:i:s', strtotime('+2 hours')));
+$params = array('date_time' => get_wordpress_date('Y-m-d H:i:s', strtotime('+2 hours')));
 $paramKeys = array(
 	'firstname' => 'firstname',
 	'lastname' => 'lastname',

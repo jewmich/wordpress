@@ -16,7 +16,7 @@ define('NUM_DAYS_TO_SHOW', 50);
 function getDaysToShow() {
 	$days = array();
 	$lastSaturday = strtotime('last saturday');
-	$curJulianDay = gregoriantojd(idate('m', $lastSaturday), idate('d', $lastSaturday), idate('Y', $lastSaturday));
+	$curJulianDay = gregoriantojd(get_wordpress_date('m', $lastSaturday), get_wordpress_date('d', $lastSaturday), get_wordpress_date('Y', $lastSaturday));
 	for ($i = 1; $i <= NUM_DAYS_TO_SHOW; $i++) {
 		$day = $curJulianDay + (7 * $i);
 		$dayDetails = cal_from_jd($day, CAL_JEWISH);
@@ -97,7 +97,7 @@ function reserveDate($params) {
 	$mailer->Subject = "Chabad Kiddush Confirmation";
 	$mailer->Body = "Dear ".$details['name'].", \n\n" .
 		"Thank you for sponsoring a kiddush at chabad.\n\n" .
-		"Your kiddush has been reserved for: ".date("M j, Y",strtotime($details['date']))." \n\n" .
+		"Your kiddush has been reserved for: ".get_wordpress_date("M j, Y",strtotime($details['date']))." \n\n" .
 		"Sincerely,\n\n" .
 		"Kiddush Coordinator";
 	$mailer->AddAddress($details['email']);

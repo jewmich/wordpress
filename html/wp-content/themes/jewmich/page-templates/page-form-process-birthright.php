@@ -15,7 +15,7 @@ if (empty($_POST['subject'])) {
 	exit;
 }
 
-$params = array('signed_up_at' => date('Y-m-d H:i:s', strtotime('+3 hours')));
+$params = array('signed_up_at' => get_wordpress_date('Y-m-d H:i:s', strtotime('+3 hours')));
 $paramKeys = array(
 	'firstname' => 'firstname',
 	'lastname' => 'lastname',

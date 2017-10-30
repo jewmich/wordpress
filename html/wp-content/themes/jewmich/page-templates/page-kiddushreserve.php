@@ -163,7 +163,7 @@ elseif(!isset($_POST['change'])): ?>
 			<td width="51%" class="chabad">
 				<select NAME="newJd">
 					<?php foreach(getAllowedChangeDays($_POST['originalJd']) as $day): ?>
-					<option value="<?= $day ?>"><?= date("M j, Y", jdtounix($day + 1)) ?></option>
+					<option value="<?= $day ?>"><?= get_wordpress_date("M j, Y", jdtounix($day + 1)) ?></option>
 					<?php endforeach ?>
 				</select>
 			</td>

@@ -107,7 +107,7 @@ if (document.form.phone.value=="") {
                       
                       <p align="center"><b><font color="#FFFFFF" size="2">Taglit-Birthright Israel: Mayanot
 								Blue Goes to Israel 
-                        <?= date("M 'y", NEXT_TRIP_DATE) ?>
+                        <?= get_wordpress_date("M 'y", NEXT_TRIP_DATE) ?>
                       
 									<a href="http://mayanotisrael.com">	<font color="#FFFFFF">www.mayanotisrael.com</font></a>
                       
@@ -137,7 +137,7 @@ if (document.form.phone.value=="") {
 							<p align="left"><SPAN class=text><font color="#FFFFFF">If you are Jewish, 
 									ages 18 through 26 and have never been on a group tour to Israel then you are eligible for this gift!!<br>
 									<br>
-									This great trip is scheduled to leave in the beginning of <?= date('M Y', NEXT_TRIP_DATE) ?>
+									This great trip is scheduled to leave in the beginning of <?= get_wordpress_date('M Y', NEXT_TRIP_DATE) ?>
 									 for 10 
 								   days. Exact dates to be announced late March.</font></SPAN><P class=blackSmall><font color="#FFFFFF">
 								Taglit-Birthright Israel is an innovative partnership
@@ -199,12 +199,12 @@ if (document.form.phone.value=="") {
 													Pre-Register
 													now<br>
 												</font>
-												<font color="#000000">for <?= date("M 'y", NEXT_TRIP_DATE) ?> trip </font></td>
+												<font color="#000000">for <?= get_wordpress_date("M 'y", NEXT_TRIP_DATE) ?> trip </font></td>
 										</tr>
 										<tr>
 											<td align="center" colspan="2">
 												<p class="pp_smaller"><font color="#000000">
-													Scheduled to leave in the beginning of <?= date('M Y', NEXT_TRIP_DATE) ?> for 10 days. 
+													Scheduled to leave in the beginning of <?= get_wordpress_date('M Y', NEXT_TRIP_DATE) ?> for 10 days. 
 													
 													
 													&nbsp;</font></td>

@@ -5,7 +5,7 @@
 
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
-$params = array('signed_up_at' => date('Y-m-d H:i:s', strtotime('+2 hours')));
+$params = array('signed_up_at' => get_wordpress_date('Y-m-d H:i:s', strtotime('+2 hours')));
 $paramKeys = array('firstname', 'midlename', 'lastname', 'email', 'phone', 'dob', 'year', 'citizen', 'passnum', 'pissue', 'passdate', 'fatname', 'fatcell', 'fatemail', 'motname', 'motcell', 'motemail', 'othname', 'othcell', 'othemail', 'extend', 'trip');
 foreach ($paramKeys as $paramKey) $params[$paramKey] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
 $GLOBALS['wpdb']->insert('Trips', $params);
