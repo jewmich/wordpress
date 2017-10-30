@@ -5,9 +5,9 @@
 
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
-$startPassover = passoverDates()['start'];
-$openDate = strtotime('-10 weeks', $startPassover);
-$closeDate = strtotime('07:00PM', $startPassover);
+$year = currentJewishYear();
+$openDate = jewishtojdunix(8, 24, $year - 1);
+$closeDate = jewishtojdunix(8, 13, $year);
 get_header();
 ?>
 
