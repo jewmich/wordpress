@@ -10,7 +10,7 @@ $paramKeys = array('firstname', 'midlename', 'lastname', 'email', 'phone', 'dob'
 foreach ($paramKeys as $paramKey) $params[$paramKey] = isset($_POST[$paramKey]) ? $_POST[$paramKey] : '';
 $GLOBALS['wpdb']->insert('Trips', $params);
 
-#mail(WEBFORM_EMAIL . ", alter@jewmich.com", $_POST['subject'], "'".$_POST['firstname']."', '".$_POST['lastname']."'\n Email:'".$_POST['email']."'\n Phone:'".$_POST['phone']."'\n UM Student:'".$_POST['student']."'\n Year:'".$_POST['year']."'\n Found Us:'".$_POST['foundus']."'\n Involved with:'".$_POST['involvedwith']."'\n Suggestion:'".$_POST['suggestion']."'", "From: ".$_POST['firstname']." ".$_POST['lastname']." <".$_POST['email'].">");
+#mail(WEBFORM_EMAIL . ", $_POST['subject'], "'".$_POST['firstname']."', '".$_POST['lastname']."'\n Email:'".$_POST['email']."'\n Phone:'".$_POST['phone']."'\n UM Student:'".$_POST['student']."'\n Year:'".$_POST['year']."'\n Found Us:'".$_POST['foundus']."'\n Involved with:'".$_POST['involvedwith']."'\n Suggestion:'".$_POST['suggestion']."'", "From: ".$_POST['firstname']." ".$_POST['lastname']." <".$_POST['email'].">");
 
 #mail($_POST['email'], "Culinary Shabbat Registration", "Hey ".$_POST['realname'].",
 
