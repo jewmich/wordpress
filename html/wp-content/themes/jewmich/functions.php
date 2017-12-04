@@ -86,10 +86,6 @@ define('USER1_EMAIL', 'ar7gold@gmail.com');
 define('USER2_EMAIL', 'umchabad@jewmich.com');
 define('ERROR_EMAIL_RECIPIENTS', 'mason.malone@gmail.com,alter@jewmich.com');
 
-// used for sunset calculations
-define('LATITUDE_ANNARBOR', 42.22);
-define('LONGITUDE_ANNARBOR', -83.75);
-
 require_once('includes/calendar.php');
 require_once('includes/mailer.php');
 require_once('includes/shortcodes.php');

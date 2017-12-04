@@ -6,9 +6,6 @@
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 $passoverDates = passoverDates();
-$sunsetTimeOnFirstSeder = date_sunset($passoverDates['firstSeder'], SUNFUNCS_RET_TIMESTAMP, LATITUDE_ANNARBOR, LONGITUDE_ANNARBOR);
-// round to nearest quarter-hour
-$sunsetTimeOnFirstSeder = round($sunsetTimeOnFirstSeder / (15 * 60)) * (15 * 60);
 
 get_header();
 ?>
@@ -40,8 +37,8 @@ get_header();
        ON-LINE UM STUDENT PASSOVER RESERVATIONS FORM
       </span>
       <br/>
-		<?= get_wordpress_date('F j', $passoverDates['firstSeder']) ?> - <?= get_wordpress_date('F j', $passoverDates['secondSeder']) ?>, <?= get_wordpress_date('Y', $passoverDates['firstSeder']) ?> <?= get_wordpress_date('g:i A', $sunsetTimeOnFirstSeder) ?>
-     </span>
+		<?= $passoverDates['firstSeder']->format('F j') ?> - <?= $passoverDates['secondSeder']->format('F j') ?>, <?= $passoverDates['firstSeder']->format('Y g:i A') ?>
+	 </span>
     </p>
    </td>
   </tr>
@@ -175,10 +172,10 @@ get_header();
          <table border="0" width="526" id="table8">
            <tr>
              <td class="chabad" colspan="3">
-               <p class="chabad-header">1st Seder <?= get_wordpress_date('D F j, Y', $passoverDates['firstSeder']) ?></p>
+               <p class="chabad-header">1st Seder <?= $passoverDates['firstSeder']->format('D F j, Y') ?></p>
                </td>
              <td class="chabad" colspan="3">
-               <p class="chabad-header">2nd Seder <?= get_wordpress_date('D F j, Y', $passoverDates['secondSeder']) ?></p>
+               <p class="chabad-header">2nd Seder <?= $passoverDates['secondSeder']->format('D F j, Y') ?></p>
                </td>
              </tr>
            <tr>

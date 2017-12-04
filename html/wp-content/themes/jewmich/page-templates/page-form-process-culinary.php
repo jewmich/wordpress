@@ -16,7 +16,7 @@ $paramKeys = array(
 	'involvedwith' => 'involvedwith',
 	'suggestion' => 'suggestion',
 );
-$params = array('signed_up_at' => get_wordpress_date('Y-m-d H:i:s', strtotime('+3 hours')));
+$params = array('signed_up_at' => datetime_annarbor('+3 hours')->format('Y-m-d H:i:s'));
 foreach ($paramKeys as $dbKey => $postKey) {
 	$params[$dbKey] = isset($_POST[$postKey]) ? $_POST[$postKey] : '';
 }

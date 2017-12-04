@@ -44,7 +44,7 @@ get_header();
 			<?php endif ?>
 			</form>
 		</td>
-		<td class="chabad-small" width="140"><?= get_wordpress_date("M j, Y", jdtounix($jd + 1)) ?></td>
+		<td class="chabad-small" width="140"><?= datetime_from_jd($jd)->format("M j, Y") ?></td>
 		<?php $jewishDetails = cal_from_jd($jd, CAL_JEWISH) ?>
 		<td class="chabad-small"><?= $jewishDetails['day'] . " " . $jewishDetails['monthname'] . ", " . $jewishDetails['year'] ?></td>
 		<?php if ($isCoordinator): ?>

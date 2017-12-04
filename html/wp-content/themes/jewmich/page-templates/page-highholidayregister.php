@@ -5,21 +5,17 @@
 
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
-$currentJewishCal = cal_from_jd(unixtojd(time()), CAL_JEWISH);
-$curJewishYear = $currentJewishCal['year'];
-$nextRoshHoshanahStart = jewishtojd(1, 1, $curJewishYear);
-$nextRoshHoshanahEnd = jewishtojd(1, 2, $curJewishYear);
-$nextYomKippurStart = jdtounix(jewishtojd(1, 10, $curJewishYear));
-$nextYomKippurEnd = $nextYomKippurStart + (24 * 60 * 60);
-if ($nextYomKippurEnd < time()) {
+$curJewishYear = currentJewishYear();
+$nextYomKippurStart = datetime_from_jewish(1, 10, $curJewishYear);
+$nextYomKippurEnd = $nextYomKippurStart->modify('+1 day');
+if ($nextYomKippurEnd < datetime_annarbor()) {
+	$curJewishYear += 1;
 	// Yom Kippur has already passed for the current year. Get next year.
-	$nextYomKippurStart = jdtounix(jewishtojd(1, 10, $curJewishYear + 1));
-	$nextYomKippurEnd = $nextYomKippurStart + (24 * 60 * 60);
-	$nextRoshHoshanahStart = jewishtojd(1, 1, $curJewishYear + 1);
-	$nextRoshHoshanahEnd = jewishtojd(1, 2, $curJewishYear + 1);
+	$nextYomKippurStart = datetime_from_jewish(1, 10, $curJewishYear);
+	$nextYomKippurEnd = $nextYomKippurStart->modify('+1 day');
 }
-$nextRoshHoshanahUnix = jdtounix($nextRoshHoshanahStart);
-//echo "CUR JEWISH YEAR: $curJewishYear<br>NEXT ROSH HASHANAH: " . date('r', $nextRoshHoshanahUnix). "<br>NEXT YOM KIPPUR: " . date('r', $nextYomKippurStart) . "<br>";
+$nextRoshHoshanahStart = datetime_from_jewish(1, 1, $curJewishYear);
+$nextRoshHoshanahEnd = datetime_from_jewish(1, 2, $curJewishYear);
 get_header();
 ?>
 <script language="JavaScript" type="text/javascript">
@@ -360,7 +356,7 @@ return false;
 								</tr>
 								<tr>
 									<td width="53%">
-										<?= get_wordpress_date('l, F j', $nextRoshHoshanahUnix) ?>
+										<?= $nextRoshHoshanahStart->format('l, F j') ?>
 									</td>
 									<td width="19%">
 										7:30 pm
@@ -383,11 +379,11 @@ return false;
 									</td>
 								</tr>
 <?php
-$firstMorningRoshHashanah = strtotime('tomorrow 9:45 AM EDT', $nextRoshHoshanahUnix);
+$firstMorningRoshHashanah = $nextRoshHoshanahStart->modify('9:43 AM tomorrow');
 ?>
 								<tr>
 									<td width="53%">
-										<?= get_wordpress_date('l, F j', $nextRoshHoshanahUnix + (24 * 60 * 60)) ?>
+										<?= $firstMorningRoshHashanah->format('l, F j') ?>
 									</td>
 									<td width="19%">
 										9:45 am
@@ -401,7 +397,7 @@ $firstMorningRoshHashanah = strtotime('tomorrow 9:45 AM EDT', $nextRoshHoshanahU
 								</tr>
 <?php
 // check if it's on shabbat. If so, skip shofar blowing
-$nextRoshHoshanahStartWeekday = get_wordpress_date('N', $nextRoshHoshanahStart);
+$nextRoshHoshanahStartWeekday = $nextRoshHoshanahStart->format('N');
 if ($nextRoshHoshanahStartWeekday !== '6'): ?>
 								<tr>
 									<td width="53%">
@@ -432,14 +428,14 @@ if ($nextRoshHoshanahStartWeekday !== '6'): ?>
 									</td>
 								</tr>
 <?php
-$finalRoshHashanahService = strtotime('9:45AM EDT', jdtounix($nextRoshHoshanahEnd));
+$finalRoshHashanahService = $nextRoshHoshanahEnd->modify('9:45AM');
 ?>
 								<tr>
 									<td width="53%">     
-                              <?= get_wordpress_date('l, F j', $finalRoshHashanahService) ?>
+                              <?= $finalRoshHashanahService->format('l, F j') ?>
 									</td>
 									<td width="19%">
-										<?= get_wordpress_date('g:i a', $finalRoshHashanahService) ?>
+										<?= $finalRoshHashanahService->format('g:i a') ?>
 									</td>
 									<td width="14%">
 										<input name="2dyser" type="checkbox" value="y"/>
@@ -450,7 +446,7 @@ $finalRoshHashanahService = strtotime('9:45AM EDT', jdtounix($nextRoshHoshanahEn
 								</tr>
 <?php
 // check if it's on shabbat. If so, skip shofar blowing
-$nextRoshHoshanahEndWeekday = get_wordpress_date('N', $nextRoshHoshanahEnd);
+$nextRoshHoshanahEndWeekday = $nextRoshHoshanahEnd->format('N');
 if ($nextRoshHoshanahEndWeekday !== '6'): ?>
 								<tr>
 									<td width="53%">
@@ -475,7 +471,7 @@ if ($nextRoshHoshanahEndWeekday !== '6'): ?>
 								</tr>
 								<tr>
 									<td width="53%">
-										<?= get_wordpress_date('l, F j', $nextYomKippurStart) ?> - Kol   								Nidrei
+										<?= $nextYomKippurStart->format('l, F j') ?> - Kol   								Nidrei
 									</td>
 									<td width="19%">
 										7:00 pm
@@ -488,7 +484,7 @@ if ($nextRoshHoshanahEndWeekday !== '6'): ?>
 								</tr>
 								<tr>
 									<td width="53%">
-										<?= get_wordpress_date('l, F j', $nextYomKippurEnd) ?>
+										<?= $nextYomKippurEnd->format('l, F j') ?>
 									</td>
 									<td width="19%">
 										9:45 am

@@ -5,13 +5,12 @@
 
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
-if (time() < strtotime('Aug 25')) {
-	define('NEXT_TRIP_DATE', strtotime('May 1'));
+if (datetime_annarbor() < datetime_annarbor('Aug 25')) {
+	$next_trip_date = datetime_annarbor('May 1');
 } else {
-	define('NEXT_TRIP_DATE', strtotime('May 1, +1 Year'));
+	$next_trip_date = datetime_annarbor('May 1, +1 Year');
 }
-define('PREREG_CUTOFF_DATE', strtotime('feb 1', NEXT_TRIP_DATE));
-
+$prereg_cutoff_date = datetime_annarbor('feb 1 ' . $next_trip_date->format('Y')); 
 ?>
 <html>
 <head>
@@ -107,7 +106,7 @@ themessage = themessage + " -  School Year";
                       
                       <p align="center"><b><font color="#FFFFFF" size="2">Taglit-Birthright Israel: Mayanot
 								Blue Goes to Israel 
-                        <?= get_wordpress_date("M 'y", NEXT_TRIP_DATE) ?>
+                        <?= $next_trip_date->format("M 'y") ?>
                       
 									<a href="http://mayanotisrael.com">	<font color="#FFFFFF">www.mayanotisrael.com</font></a>
                       
@@ -125,7 +124,7 @@ themessage = themessage + " -  School Year";
 									AND THE EXPERIENCE
 									IS PRICELESS<br>
 									&nbsp;</font></b>
-							<?php if (time() > PREREG_CUTOFF_DATE): ?>
+							<?php if (datetime_annarbor() > $prereg_cutoff_date): ?>
 								<br>
 								<span class="pp_heading"><a href="http://register.birthrightisrael.com/index.cfm?org=63&ref=rabbialter">Apply for the trip</a></span><br>&nbsp;</font>
 							<?php endif ?>
@@ -137,7 +136,7 @@ themessage = themessage + " -  School Year";
 							<p align="left"><SPAN class=text><font color="#FFFFFF">If you are Jewish, 
 									ages 18 through 26 and have never been on a group tour to Israel then you are eligible for this gift!!<br>
 									<br>
-									This great trip is scheduled to leave in the beginning of <?= get_wordpress_date('M Y', NEXT_TRIP_DATE) ?>
+									This great trip is scheduled to leave in the beginning of <?= $next_trip_date->format('M Y') ?>
 									 for 10 
 								   days. Exact dates to be announced late March.</font></SPAN><P class=blackSmall><font color="#FFFFFF">
 								Taglit-Birthright Israel is an innovative partnership
@@ -185,7 +184,7 @@ themessage = themessage + " -  School Year";
 					  &nbsp;</font></td>
 					</tr>
 				</table></td>
-			<?php if (time() < PREREG_CUTOFF_DATE): ?>
+			<?php if (datetime_annarbor() < $prereg_cutoff_date): ?>
 			<td width="25%" bgcolor="#9900CC" height="579" valign="top">
 				<table border="0" width="90%" id="table4">
 					<tr>
@@ -202,12 +201,12 @@ themessage = themessage + " -  School Year";
 													Pre-Register
 													now<br>
 												</font>
-												<font color="#000000">for <?= get_wordpress_date("M 'y", NEXT_TRIP_DATE) ?> trip </font></td>
+												<font color="#000000">for <?= $next_trip_date->format("M 'y") ?> trip </font></td>
 										</tr>
 										<tr>
 											<td align="center" colspan="2">
 												<p class="pp_smaller"><font color="#000000">
-													Scheduled to leave in the beginning of <?= get_wordpress_date('M Y', NEXT_TRIP_DATE) ?> for 10 days. 
+													Scheduled to leave in the beginning of <?= $next_trip_date->format('M Y') ?> for 10 days. 
 													
 													
 													&nbsp;</font></td>

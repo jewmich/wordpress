@@ -66,7 +66,7 @@ elseif(!isset($_POST['change'])): ?>
 		<tr>
 			<td colspan="2">
 				<p align="center" class="font-weight-bold">You are reserving the week of 
-				<?= get_wordpress_date("M j, Y", jdtounix($_POST['originalJd'] + 1)) ?></p>
+				<?= datetime_from_jd($_POST['originalJd'])->format("M j, Y") ?></p>
 			</td>
 		</tr>
 		<tr>
@@ -163,7 +163,7 @@ elseif(!isset($_POST['change'])): ?>
 			<td width="51%" class="chabad">
 				<select NAME="newJd">
 					<?php foreach(getAllowedChangeDays($_POST['originalJd']) as $day): ?>
-					<option value="<?= $day ?>"><?= get_wordpress_date("M j, Y", jdtounix($day + 1)) ?></option>
+					<option value="<?= $day ?>"><?= datetime_from_jd($day)->format("M j, Y") ?></option>
 					<?php endforeach ?>
 				</select>
 			</td>

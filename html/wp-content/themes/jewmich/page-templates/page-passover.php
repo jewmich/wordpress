@@ -6,9 +6,6 @@
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 $passoverDates = passoverDates();
-$sunsetTimeOnFirstSeder = date_sunset($passoverDates['firstSeder'], SUNFUNCS_RET_TIMESTAMP, LATITUDE_ANNARBOR, LONGITUDE_ANNARBOR);
-// round to nearest quarter-hour
-$sunsetTimeOnFirstSeder = round($sunsetTimeOnFirstSeder / (15 * 60)) * (15 * 60);
 
 get_header();
 ?>
@@ -26,12 +23,11 @@ get_header();
         </tr>
         <tr>
           <td background="pic/chabad-bg.gif"><p align="center"> <span class="chabad"> <span class="chabad-header"> ON-LINE PASSOVER RESERVATIONS FORM </span> <br/>
-            <?= get_wordpress_date('F j', $passoverDates['firstSeder']) ?>
+            <?= $passoverDates['firstSeder']->format('F j') ?>
             -
-            <?= get_wordpress_date('F j', $passoverDates['secondSeder']) ?>
+            <?= $passoverDates['secondSeder']->format('F j') ?>
             ,
-            <?= get_wordpress_date('Y', $passoverDates['firstSeder']) ?>
-            <?= get_wordpress_date('g:i A', $sunsetTimeOnFirstSeder) ?>
+            <?= $passoverDates['secondSeder']->format('Y g:i A') ?>
           </span> </p></td>
         </tr>
         <tr>

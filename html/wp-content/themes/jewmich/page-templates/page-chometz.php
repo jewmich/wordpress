@@ -6,8 +6,8 @@
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 $year = currentJewishYear();
-$openDate = strtotime('12:00AM America/New_York', jewishtojdunix(8, 24, $year - 1));
-$closeDate = strtotime('12:00AM America/New_York', jewishtojdunix(8, 13, $year));
+$openDate = datetime_from_jewish(8, 24, $year - 1);
+$closeDate = datetime_from_jewish(8, 13, $year);
 get_header();
 ?>
 
@@ -42,10 +42,10 @@ get_header();
 	<br/>
 	Please fill out the form bellow.  If you are 
 	unable to submit your form on-line you may do it in person until 
-	<?= get_wordpress_date('l F j, Y h:iA', $closeDate) ?>.
+	<?= $closeDate->format('l F j, Y h:iA') ?>.
 </p>
 <br/>
-<?php if (time() < $openDate || time() > $closeDate): ?>
+<?php if (datetime_annarbor() < $openDate || datetime_annarbor() > $closeDate): ?>
 <p class="chabad">Sorry, we are closed</p>
 <?php else: ?>
 <form action="https://pay1.plugnpay.com/payment/annarborchapay.cgi" method="post">
