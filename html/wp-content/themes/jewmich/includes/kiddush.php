@@ -17,8 +17,8 @@ function getDaysToShow() {
 	$days = array();
 	$lastSaturday = datetime_annarbor('last saturday');
 	for ($i = 1; $i <= NUM_DAYS_TO_SHOW; $i++) {
-		$day = $lastSaturday->modify("+$i weeks");
-		$day = unixtojd($day->getTimestamp());
+		$lastSaturday = $lastSaturday->modify('next saturday');
+		$day = unixtojd($lastSaturday->getTimestamp());
 		$dayDetails = cal_from_jd($day, CAL_JEWISH);
 		if ($dayDetails['monthname'] === 'Tishri' && $dayDetails['day'] === 10) {
 			// no kiddush on Yom Kippur: http://www.chabad.org/holidays/JewishNewYear/template_cdo/aid/1644723/jewish/Do-We-Recite-the-Sabbath-Kiddush-on-Yom-Kippur.htm
@@ -27,7 +27,7 @@ function getDaysToShow() {
 			// no kiddush during Passover
 			continue;
 		}
-		$days[] = $day;
+		$days[] = $day + 1;
 	}
 	return $days;
 }
