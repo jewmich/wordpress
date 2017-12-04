@@ -72,20 +72,21 @@ function reserveDate($params) {
 		$message = "Thank you<br><br>Your kiddush reservation has been submitted.";
 		$emailSubject = "Kiddush Web Submission";
 		$sql = $wpdb->prepare(' 
-			INSERT INTO `Kiddush` (`date`, `phone`, `email`, `name`, `inhonorof`, `foundus`, `added`)
-			VALUES (%s, %s, %s, %s, %s, %s, DATE_ADD(NOW(), INTERVAL 2 HOUR))
-		', jdToDb($reservedJd), $params['phone'], $params['email'], $params['realname'], $params['honor'], $params['foundus']);
+			INSERT INTO `Kiddush` (`date`, `phone`, `email`, `name`, `inhonorof`, `added`)
+			VALUES (%s, %s, %s, %s, %s, DATE_ADD(NOW(), INTERVAL 2 HOUR))
+		', jdToDb($reservedJd), $params['phone'], $params['email'], $params['realname'], $params['honor']);
 	}
 	$wpdb->query($sql);
 
 	$details = getReservation($reservedJd);
 	$mailer = getMailer();
 	$mailer->Subject = $emailSubject;
-	$mailer->Body = "'".$details['phone']."', '".$details['email']."'\n" .
-		" Date: '".$details['date']."'\n" . 
-		" Name: '".$details['name']."'\n" .
-		" Honor: '".addslashes($details['inhonorof'])."'\n" .
-		" Found Us: '".$details['foundus']."'";
+	$mailer->Body = 
+	" Name: ".$details['name']."\n".
+	" Date: ".$details['date']."\n". 
+	" Phone: ".$details['phone']."\n".
+	" Email: ".$details['email']."\n".
+	" Honor: ".addslashes($details['inhonorof'])."\n";
 	$mailer->AddAddress(WEBFORM_EMAIL);
 	$mailer->AddAddress('aharon@jewmich.com');
 	$mailer->AddAddress('esther@jewmich.com');
