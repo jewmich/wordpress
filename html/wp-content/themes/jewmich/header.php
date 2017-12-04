@@ -16,7 +16,7 @@
 </head>
 <body <?php body_class(); ?>>
 	<header style="background-image: url(<?= header_image() ?>)">
-		<h1><a href="/">C<small>HABAD</small> H<small>OUSE</small> <small>OF</small> A<small>NN</small> A<small>RBOR</small></a></h1>
+		<h1><large><a href="/"><large>CHABAD HOUSE OF ANN ARBOR</large></a></h1>
 		<?php if (is_front_page()): ?>
 		<div class="jumbotron text-center">
 			<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
@@ -98,6 +98,7 @@
 						<li><a href="/highholiday">High Holiday Reservation</a></li>
 						<li><a href="/kiddush">Sponsor a Kiddush Lunch</a></li>
 						<li><a href="/shabbat">RSVP for a Student Shabbat Dinner</a></li>
+						<li><a href="/events">Register for holiday event</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">

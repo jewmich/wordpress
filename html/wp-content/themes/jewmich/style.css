@@ -47,6 +47,8 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		background: url("assets/images/torah_star.jpg") no-repeat #999;
 		background-size: cover;
 	}
+	
+
 	header {
 		background: center no-repeat #333;
 		background-size: cover;
@@ -63,6 +65,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		background: -moz-linear-gradient(top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
 		background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.8));
 		padding: 25px;
+	
 	}
 	header h1 a {
 		color: white;
@@ -70,7 +73,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		font-family: 'Perpetua Titling', serif;
 		letter-spacing: 1px;
 	}
-	header h1 a:hover {
+	header hzzz a:hover {
 		color: #fff;
 	}
 	header .carousel-inner img {
@@ -94,7 +97,8 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	.nav > li li:last-child a {
 		border-bottom: none;
 	}
-
+	
+	
 	#students, #students_article {
 		background-color: #00274c;
 	}
@@ -372,9 +376,11 @@ nav, header, section, article, h1, h2, h3, h4, p {
 	text-decoration: none;
 	text-align: left;
 }
-.chabad a:link {	color: #4C4C4C; text-decoration: underline; }
+/*
+.chabad { color: #4C4C4C; text-decoration: underline; }
 .chabad a:visited {	color: #4C4C4C; text-decoration: underline; }
 .chabad a:hover {	color: #727272; }
+*/
 table.chabad .label { white-space: nowrap }
 
 #table1 {
@@ -416,9 +422,11 @@ table.chabad .label { white-space: nowrap }
 	line-height: 14px;
 	color: #727272;
 }
+/*
 .chabad-sub-info a:link {	color: #727272; text-decoration: none; }
 .chabad-sub-info a:visited {	color: #727272; text-decoration: none; }
 .chabad-sub-info a:hover {	color: #727272; text-decoration: underline; }
+*/
 
 .chabad-small {
 	font-family: Arial, Helvetica, sans-serif;
@@ -436,7 +444,7 @@ table.chabad .label { white-space: nowrap }
 	COLOR: #4C4C4C;
 	text-align: left;
 }
-
+/*
 .linknoline {	font-family: Arial, Helvetica, sans-serif;	font-size: 12px; line-height: 18px;	color: #4C4C4C;}
 .linknoline a:link {	color: #4C4C4C; text-decoration: none; font-weight:none }
 .linknoline a:visited {	color: #4C4C4C;text-decoration: none; font-weight:none }
@@ -446,6 +454,7 @@ table.chabad .label { white-space: nowrap }
 .linkyesline a:link {	color: #4C4C4C; text-decoration: underline; font-weight:none }
 .linkyesline a:visited {	color: #4C4C4C;text-decoration: underline; font-weight:none }
 .linkyesline a:hover {	text-decoration: none; color: #727272;}
+*/
 
 /* honeypot for spam bots */
 form[name="form"] input[name="username"] {
