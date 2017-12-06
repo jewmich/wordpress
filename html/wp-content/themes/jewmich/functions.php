@@ -49,7 +49,7 @@ add_action('init', function() {
 // See example 1 at http://svn.wp-plugins.org/wp-super-cache/trunk/plugins/dynamic-cache-test.php
 require_once(ABSPATH . 'wp-admin/includes/plugin.php');
 if (is_plugin_active('wp-super-cache/wp-cache.php') && function_exists('add_cacheaction')) {
-	add_cacheaction( 'wpsc_cachedata', function(&$cachedata) {
+	add_cacheaction( 'wpsc_cachedata', function($cachedata) {
 		return str_replace('<!-- DYNAMIC_CACHE_SIDEBAR -->', do_shortcode('[user_welcome][sidebar]'), $cachedata);
 	});
 	add_cacheaction( 'wpsc_cachedata_safety', function() { return 1; });
