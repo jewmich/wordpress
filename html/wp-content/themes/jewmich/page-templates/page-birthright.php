@@ -246,7 +246,7 @@ themessage = themessage + " -  School Year";
 										<tr>
 											<td  colspan="2" align="center" valign="top"><p>Date preference:<br>
 										      <font color="#ff0000">
-										    (Graduation this year April 29)</font><span class="pp_smaller"><br>
+										    (Graduation this year April 28)</font><span class="pp_smaller"><br>
 										    </span></p></td>
 										</tr>
 										
@@ -265,7 +265,7 @@ themessage = themessage + " -  School Year";
 													  <td>I can depart:</td>
 													  <td><select size="1" name="datpref">
 													    <option></option>
-													    <option>May 1</option>
+													    <option>April 30</option>
 													                                                       
                                                         <option>June or july</option>
                                                         <option>Any date</option>

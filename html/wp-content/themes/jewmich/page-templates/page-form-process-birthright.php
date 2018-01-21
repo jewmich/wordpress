@@ -22,7 +22,7 @@ $paramKeys = array(
 	'email' => 'email',
 	'phone' => 'phone',
 	'foundus' => 'foundus',
-	'year' => 'styear',
+	'styear' => 'styear',
 	'isstudent' => 'isstudent',
 	'datpref' => 'datpref',
 	'suggestion' => 'suggestion',
@@ -44,18 +44,19 @@ $mailer = getMailer();
 $mailer->Subject = "Mayanot - Blue Goes to Israel Pre-Reg Confirmation";
 $mailer->Body = "Hey ".$_POST['firstname'].",
 
-This email is to confirm that your Mayanot  Blue Goes To Israel pre-registration was received. 
+This email is to confirm that your Mayanot 'Blue Goes To Israel' pre-registration was received. 
 
-You have taken the first step towards an incredible adventure to the Holy Land.  
+You have taken the first step towards an incredible adventure to the Holy Land.
+
+STEP TWO: 
+Begin your official registration TODAY and be able to access your registration a day earlier.
+http://www.mayanotisrael.com 
+
+Official registration open Jan. 30th.
 
 Please watch for emails from Mayanot  Blue Goes to Israel.
 
-This great trip is scheduled to leave in the beginning of May for 10 days. Exact dates TBA.
-
-Official registration for SPRING/SUMMER TBA. We will keep you posted.
-
-If you have any further question, please reply to this email or 
-visit http://www.mayanotisrael.com
+If you have any further question, please reply to this email or visit http://www.mayanotisrael.com
  
 Thank you,
 
