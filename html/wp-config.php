@@ -15,9 +15,9 @@
  */
 
 // Determine environment
-if (__DIR__ === '/home/alterga2/jewmich.com/html') {
+if (strpos(__DIR__, '/jewmich.com/') !== false) {
 	define('ENVIRONMENT', 'production');
-} elseif (__DIR__ === '/home/alterga2/test.jewmich.com/html') {
+} elseif (strpos(__DIR__, '/test.jewmich.com/') !== false) {
 	define('ENVIRONMENT', 'testing');
 } else {
 	define('ENVIRONMENT', 'development'); // inside docker
