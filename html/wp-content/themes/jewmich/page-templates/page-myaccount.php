@@ -5,8 +5,8 @@
 
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
-$user = User::getLoggedInUser();
-if (!$user) {
+$user = wp_get_current_user();
+if (!$user->exists()) {
 	header("Location: /login");
 	exit;
 }
@@ -14,23 +14,35 @@ if (!$user) {
 $errors = array();
 $success = false;
 if (!empty($_POST['email'])) {
-	if ($_POST['email'] != $user->person->email && User::isEmailTaken($_POST['email'])) {
+	if ($_POST['email'] != $user->user_email && !empty(get_user_by('email', $_POST['email']))) {
 		$errors[] = "Email is already registered";
 	}
 	if (!empty($_POST['password']) && $_POST['password'] !== $_POST['reenter_password']) {
 		$errors[] = 'Passwords do not match';
 	}
 	if (empty($errors)) {
-		$user->person->fullName = $_POST['fullname'];
-		$user->person->phone = $_POST['phone'];
-		$user->person->studentYear = $_POST['student'];
-		if ($_POST['email'] != $user->person->email) {
-			$user->person->email = $_POST['email'];
+		$userData = [
+			'ID' => $user->ID,
+			'display_name' => $_POST['fullname'],
+		];
+		update_user_meta($user->ID, 'phone', $_POST['phone']);
+		update_user_meta($user->ID, 'student_year', $_POST['student']);
+		if ($_POST['email'] != $user->user_email) {
+			$GLOBALS['wpdb']->update(
+				$GLOBALS['wpdb']->users,
+				[ 'user_login' => $POST['email'] ],
+				['ID' => $user->ID]
+			);
+			$userData['user_email'] = $_POST['email'];
 		}
 		if (!empty($_POST['password'])) {
-			$user->updatePassword($_POST['password']);
+			$userData['user_pass'] = $_POST['password'];
 		}
-		$success = $user->person->save();
+		$result = wp_update_user($userData);
+		if (is_wp_error($result)) {
+			throw new Exception($result->get_error_message());
+		}
+		$success = true;
 	}
 }
 
@@ -62,7 +74,7 @@ Please correct the errors below:
 				<p class="chabad">Email:</p>
 			</td>
 			<td>
-				<input name="email" type="text" size="24" value="<?= $user->person->email ?>"/>
+				<input name="email" type="text" size="24" value="<?= $user->user_email ?>"/>
 			</td>
 		</tr>
 		<tr>
@@ -70,7 +82,7 @@ Please correct the errors below:
 				<p class="chabad">Full Name:</p>
 			</td>
 			<td>
-				<input name="fullname" type="text" size="24" value="<?= $user->getName() ?>"/>
+				<input name="fullname" type="text" size="24" value="<?= $user->display_name ?>"/>
 			</td>
 		</tr>
 		<tr>
@@ -78,7 +90,7 @@ Please correct the errors below:
 				<p class="chabad">Cell Phone</p>
 			</td>
 			<td>
-				<input type="text" size="24" maxsize="50" name="phone" value="<?= $user->person->phone ?>">
+				<input type="text" size="24" maxsize="50" name="phone" value="<?= get_user_meta($user->ID, 'phone', true) ?>">
 			</td>
 		</tr>
 		<tr>
@@ -86,7 +98,7 @@ Please correct the errors below:
 				<p class="chabad">U of M School year</p>
 			</td>
 			<td>
-				<?= do_shortcode("[um_school_year_dropdown value={$user->person->studentYear}]") ?>
+				<?= do_shortcode("[um_school_year_dropdown value=" . get_user_meta($user->ID, 'student_year', true) . "}]") ?>
 			</td>
 		</tr>
 		<tr>

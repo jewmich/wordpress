@@ -26,11 +26,11 @@ add_shortcode('plugnpay_success_link', function($atts = []) {
 });
 
 add_shortcode('user_welcome', function($atts = []) {
-	$user = User::getLoggedInUser();
-	if (!$user) return '';
+	$user = wp_get_current_user();
+	if (!$user->exists()) return '';
 	return '
 		<div class="chabad" style="text-align: center; padding-bottom: 5px;">
-			Welcome, ' . esc_html($user->getName()) . '<br>
+			Welcome, ' . esc_html($user->display_name) . '<br>
 			<a href="myaccount">My Account</a> &ndash; <a href="logout?return=' . get_page_uri() . '">Logout</a>
 		</div>
 	';

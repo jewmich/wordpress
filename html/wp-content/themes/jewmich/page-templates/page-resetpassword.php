@@ -10,9 +10,9 @@ if (empty($_REQUEST['expire']) || empty($_REQUEST['email']) || empty($_REQUEST['
 	exit;
 }
 
-$user = User::getByEmail($_REQUEST['email']);
+$user = get_user_by('email', $_POST['email']);
 if (!$user ||
-	$user->generatePasswordResetToken($_REQUEST['expire']) !== $_REQUEST['token'] ||
+	sha1(RESET_LINK_SALT . $user->user_pass. $_REQUEST['expire']) !== $_REQUEST['token'] ||
 	time() > intval($_REQUEST['expire'])
 ) {
 	header("Location: /");
@@ -25,8 +25,13 @@ if (!empty($_POST['password'])) {
 	if ($_POST['password'] !== $_POST['reenter_password']) {
 		$error = "Passwords do not match";
 	} else {
-		$user->updatePassword($_POST['password']);
-		$_SESSION['user'] = $user;
+		$result = wp_update_user([
+			'user_pass' => $_POST['password'],
+			'ID' => $user->ID,
+		]);
+		if (is_wp_error($result)) {
+			throw new Exception($result->get_error_message());
+		}
 		$success = true;
 	}
 }

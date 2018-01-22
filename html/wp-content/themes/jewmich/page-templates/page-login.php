@@ -7,11 +7,21 @@ if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
 $loginError = '';
 if (!empty($_POST['email']) && !empty($_POST['password'])) {
-	if (!User::login($_POST['email'], $_POST['password'])) {
+	$user = wp_signon([
+		'user_login' => $_POST['email'],
+		'user_password' => $_POST['password'],
+	]);
+	if (is_wp_error($user)) {
 		$loginError = "Invalid email and/or password";
 	} else {
-		header('Location: /myaccount');
-		die;
+		if (is_super_admin($user->ID)) {
+			$loginError = 'Please use /wp-admin to login';
+		} else {
+			wp_set_current_user($user->ID);
+			wp_set_auth_cookie($user->ID);
+			header('Location: /myaccount');
+			die;
+		}
 	}
 }
 get_header();

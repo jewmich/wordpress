@@ -5,7 +5,6 @@
 
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
-unset($_SESSION['user']);
-session_regenerate_id(true);
+wp_logout();
 header('Location: ' . $_GET['return']);
 ?>

@@ -10,21 +10,30 @@ if (isset($_GET['wronguser'])) {
 }
 
 $phoneNotFound = false;
-$user = User::getLoggedInUser();
-if (!is_null($user)) {
-  $person = $user->person;
-  unset($user);
-} else {
-  if (!empty($_POST['phone'])) {
-    $person = Person::getByPhone($_POST['phone']);
-    if (is_null($person)) {
-      $phoneNotFound = true;
-    } else {
-      $_SESSION['phone'] = $_POST['phone'];
-    }
-  } elseif (!empty($_SESSION['phone'])) {
-    $person = Person::getByPhone($_SESSION['phone']);
-  }
+$user = wp_get_current_user();
+if (!$user->exists()) {
+	$user = null;
+	if (!empty($_POST['phone'])) {
+		$toReplace = array('-', ' ', '(', ')', '.');
+		$phone = str_replace($toReplace, array(), $_POST['phone']);
+		$fieldName = 'meta_value';
+		foreach ($toReplace as $char) $fieldName = "REPLACE($fieldName, '$char', '')";
+		$sql = $wpdb->prepare("SELECT user_id, meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'phone' AND {$fieldName} = %s LIMIT 1", $phone);
+		$results = $wpdb->get_row($sql);
+
+		if (!$results) {
+			$phoneNotFound = true;
+		} else {
+			$user = new WP_User($results->user_id);
+			$_SESSION['phone'] = $results->meta_value;
+		}
+	} elseif (!empty($_SESSION['phone'])) {
+		$user = get_users([
+			'meta_key' => 'phone', 
+			'meta_value' => $_SESSION['phone'],
+			'number' => 1,
+		])[0];
+	}
 }
 
 function serviceTime(){
@@ -199,7 +208,7 @@ If
 you know someone who would like to be a proud sponsor of a Shabbat dinner <a href="/sponsorshabbat">please use our 
 Secure on-line from</a>.&nbsp;
 <br>
-<?php if (!isset($person)): ?>
+<?php if (!$user): ?>
 <form name="login_form" method="post">
 <div style="background-image: url(/pic/chabad-bg.gif); width: 100%; padding: 5px 0">
   <p class="chabad-header">
@@ -229,19 +238,19 @@ Secure on-line from</a>.&nbsp;
 
 <div id="shabatContainer">
   <p class="chabad-header">
-<?php if (!isset($person)): ?>
+<?php if (!$user): ?>
   Don't have an account yet? <br />
   Fill out this form to reserve a space at our Shabbat Dinner!
 <?php else: ?>
-  Welcome <?= $person->getName() ?>!
-  <?php if (is_null(User::getLoggedInUser())): ?>(<a href="/shabbat?wronguser">Not you?</a>)<?php endif ?>
+  Welcome <?= $user->display_name ?>!
+  <?php if (wp_get_current_user()->exists()): ?>(<a href="/shabbat?wronguser">Not you?</a>)<?php endif ?>
   <br>
   Fill out this form to reserve a space at our Shabbat Dinner, or <a href="/myaccount">click here to change your contact information</a>.
-  <input type=hidden name="person_id" value="<?= $person->id ?>">
+  <input type=hidden name="user_id" value="<?= $user->ID ?>">
 <?php endif ?>
   </p>
    <table border="0" width="72%" id="registertable">
-<?php if (!isset($person)): ?>
+<?php if (!$user): ?>
       <tr>
       <label for="realname">Full Name </label>
       <input TYPE="text" size="24" maxsize="50" name="realname" id="realname" required>
@@ -318,7 +327,7 @@ Secure on-line from</a>.&nbsp;
       </tr>
    </table>
   <p align="center">
-    <input type="submit" value="Reserve Shabbat Dinner" <?= isset($person) ? '' : ' onclick="return verify();"'?>>
+    <input type="submit" value="Reserve Shabbat Dinner" <?= $user ? '' : ' onclick="return verify();"'?>>
   </p>
 </div>
 </form>

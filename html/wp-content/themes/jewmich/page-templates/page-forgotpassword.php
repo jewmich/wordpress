@@ -8,16 +8,16 @@ if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 $error = false;
 $success = false;
 if (!empty($_POST['email'])) {
-	$user = User::getByEmail($_POST['email']);
+	$user = get_user_by('email', $_POST['email']);
 	if (!$user) {
 		$error = "Email is not registered";
 	} else {
 		$expireTime = time() + (24 * 60 * 60);
-		$token = $user->generatePasswordResetToken($expireTime);
-		$encodedEmail = urlencode($user->person->email);
+		$token = sha1(RESET_LINK_SALT . $user->user_pass. $expireTime);
+		$encodedEmail = urlencode($user->user_login);
 		$mailer = getMailer();
 		$mailer->Subject = "Password Reset";
-		$mailer->Body = "Dear {$user->getName()},
+		$mailer->Body = "Dear {$user->display_name},
 
 We received a request to reset your password. If you did not make such a request, ignore this e-mail. Otherwise, click the link below:
 https://{$_SERVER['HTTP_HOST']}/resetpassword?email=$encodedEmail&expire=$expireTime&token=$token
@@ -25,7 +25,7 @@ https://{$_SERVER['HTTP_HOST']}/resetpassword?email=$encodedEmail&expire=$expire
 If you need additional help, please contact the Chabad House. See the following link for contact details:
 http://jewmich.com/contact
 ";
-		$mailer->AddAddress($user->person->email);
+		$mailer->AddAddress($user->user_login);
 		$mailer->SetFrom('umchabad@jewmich.com', 'Chabad House at UM');
 		$mailer->Send();
 		$success = true;

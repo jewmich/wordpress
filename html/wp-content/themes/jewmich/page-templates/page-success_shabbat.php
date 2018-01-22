@@ -5,22 +5,28 @@
 
 if (!defined('DONOTCACHEPAGE')) define('DONOTCACHEPAGE', true);
 
-$user = User::getLoggedInUser();
-if (!$user && empty($_SESSION['person_id'])) {
+$user = wp_get_current_user();
+if (!$user->exists() && empty($_SESSION['user_id'])) {
 	header("Location: /success");
 	exit;
 }
 
-$person = $user ? $user->person : Person::getFromId($_SESSION['person_id']);
-
 $error = '';
-if (!$user && !empty($_POST['password'])) {
+if (!$user->exists() && !empty($_POST['password'])) {
 	if ($_POST['password'] != $_POST['reenter_password']) {
 		$error = "Passwords do not match";
 	} else {
-		$user = User::create($person, $_POST['password']);
-		$_SESSION['user'] = $user;
+		$result = wp_update_user([
+			'ID' => $_SESSION['user_id'],
+			'user_pass' => $_POST['password'],
+		]);
+		if (is_wp_error($result)) {
+			throw new Exception($result->get_error_message());
+		}
+		wp_set_current_user($result);
+		wp_set_auth_cookie($result);
 		header('Location: /success?type=registered');
+		exit();
 	}
 }
 
@@ -30,26 +36,17 @@ get_header();
 	<span class="chabad-header">Thank you</span>
 	<br>
 	Your reservation has been submitted.
-<?php if(!$user && !User::isEmailTaken($person->email)): ?>
+<?php if(!$user->exists()): ?>
 If you'd like to make make future reservations simpler, register an account below:
 </p>
 <br>
 <form action="/success_shabbat" method="post">
-	<input type="hidden" name="person_id" value="<?= $person->id ?>">
 <div style="background-image: url(/pic/chabad-bg.gif); width: 100%; padding: 5px 0" align="center">
    <p align="center" class="chabad-header">Register an account (optional)</p>
    <?php if ($error): ?>
    <font color='red'><?= $error ?></font>
    <?php endif ?>
    <table border="0" id="logintable">
-      <tr>
-         <td>
-            <p class="chabad">Email:</p>
-         </td>
-         <td>
-            <input name="email" type="text" size="24" value="<?= $person->email ?>" disabled/>
-         </td>
-      </tr>
       <tr>
          <td>
             <p class="chabad">Password:</p>

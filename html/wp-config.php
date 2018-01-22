@@ -15,12 +15,12 @@
  */
 
 // Determine environment
-if (__DIR__ === '/var/www/html') {
-	define('ENVIRONMENT', 'development'); // inside docker
+if (__DIR__ === '/home/alterga2/jewmich.com/html') {
+	define('ENVIRONMENT', 'production');
 } elseif (__DIR__ === '/home/alterga2/test.jewmich.com/html') {
 	define('ENVIRONMENT', 'testing');
 } else {
-	define('ENVIRONMENT', 'production');
+	define('ENVIRONMENT', 'development'); // inside docker
 }
 
 ini_set('log_errors', 1);
