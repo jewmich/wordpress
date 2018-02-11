@@ -10,7 +10,7 @@ if (datetime_annarbor() < datetime_annarbor('Aug 25')) {
 } else {
 	$next_trip_date = datetime_annarbor('May 1, +1 Year');
 }
-$prereg_cutoff_date = datetime_annarbor('feb 1 ' . $next_trip_date->format('Y')); 
+$prereg_cutoff_date = datetime_annarbor('jan 30 ' . $next_trip_date->format('Y')); 
 ?>
 <html>
 <head>
@@ -89,6 +89,7 @@ themessage = themessage + " -  School Year";
 	<link rel="shortcut icon" href="/favicon.ico" >
 </head>
 <body>
+
 	<table id="main" border="0" width="53%" cellpadding="6" height="913" cellspacing="0">
 		<tr>
 			<td width="88%" bgcolor="#9900CC" height="31" valign="top" colspan="2">

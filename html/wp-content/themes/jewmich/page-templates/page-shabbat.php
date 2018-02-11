@@ -1,3 +1,7 @@
+
+
+
+
 <?php
 /**
  * Template Name: shabbat Template
@@ -12,28 +16,28 @@ if (isset($_GET['wronguser'])) {
 $phoneNotFound = false;
 $user = wp_get_current_user();
 if (!$user->exists()) {
-	$user = null;
-	if (!empty($_POST['phone'])) {
-		$toReplace = array('-', ' ', '(', ')', '.');
-		$phone = str_replace($toReplace, array(), $_POST['phone']);
-		$fieldName = 'meta_value';
-		foreach ($toReplace as $char) $fieldName = "REPLACE($fieldName, '$char', '')";
-		$sql = $wpdb->prepare("SELECT user_id, meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'phone' AND {$fieldName} = %s LIMIT 1", $phone);
-		$results = $wpdb->get_row($sql);
+    $user = null;
+    if (!empty($_POST['phone'])) {
+        $toReplace = array('-', ' ', '(', ')', '.');
+        $phone = str_replace($toReplace, array(), $_POST['phone']);
+        $fieldName = 'meta_value';
+        foreach ($toReplace as $char) $fieldName = "REPLACE($fieldName, '$char', '')";
+        $sql = $wpdb->prepare("SELECT user_id, meta_value FROM {$wpdb->usermeta} WHERE meta_key = 'phone' AND {$fieldName} = %s LIMIT 1", $phone);
+        $results = $wpdb->get_row($sql);
 
-		if (!$results) {
-			$phoneNotFound = true;
-		} else {
-			$user = new WP_User($results->user_id);
-			$_SESSION['phone'] = $results->meta_value;
-		}
-	} elseif (!empty($_SESSION['phone'])) {
-		$user = get_users([
-			'meta_key' => 'phone', 
-			'meta_value' => $_SESSION['phone'],
-			'number' => 1,
-		])[0];
-	}
+        if (!$results) {
+            $phoneNotFound = true;
+        } else {
+            $user = new WP_User($results->user_id);
+            $_SESSION['phone'] = $results->meta_value;
+        }
+    } elseif (!empty($_SESSION['phone'])) {
+        $user = get_users([
+            'meta_key' => 'phone',
+            'meta_value' => $_SESSION['phone'],
+            'number' => 1,
+        ])[0];
+    }
 }
 
 function serviceTime(){
@@ -42,9 +46,9 @@ function serviceTime(){
    $nextFridayDayOfYear = idate('z',$nextFridayUNIXTime);
    $nextFridayDayOfMonth = idate('d',$nextFridayUNIXTime);
    $nextFridayMonth = idate('m',$nextFridayUNIXTime);
-   
+
    if( $nextFridayMonth==1 ){ // january
-      if($nextFridayDayOfMonth <= 22){ 
+      if($nextFridayDayOfMonth <= 22){
          return '5:30pm';}
       else{return '5:45pm';}
    }
@@ -86,14 +90,14 @@ function dinnerTime(){
    $nextFridayDayOfYear = idate('z',$nextFridayUNIXTime);
    $nextFridayDayOfMonth = idate('d',$nextFridayUNIXTime);
    $nextFridayMonth = idate('m',$nextFridayUNIXTime);
-   
+
    if( $nextFridayMonth==1 ){ // january
-      if($nextFridayDayOfMonth <= 22){ 
+      if($nextFridayDayOfMonth <= 22){
          return '6:00pm';}
       else{return '6:15pm';}
    }
    else if( $nextFridayMonth==2 ){ // February
-      if($nextFridayDayOfMonth <= 10){ 
+      if($nextFridayDayOfMonth <= 10){
          return '6:30pm';}
       else{return '6:45pm';}
    }  else if( $nextFridayMonth==3 && idate('I',$nextFridayUNIXTime)==0 ){ // If March and NOT DST
@@ -106,7 +110,7 @@ function dinnerTime(){
       return '7:45pm';
    }
    else if( $nextFridayMonth>=5 && $nextFridayMonth<=7 ){ // May to july
-         return 'Please Call Chabad';  
+         return 'Please Call Chabad';
    }
    else if( $nextFridayMonth==8 ){ // Auguest
       if($nextFridayDayOfMonth <= 19){ return 'Please Call Chabad';}
@@ -133,8 +137,7 @@ function dinnerTime(){
 }
 get_header();
 ?>
-<script LANGUAGE="JavaScript" type="text/javascript">
-function verify() {
+<script LANGUAGE="JavaScript" type="text/javascript"> function verify() {
   var themessage = "You are required to complete the following fields: ";
   if (document.register_form.realname.value=="") {
     themessage = themessage + " - Your full name";
@@ -146,7 +149,8 @@ function verify() {
     themessage = themessage + " -  Your Phone Number";
   }
 
-  if (document.register_form.email.value != document.register_form.elll0.value) {
+  if (document.register_form.email.value !=
+document.register_form.elll0.value) {
     themessage = "Emails do not match";
   }
 
@@ -160,177 +164,137 @@ function verify() {
    }
 }
 </script>
-<style type="text/css">
-#registertable td:first-child {
-   padding-left: 20px;
-   width: 70px;
-}
-#shabatContainer {
-  background-image: url(/pic/chabad-bg.gif);
-  width: 100%;
-  padding: 5px 0
-}
-.chabad-header {
-  line-height: 24px;  
-}
-</style>
 
-<p class="chabad"> 
-<span class="chabad-header">Shabbat Dinner&nbsp;for 
-U of M Students</span>
-<br>
-<span class="chabad">
-Experience the most amazing Shabbat Dinner you have ever 
-experienced.&nbsp; Every Friday evening of the U of M academic school 
-year.<br>
-<br>
-<b>Schedule for this week:&nbsp; </b><br>
-Shabbat Services: <font color="#FF0000"><?php echo serviceTime(); ?></font> <br  />
-     Shabbat Dinner: <font color="#FF0000"><?php echo dinnerTime(); ?></font>
+<div class="page-header">
+ <h1>Shabbat Dinner for U of M Students</h1>  <h4>Experience the most amazing Shabbat Dinner you have ever experienced.<br>  Every Friday evening of the U of M academic school year.</h4> </div>
 
-</span><a href="http://www.chabad.org/calendar/CandleLighting2.asp?PlaceID=23&imageField4.x=15&imageField4.y=10">
-</a><br>
-<br>
-&quot;You'll never forget Shabbat at Chabad!&quot; <br>
-The weekly Shabbat dinners at Chabad provide Jewish 
-students -- from the freshman to the MBA -- an intimate and elegant 
-setting to eat, meet new friends from every niche of the campus, and 
-celebrate Shabbat in a warm and enjoyable manner.<br>
-<br>
-Shabbat dinner features five courses of traditional classics and 
-updated favorites. You don't have to dress up for the occasion and 
-you don't have to recite your Bar-Mitzvah speech.<br>
-<br>
-There is&nbsp; <span class="chabad-header">no charge</span> for the Shabbat 
-Dinner thanks to our wonderful sponsors.<br>
-<br>
-If 
-you know someone who would like to be a proud sponsor of a Shabbat dinner <a href="/sponsorshabbat">please use our 
-Secure on-line from</a>.&nbsp;
-<br>
-<?php if (!$user): ?>
-<form name="login_form" method="post">
-<div style="background-image: url(/pic/chabad-bg.gif); width: 100%; padding: 5px 0">
-  <p class="chabad-header">
-    Have you RSVP'd in the past? <br />
-     Enter your phone number here!
-<?php if ($phoneNotFound): ?>
-    <br>
-    <font color='red'>
-    Your phone number isn't in our system yet. Please fill out the form below to add it.
-    </font>
-    <?php endif ?>
+<div class="row">
+<h4>Schedule for this week:</h4>
+<h5>Shabbat Services: <font color="#FF0000"><?php echo serviceTime(); ?></font><br> Shabbat Dinner: <font color="#FF0000"><?php echo dinnerTime(); ?></font></h5> <a class="btn btn-danger" href="/candlelighting/">Candle Lighting Times</a> </div> <br>
+
+
+<div class="row">
+<p>
+&quot;You'll never forget Shabbat at Chabad!&quot; <br> The weekly Shabbat dinners at Chabad provide Jewish students from the freshman to the MBA an intimate and elegant setting to eat, meet new friends from every niche of the campus, and celebrate Shabbat in a warm and enjoyable manner.<br> <br> Shabbat dinner features five courses of traditional classics and updated favorites. You don't have to dress up for the occasion and you don't have to recite your Bar-Mitzvah speech.<br> <br> There is <b>no charge</b> for the Shabbat Dinner thanks to our wonderful sponsors.<br> <br> If you would like to be a proud sponsor of a Shabbat dinner <a href="/sponsorshabbat">please use our Secure on-line from</a>.
   </p>
-   <p>
-    <label for="phone" class="chabad">*</label>
-    <input type="text" size="24" maxsize="50" name="phone" id="phone" placeholder="Phone number"/>
-    <br>
-      <input class="login" width="50" type="submit" value="Continue >">
-    <br>
-   </p>
 </div>
+
 <br>
+
+<div class="row">
+<?php if (!$user): ?>
+<form class="form-inline" name="login_form" method="post">
+
+<div class="form-group">
+
+<label for="email">Have you RSVP'd in the past? Enter your phone number here!</label><br> <input class="form-control" type="text" size="24" maxsize="50" name="phone"
+id="phone" placeholder="Phone number"/>
+<input class="login btn btn-info" width="50" type="submit" value="Continue
+>">
+<br>
+</div>
+
+<?php if ($phoneNotFound): ?>
+<p style="color: red">Your phone number isn't in our system yet. Please fill out the form below to add it.</p>
+    <?php endif ?>
+
+
+
 </form>
 <?php endif ?>
+</div>
 
-<form name="register_form" action="/form-process-shabbat" method="post">
+
+<form  name="register_form" action="/form-process-shabbat" method="post">
+
 <input type=hidden name="subject" value="Shabbat Dinner Web Submission">
 
-<div id="shabatContainer">
-  <p class="chabad-header">
+
 <?php if (!$user): ?>
-  Don't have an account yet? <br />
-  Fill out this form to reserve a space at our Shabbat Dinner!
-<?php else: ?>
-  Welcome <?= $user->display_name ?>!
+<h3>  Don't have an account yet? <br>
+  Fill out this form to reserve a space at our Shabbat Dinner!</h3> <?php else: ?>
+
+ <h3> Welcome <?= $user->display_name ?>! <a href="/shabbat?wronguser">Not you?</a>
   <?php if (wp_get_current_user()->exists()): ?>(<a href="/shabbat?wronguser">Not you?</a>)<?php endif ?>
   <br>
-  Fill out this form to reserve a space at our Shabbat Dinner, or <a href="/myaccount">click here to change your contact information</a>.
-  <input type=hidden name="user_id" value="<?= $user->ID ?>">
+
+  Fill out this form to reserve a space at our Shabbat Dinner,<br> or <a href="/myaccount">click here to change your contact information</a>.</h3>
+  <input type=hidden name="user_id" value="<?= $user->ID ?>"> <?php endif ?> <div class="row col-md-6"> <?php if (!$user): ?>
+
+<div class="form-group">
+      <label for="realname">Full Name *</label>
+      <input class="form-control" type="text" size="24" maxsize="50"
+name="realname" id="realname" required="required"> </div>
+
+  <div class="form-group">
+      <label for="email">Email *</label>
+      <input class="form-control" type="text" size="24" maxsize="50"
+name="email" id="email" required="required"> </div>
+
+  <div class="form-group">
+      <label for="elll0">Retype Email *</label>
+      <input class="form-control" type="text" size="24" maxsize="50"
+name="elll0" id="elll0" data-match="#email" data-match-error="Whoops, Emails don't match">
+  </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+       <input class="form-control" TYPE="TEXT" SIZE="24" MAXSIZE="50"
+NAME="phone" id="phone" required="required"
+VALUE="<?=isset($_POST['phone']) ? $_POST['phone'] : ''?>"/>
+  </div>
+
+  <!--
+<div class="form-group">
+<label>U of M School year</label>
+  <span class="form-control"><?= do_shortcode('[um_school_year_dropdown]')
+?></span>
+ </div>
+-->
+<div class="form-group">
+<label for="form_year">Year you intend to graduate: *</label> <select class="form-control" name="student" required="required"> <option value="">Choose one</option> <script>
+  var myDate = new Date();
+  var year = myDate.getFullYear();
+  for(var i = year; i < year+5; i++){
+          document.write('<option value="'+i+'">'+i+'</option>');
+        }
+  for(var i = year; i < year+5; i++){
+          document.write('<option value="Grad '+i+'">Grad '+i+'</option>');
+  }
+</script>
+</select>
+</div>
 <?php endif ?>
-  </p>
-   <table border="0" width="72%" id="registertable">
-<?php if (!$user): ?>
-      <tr>
-      <label for="realname">Full Name </label>
-      <input TYPE="text" size="24" maxsize="50" name="realname" id="realname" required>
-      <br />
-      </tr>
-      <tr>
-      <label for="email">Email </label>
-      <input type="text" size="24" maxsize="50" name="email" id="email" required>
-        <br />
-      </tr>
-      <tr>
-      <label for="elll0">Retype Email </label>
-      <input type="text" size="24" maxsize="50" name="elll0" id="elll0" required>
-      <br />
-      </tr>
-      <tr>
-      <label for="phone">Phone Number </label>
-        <input TYPE="TEXT" SIZE="24" MAXSIZE="50" NAME="phone" id="phone" VALUE="<?=
-          isset($_POST['phone']) ? $_POST['phone'] : ''
-        ?>"/>
-      
-      <br />
-      </tr>
-      <tr>
-         <td>U of M School year</td>
-         <td>
-      <?= do_shortcode('[um_school_year_dropdown]') ?>
-         </td>
-      </tr>
-<?php endif ?>
-      <tr>
-        <td>How many people?</td>
-        <td>
-           <select size="1" name="people">
-              <option selected value="1">1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-           </select>
-        </td>
-      </tr>
-      <tr>
-        <td><span class="chabad">For which week?</font></td>
-        <td><span class="chabad">
-           <select size="1" name="week">
-              <option>Chose one</option><br />
+
+<div class="form-group">
+<label for="people">How many people intend to come? * (Including You)</label> <select class="form-control"  size="1" name="people">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option> </select> </div>
+
+<div class="form-group">
+<label for="week">For which week?</label> <select class="form-control" size="1" name="week" required="required">
+              <option value="">Chose one</option><br />
               <option>This Week</option>
               <option>Next Week</option>
-              <option>Other</option>
               <option>Parents Weekend</option>
               <option>Graduation Weekend</option>
-           </select>
-        </td>
-      </tr>
-      <tr>
-        <td width="95%" class="chabad" colspan="2">Comment: (Additional names)</td>
-      </tr>
-      <tr>
-         <td width="95%" colspan="2">
-            <p align="center"><textarea rows="4" name="suggestion" cols="30"></textarea></p>
-         </td>
-      </tr>
-      <tr>
-        <td width="95%" class="chabad" colspan="2">
-            <p class="chabad-med" align="center">
-               <font color="#FF0000">Please be advised the Shabbat 
-               dinner on-line <br>
-               reservation service is only available to U of M 
-               students. <br>
-               All others will need to call&nbsp; 734-995-3276.</font>
-            </p>
-         </td>
-      </tr>
-   </table>
-  <p align="center">
-    <input type="submit" value="Reserve Shabbat Dinner" <?= $user ? '' : ' onclick="return verify();"'?>>
-  </p>
-</div>
+              <option>Other (*Describe in Comment)</option> </select> </div>
+
+<div class="form-group">
+<label for="suggestion">Comment: (Additional Names)</label> <textarea class="form-control" rows="4" name="suggestion"></textarea> </div>
+
+<p align="center">
+ <font size=small color="#FF0000">Please be advised the Shabbat dinner on-line <br>  reservation service is only available to U of M students. <br> All others please call <a href="tel:7349953276">734-995-3276</a>.</font>
+</p>
+
+<input class="btn btn-success btn-block" type="submit" value="Reserve Shabbat Dinner"> <!--<input class="btn btn-sucsess btn-block" type="submit" value="Reserve Shabbat Dinner" <?= $user ? '' : ' onclick="return verify();"'?>>-->
+
+    </div>
 </form>
+
 <?php
 get_footer();
 ?>
