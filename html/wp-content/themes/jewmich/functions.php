@@ -45,6 +45,25 @@ add_action('init', function() {
 	if( !session_id() ) { session_start(); }
 });
 
+// Semi-hack alert: Evaluate inline PHP inside posts. Normally, this would be a huge security hole,
+// but since posts are only every edited by a handful of admins (Alter/Mendel), and we don't do
+// comments, this isn't a big issue.
+//
+// Priority set to 7 because we need this to run before the autoembed filter, which is at
+// priority 8.
+add_filter('the_content', function($html) {
+	if(strpos($html, '<?php') !== false) {
+		if (!defined('DONOTCACHEPAGE')) {
+			// For wp-super-cache
+			define('DONOTCACHEPAGE', true);
+		}
+		ob_start();
+		eval('?>' . $html);
+		$html = ob_get_clean();
+	}
+	return $html;
+}, 7);
+
 // Add WP-Super-Cache cache filter to dynamically generate the sidebar for the footer
 // See example 1 at http://svn.wp-plugins.org/wp-super-cache/trunk/plugins/dynamic-cache-test.php
 require_once(ABSPATH . 'wp-admin/includes/plugin.php');
