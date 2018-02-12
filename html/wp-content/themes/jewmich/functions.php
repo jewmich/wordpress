@@ -25,6 +25,11 @@ add_action('after_setup_theme', function() {
 		'flex-width' => false,
 		'flex-height' => false,
 	]);
+
+	// Don't show toolbar for subscribers
+	if (!current_user_can('administrator') && !is_admin()) {
+		show_admin_bar(false);
+	}
 });
 
 add_action('wp_enqueue_scripts', function() {
