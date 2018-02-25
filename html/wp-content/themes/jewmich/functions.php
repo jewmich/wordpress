@@ -72,6 +72,7 @@ add_filter('the_content', function($html) {
 
 add_filter('tiny_mce_before_init', function($in) {
 	$in['protect'] = '[ /<\?php[\s\S]*?(?:$|\?>)/g  ]';
+	return $in;
 });
 
 // Add WP-Super-Cache cache filter to dynamically generate the sidebar for the footer
