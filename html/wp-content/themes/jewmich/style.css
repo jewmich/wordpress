@@ -3,7 +3,7 @@ body {
 	background: #fff;
 	margin: 0;
 }
-nav, header, section, article, h1, h2, h3, h4, p {
+nav, header, section, article, , h2, h3, h4, p {
 	display: block;
 	margin: 0;
 }
@@ -17,7 +17,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		color: #333;
 		margin: 10px;
 	}
-	h1 {
+ 	h1 {
 		font-size: 24pt;
 		font-weight: bold;
 		margin: 20px 0;
@@ -30,6 +30,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		font-size: 16pt;
 		font-weight: bold;
 	}
+	*/
 	nav, img, ul, a, article span, aside {
 		display: none;
 	}
@@ -54,6 +55,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		background-size: cover;
 		min-height: 300px;
 	}
+	
 	header h1 {
 		position: absolute;
 		top: 0;
@@ -73,6 +75,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		font-family: 'Perpetua Titling', serif;
 		letter-spacing: 1px;
 	}
+
 	header hzzz a:hover {
 		color: #fff;
 	}
@@ -80,7 +83,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		margin: 0 auto;
 	}
 
-	h2 {
+/*	h2 {
 		color: #333;
 	}
 	h3 {
@@ -90,7 +93,7 @@ nav, header, section, article, h1, h2, h3, h4, p {
 		padding: 0 15px;
 		margin-bottom: 20px;
 	}
-
+*/
 	.nav > li li a {
 		border-bottom: 1px solid #777;
 	}
@@ -475,17 +478,7 @@ table.chabad .label { white-space: nowrap }
 	COLOR: #4C4C4C;
 	text-align: left;
 }
-/*
-.linknoline {	font-family: Arial, Helvetica, sans-serif;	font-size: 12px; line-height: 18px;	color: #4C4C4C;}
-.linknoline a:link {	color: #4C4C4C; text-decoration: none; font-weight:none }
-.linknoline a:visited {	color: #4C4C4C;text-decoration: none; font-weight:none }
-.linknoline a:hover {	text-decoration: underline; color: #727272;}
 
-.linkyesline {	font-family: Arial, Helvetica, sans-serif;	font-size: 12px;	line-height: 18px;	color: #4C4C4C;}
-.linkyesline a:link {	color: #4C4C4C; text-decoration: underline; font-weight:none }
-.linkyesline a:visited {	color: #4C4C4C;text-decoration: underline; font-weight:none }
-.linkyesline a:hover {	text-decoration: none; color: #727272;}
-*/
 
 /* honeypot for spam bots */
 form[name="form"] input[name="username"] {
