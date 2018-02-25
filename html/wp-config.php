@@ -21,6 +21,7 @@ if (strpos(__DIR__, '/jewmich.com/') !== false) {
 	define('ENVIRONMENT', 'testing');
 } else {
 	define('ENVIRONMENT', 'development'); // inside docker
+	define('SCRIPT_DEBUG', true);
 }
 
 ini_set('log_errors', 1);
