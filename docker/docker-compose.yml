@@ -8,6 +8,7 @@ services:
      ports:
        - "3306:3306"
      restart: always
+     user: "${UID}"
      environment:
        MYSQL_ROOT_PASSWORD: wordpress
        MYSQL_DATABASE: jewmichmainsql
@@ -21,15 +22,18 @@ services:
          - "1080:1080"
 
    wordpress:
+     build:
+        context: .
+        dockerfile: Dockerfile-wordpress
+        args:
+           - UID
      depends_on:
        - db
        - mailcatcher
      volumes:
        - "..:/var/www/"
+       # Override VOLUME in Wordpress base image
        - "../html/:/var/www/html"
-     build:
-        context: .
-        dockerfile: Dockerfile-wordpress
      links:
        - db
      ports:

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8a39409717c8e195ce455655e75ef8e3",
+    "content-hash": "40648bef13af034fdb0201ee74ac2c97",
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.3.0",
+            "version": "v1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045"
+                "reference": "049797d727261bf27f2690430d935067710049c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/79ad876c7498c0bbfe7eed065b8651c93bfd6045",
-                "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
+                "reference": "049797d727261bf27f2690430d935067710049c2",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,7 @@
             },
             "require-dev": {
                 "composer/composer": "1.0.*@dev",
-                "phpunit/phpunit": "4.1.*"
+                "phpunit/phpunit": "^4.8.36"
             },
             "type": "composer-plugin",
             "extra": {
@@ -63,6 +63,7 @@
                 "Hurad",
                 "ImageCMS",
                 "Kanboard",
+                "Lan Management System",
                 "MODX Evo",
                 "Mautic",
                 "Maya",
@@ -86,6 +87,7 @@
                 "croogo",
                 "dokuwiki",
                 "drupal",
+                "eZ Platform",
                 "elgg",
                 "expressionengine",
                 "fuelphp",
@@ -98,14 +100,18 @@
                 "lavalite",
                 "lithium",
                 "magento",
+                "majima",
                 "mako",
                 "mediawiki",
                 "modulework",
+                "modx",
                 "moodle",
+                "osclass",
                 "phpbb",
                 "piwik",
                 "ppi",
                 "puppet",
+                "pxcms",
                 "reindex",
                 "roundcube",
                 "shopware",
@@ -118,7 +124,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-04-24T06:37:16+00:00"
+            "time": "2017-12-29T09:13:20+00:00"
         },
         {
             "name": "jewmich/jewmich_sidebar",
@@ -159,7 +165,7 @@
         },
         {
             "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
-            "version": "4.2.8",
+            "version": "4.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
@@ -167,7 +173,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1496969531",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1517558608",
                 "reference": null,
                 "shasum": null
             },
@@ -179,16 +185,16 @@
         },
         {
             "name": "wpackagist-plugin/debug-this",
-            "version": "0.5.1",
+            "version": "0.5.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/debug-this/",
-                "reference": "tags/0.5.1"
+                "reference": "tags/0.5.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-this.0.5.1.zip",
-                "reference": "tags/0.5.1",
+                "url": "https://downloads.wordpress.org/plugin/debug-this.0.5.2.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -199,16 +205,16 @@
         },
         {
             "name": "wpackagist-plugin/error-log-monitor",
-            "version": "1.5.4",
+            "version": "1.5.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/error-log-monitor/",
-                "reference": "tags/1.5.4"
+                "reference": "tags/1.5.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/error-log-monitor.1.5.4.zip",
-                "reference": "tags/1.5.4",
+                "url": "https://downloads.wordpress.org/plugin/error-log-monitor.1.5.7.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -239,15 +245,15 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.1.6",
+            "version": "3.2.16",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.1.6"
+                "reference": "tags/3.2.16"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.1.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.2.16.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -259,15 +265,15 @@
         },
         {
             "name": "wpackagist-plugin/unique-headers",
-            "version": "1.7.11",
+            "version": "1.7.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/unique-headers/",
-                "reference": "tags/1.7.11"
+                "reference": "tags/1.7.12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/unique-headers.1.7.11.zip",
+                "url": "https://downloads.wordpress.org/plugin/unique-headers.1.7.12.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -276,6 +282,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/unique-headers/"
+        },
+        {
+            "name": "wpackagist-plugin/woocommerce",
+            "version": "3.3.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/woocommerce/",
+                "reference": "tags/3.3.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/woocommerce.3.3.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/woocommerce/"
         },
         {
             "name": "wpackagist-plugin/wp-editor",
@@ -299,15 +325,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-super-cache",
-            "version": "1.5.3",
+            "version": "1.5.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-super-cache/",
-                "reference": "tags/1.5.3"
+                "reference": "tags/1.5.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.5.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-super-cache.1.5.9.zip",
                 "reference": null,
                 "shasum": null
             },

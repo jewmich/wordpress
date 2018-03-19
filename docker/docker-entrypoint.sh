@@ -34,10 +34,6 @@ fi
 
 cd ..
 
-# Need to make writable php error log 
-touch php-errors.log
-chown www-data:www-data php-errors.log
-
 if ! [ -e composer.phar ]; then
 	# Install composer (taken from https://getcomposer.org/doc/faqs/how-to-install-composer-programmatically.md)
 	EXPECTED_SIGNATURE=$(curl -s https://composer.github.io/installer.sig)

@@ -14,6 +14,7 @@
 		"wpackagist-plugin/wp-super-cache": "*",
 		"wpackagist-plugin/ninja-forms": "*",
 		"wpackagist-plugin/wp-editor": "*",
+		"wpackagist-plugin/woocommerce": "*",
 		"jewmich/jewmich_sidebar": "*",
 		"wpackagist-plugin/unique-headers": "^1.7"
 	},
