@@ -123,3 +123,30 @@ sfHover = function() {
 	}
 }
 if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+
+
+function fmtPrice(value) {
+result="$"+Math.floor(value)+".";
+var cents=100*(value-Math.floor(value))+0.5;
+result += Math.floor(cents/10);
+result += Math.floor(cents%10);
+return result;
+}
+function compute() {
+var unformatted_tax = (document.forms[0].cost.value)*(document.forms[0].tax.value);
+document.forms[0].unformatted_tax.value=unformatted_tax;
+var formatted_tax = fmtPrice(unformatted_tax);
+document.forms[0].formatted_tax.value=formatted_tax;
+var cost3= eval( document.forms[0].cost.value );
+cost3 += eval( (document.forms[0].cost.value)*(document.forms[0].tax.value) );
+var total_cost = fmtPrice(cost3);
+document.forms[0].total_cost.value=total_cost;
+}
+function resetIt() {
+document.forms[0].cost.value="19.95";
+document.forms[0].tax.value=".06";
+document.forms[0].unformatted_tax.value="";
+document.forms[0].formatted_tax.value="";
+document.forms[0].total_cost.value="";
+}

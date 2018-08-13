@@ -11,14 +11,21 @@ add_shortcode('um_school_year_dropdown', function ($atts = []) {
 	$options[] = 'Other';
 
 	$selectName = isset($atts['name']) ? $atts['name'] : 'student';
+	$selectClass = isset($atts['class']) ? $atts['class'] : null;
 	$selectedValue = isset($atts['value']) ? $atts['value'] : null;
-	$html = "<select size='1' name='$selectName'>";
+	$html = "<select name='$selectName' class='$selectClass' required> \n <option value=''>Choose One</option> ";
 	foreach ($options as $option) {
-		$html .= "\n<option" . (($option == $selectedValue) ? ' selected' : '') . ">$option</option>\n";
+		$html .= "
+
+		\n<option" . (($option == $selectedValue) ? ' selected' : '') . ">$option</option>\n";
+
+
 	}
 	$html .= '</select>';
 	return $html;
 });
+
+
 
 add_shortcode('plugnpay_success_link', function($atts = []) {
 	$url = get_site_url(null, "/successredirect?type={$atts['type']}");

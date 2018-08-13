@@ -106,6 +106,7 @@
 					<a href="#" class="dropdown-toggle" id="donate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DONATE <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="/donate">Donate Online</a></li>
+						<li><a href="https://www.paypal.com/fundraiser/charity/1619170">Donate with Paypal</a></li>					
 						<li><a href="/donation">About Donations</a></li>
 						<li><a href="/donateyourcar">Donate your car</a></li>
 						<li><a href="/wishlist">Chabad Wish List</a></li>
@@ -130,6 +131,7 @@
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</nav>
+
 	<div class="container<?= get_post_meta(get_the_ID(), 'no_sidebar', true) ? '' : ' has-sidebar' ?>" id="pageContent">
 		<div class="row">
 			<div class="col col-xs-12 pageContentWrapperCol">

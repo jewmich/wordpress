@@ -46,6 +46,13 @@ function passoverDates() {
 	foreach ([
 		'firstSeder' => 14,
 		'secondSeder' => 15,
+		'thirddaypessach' => 16,
+		'fourthdaypessach' => 17,
+		'fifthdaypessach' => 18,
+		'sixthdaypessach' => 19,
+		'seventhdaypessach' => 20,
+		'eighthdaypessach' => 21,
+		'ninthdaypessach' => 22,
 	] as $name => $day) {
 		$dates[$name] = datetime_from_jewish(8, $day);
 		$dates[$name] = datetime_sunset_annarbor($dates[$name]);

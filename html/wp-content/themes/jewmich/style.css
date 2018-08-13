@@ -7,9 +7,9 @@ nav, header, section, article, , h2, h3, h4, p {
 	display: block;
 	margin: 0;
 }
-
-.chabad-header:first-of-type {font-size: 24px !important; margin-bottom: 20px; color: #666; font-family: 'Perpetua Titling', serif;}
-
+a:hover {
+	text-decoration: underline !important;
+}
 /*print*/
 @media print {
 	body {
@@ -21,7 +21,7 @@ nav, header, section, article, , h2, h3, h4, p {
 		font-size: 24pt;
 		font-weight: bold;
 		margin: 20px 0;
-	}
+	} 
 	h2 {
 		font-size: 18pt;
 		font-weight: bold;
@@ -42,14 +42,19 @@ nav, header, section, article, , h2, h3, h4, p {
 	}
 }
 
+	
+@media screen and (min-width: 768px){
+   .rwd-break { display: none; }
+}
+
+
 /*all @media screens*/
 @media screen {
 	body {
 		background: url("assets/images/torah_star.jpg") no-repeat #999;
 		background-size: cover;
 	}
-	
-
+		
 	header {
 		background: center no-repeat #333;
 		background-size: cover;
@@ -83,17 +88,6 @@ nav, header, section, article, , h2, h3, h4, p {
 		margin: 0 auto;
 	}
 
-/*	h2 {
-		color: #333;
-	}
-	h3 {
-		font-family: 'PT Sans', Arial, sans-serif;
-		letter-spacing: 1px;
-		font-size: 1.5em;
-		padding: 0 15px;
-		margin-bottom: 20px;
-	}
-*/
 	.nav > li li a {
 		border-bottom: 1px solid #777;
 	}
@@ -275,6 +269,8 @@ nav, header, section, article, , h2, h3, h4, p {
 		transform-origin:0 0;
 		-webkit-transform-origin:0 0;
 	}
+	
+	/*
 	.call_to_action {
 		color: #e8cfa7 !important; 
 		text-shadow: none; 
@@ -287,7 +283,9 @@ nav, header, section, article, , h2, h3, h4, p {
 		width: 100%; 
 		height: initial;
 	}
+*/
 }
+
 
 /* medium phones and tablet portrait */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
@@ -350,8 +348,21 @@ nav, header, section, article, , h2, h3, h4, p {
 
 }
 
-/* VIDEO */
 
+/* IMAGE */
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* VIDEO */
 .video-container {
 	position: relative;
 	padding-bottom: 56.25%;
@@ -377,11 +388,6 @@ nav, header, section, article, , h2, h3, h4, p {
         max-width: 100%;
 }
 
-
-
-
-
-
 /* CONTACT FORM 7 */
 
 .wpcf7-form input,
@@ -397,87 +403,6 @@ nav, header, section, article, , h2, h3, h4, p {
 	width: 50%;
 }
 
-
-/**
- * BEGIN LEGACY jewmich.COM CSS
- * This CSS is solely for backwards-compatibility with old pages
- */
-.chabad {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 18px;
-	color: #4C4C4C; 
-	text-decoration: none;
-	text-align: left;
-}
-/*
-.chabad { color: #4C4C4C; text-decoration: underline; }
-.chabad a:visited {	color: #4C4C4C; text-decoration: underline; }
-.chabad a:hover {	color: #727272; }
-*/
-table.chabad .label { white-space: nowrap }
-
-#table1 {
-	width: 100%;
-	table-layout: fixed;
-}
-
-.successmsg {
-	color: #2f4f2f;
-}
-
-.sidebar p {
-	margin-bottom: 10px;
-}
-
-.chabad-header {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 18px;
-	font-weight: bold;
-	color: #4C4C4C;
-}
-
-.main-content {
-	width: 520px;
-}
-
-.texter {
-	display: none;
-}
-
-@media print {
-	.texter { display: block }
-}
-
-.chabad-sub-info {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	line-height: 14px;
-	color: #727272;
-}
-/*
-.chabad-sub-info a:link {	color: #727272; text-decoration: none; }
-.chabad-sub-info a:visited {	color: #727272; text-decoration: none; }
-.chabad-sub-info a:hover {	color: #727272; text-decoration: underline; }
-*/
-
-.chabad-small {
-	font-family: Arial, Helvetica, sans-serif;
-	FONT-SIZE: 10.5px;
-	COLOR: #000000;
-	line-height: 13px;
-}
-
-.verdana10pxGray {
-	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #727272; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
-}
-
-.chabad-med {
-	FONT-SIZE: 11px;
-	COLOR: #4C4C4C;
-	text-align: left;
-}
 
 
 /* honeypot for spam bots */
@@ -545,22 +470,6 @@ A.CLLink:Hover {
 .CLHolName {
 	font-weight:normal;
 }	
-/**
- * END LEGACY jewmich.COM CSS
- */
-
-/**
-* FORM-SPECIFIC CSS
-*/
-
-/**
-* END Culinary-SPECIFIC CSS
-*/
-
-
-/**
-* FORM-SPECIFIC CSS
-*/
 
 div#nf-form-3-cont.nf-form-cont {
 	margin-top: 20px;
@@ -579,6 +488,8 @@ div#nf-form-2-cont.nf-form-cont h3 {
 hr.ninja-forms-field {
 	border-top: 1px solid #ccc;
 }
+
+/**
 #register_top {
 	text-align: center;
 	padding: 10px 20px 20px;
@@ -680,7 +591,114 @@ div#nf-form-6-cont.nf-form-cont {
 		margin: 30px 20%;
 	}
 }
+*/
 
 /**
  * END FORM-SPECIFIC CSS
  */
+
+
+/**
+ * BEGIN LEGACY jewmich.COM CSS
+ * This CSS is solely for backwards-compatibility with old pages
+ 
+.chabad {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	color: #4C4C4C; 
+	text-decoration: none;
+	text-align: left;
+}
+/*
+.chabad { color: #4C4C4C; text-decoration: underline; }
+.chabad a:visited {	color: #4C4C4C; text-decoration: underline; }
+.chabad a:hover {	color: #727272; }
+*/
+
+/**
+table.chabad .label { white-space: nowrap }
+
+#table1 {
+	width: 100%;
+	table-layout: fixed;
+}
+
+.successmsg {
+	color: #2f4f2f;
+}
+
+.sidebar p {
+	margin-bottom: 10px;
+}
+
+.chabad-header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: bold;
+	color: #4C4C4C;
+}
+
+.main-content {
+	width: 520px;
+}
+
+.texter {
+	display: none;
+}
+
+@media print {
+	.texter { display: block }
+}
+
+.chabad-sub-info {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	line-height: 14px;
+	color: #727272;
+}
+
+*/
+
+/*
+.chabad-sub-info a:link {	color: #727272; text-decoration: none; }
+.chabad-sub-info a:visited {	color: #727272; text-decoration: none; }
+.chabad-sub-info a:hover {	color: #727272; text-decoration: underline; }
+*/
+
+/**
+.chabad-small {
+	font-family: Arial, Helvetica, sans-serif;
+	FONT-SIZE: 10.5px;
+	COLOR: #000000;
+	line-height: 13px;
+}
+
+.verdana10pxGray {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #727272; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+.chabad-med {
+	FONT-SIZE: 11px;
+	COLOR: #4C4C4C;
+	text-align: left;
+}
+*/
+
+/*	h2 {
+		color: #333;
+	}
+	h3 {
+		font-family: 'PT Sans', Arial, sans-serif;
+		letter-spacing: 1px;
+		font-size: 1.5em;
+		padding: 0 15px;
+		margin-bottom: 20px;
+	}
+*/
+
+/*
+.chabad-header:first-of-type {font-size: 24px !important; margin-bottom: 20px; color: #666; font-family: 'Perpetua Titling', serif;}
+*/
+
