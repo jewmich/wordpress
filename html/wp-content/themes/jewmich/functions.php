@@ -69,6 +69,8 @@ add_filter('the_content', function($html) {
 	return $html;
 }, 7);
 
+// Need to disable the block editor because it conflicts with above
+add_filter('use_block_editor_for_post_type', '__return_false', 6);
 
 add_filter('tiny_mce_before_init', function($in) {
 	$in['protect'] = '[ /<\?php[\s\S]*?(?:$|\?>)/g  ]';
