@@ -402,6 +402,9 @@ img {
 #nf-form-6-cont .ninja-forms-field.nf-element, nf-field-73-wrap {
 	width: 50%;
 }
+.nf-before-field .sectionHeader {
+	font-size: 18px bold;
+}
 
 
 
@@ -489,216 +492,25 @@ hr.ninja-forms-field {
 	border-top: 1px solid #ccc;
 }
 
-/**
-#register_top {
-	text-align: center;
-	padding: 10px 20px 20px;
-}
-#register_top a {
-	font-size: 21px;
-	font-weight: bold;
-	color: #333;
-}
-#register_top a:hover {
-	text-decoration: underline;
-} 
-#board {
-	padding: 50px 20px 20px 15%;
-}
-#registration {
-	margin-top: 30px;
-}
-.call_to_action {
-	display: inline-block;
-	width: 28%;
-	height: 6em;
-	margin-top: 10px !important;
-	padding: 0 1%;
-	float: left;
-	text-align: center;
-	font-size: 16px;
-	line-height: 1.2;
-	color: #800925;
-	text-shadow: white 1px 1px 5px, #e8cfa7 0px 0px 15px, #e8cfa7 0px 0px 10px;
-}
-#registration p {
-	margin: 20px 30% !important;
-}
-#registration a {
-	color: #4b1709 !important;
-}
-#registration a:hover {
-	text-decoration: underline !important;
-}
-#akervall a {
-	color: #104985;
-}
-#akervall a:hover {
-	color: #f4793c;
-	text-decoration: underline;
-}
-div#nf-form-3-cont.nf-form-cont {
-	color: black;
-}
-input#nf-field-46 {
-	color: white;
-	background: #7f0824;
-	font-size: 1.5em;
-	font-weight: bold;
-	padding: 10px 20px;
-	border: 1px solid #7f0824;
-}
-input#nf-field-46:hover {
-	color: #7f0824;
-	background: white;
-	font-weight: bold;
-	padding: 10px 20px;
-	border: 1px solid #7f0824;
-}
-.nf-response-msg a:hover {
-	text-decoration: underline;
-}
-div#nf-form-6-cont.nf-form-cont {
-	padding: 20px; 
-	background: white;
-}
-.#nf-form-6-cont.sectionHeader p {
-	padding: 10px; 
-	border: 1px solid #999;
-}
-#akervall img, #jcc img, #federation img {
-	float: left;
-	width: 30%;
-	height: auto;
-	display: block;
-	margin-left: 20px;
-}
-#chabad img {
-	margin: 0 auto;
-	display: block;
-	width: 250px;
-	height: auto;
-}
-#akervall img, #jcc img {
-	padding-right: 5%;
+
+/* style all input elements with a required attribute */
+input:required {
+  box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);
 }
 
-@media only screen and (min-width: 768px) {
-	#registration {
-		width: 80%;
-	}
-	#registration p.button {
-		margin: 30px 20%;
-	}
-}
-*/
-
 /**
- * END FORM-SPECIFIC CSS
+ * style input elements that have a required
+ * attribute and a focus state
  */
-
+input:required:focus {
+  border: 1px solid red;
+  outline: none;
+}
 
 /**
- * BEGIN LEGACY jewmich.COM CSS
- * This CSS is solely for backwards-compatibility with old pages
- 
-.chabad {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 18px;
-	color: #4C4C4C; 
-	text-decoration: none;
-	text-align: left;
+ * style input elements that have a required
+ * attribute and a hover state
+ */
+input:required:hover {
+  opacity: 1;
 }
-/*
-.chabad { color: #4C4C4C; text-decoration: underline; }
-.chabad a:visited {	color: #4C4C4C; text-decoration: underline; }
-.chabad a:hover {	color: #727272; }
-*/
-
-/**
-table.chabad .label { white-space: nowrap }
-
-#table1 {
-	width: 100%;
-	table-layout: fixed;
-}
-
-.successmsg {
-	color: #2f4f2f;
-}
-
-.sidebar p {
-	margin-bottom: 10px;
-}
-
-.chabad-header {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	line-height: 18px;
-	font-weight: bold;
-	color: #4C4C4C;
-}
-
-.main-content {
-	width: 520px;
-}
-
-.texter {
-	display: none;
-}
-
-@media print {
-	.texter { display: block }
-}
-
-.chabad-sub-info {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
-	line-height: 14px;
-	color: #727272;
-}
-
-*/
-
-/*
-.chabad-sub-info a:link {	color: #727272; text-decoration: none; }
-.chabad-sub-info a:visited {	color: #727272; text-decoration: none; }
-.chabad-sub-info a:hover {	color: #727272; text-decoration: underline; }
-*/
-
-/**
-.chabad-small {
-	font-family: Arial, Helvetica, sans-serif;
-	FONT-SIZE: 10.5px;
-	COLOR: #000000;
-	line-height: 13px;
-}
-
-.verdana10pxGray {
-	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #727272; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
-}
-
-.chabad-med {
-	FONT-SIZE: 11px;
-	COLOR: #4C4C4C;
-	text-align: left;
-}
-*/
-
-/*	h2 {
-		color: #333;
-	}
-	h3 {
-		font-family: 'PT Sans', Arial, sans-serif;
-		letter-spacing: 1px;
-		font-size: 1.5em;
-		padding: 0 15px;
-		margin-bottom: 20px;
-	}
-*/
-
-/*
-.chabad-header:first-of-type {font-size: 24px !important; margin-bottom: 20px; color: #666; font-family: 'Perpetua Titling', serif;}
-*/
-

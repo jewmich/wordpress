@@ -16,27 +16,27 @@
 </head>
 <body <?php body_class(); ?>>
 	<header style="background-image: url(<?= header_image() ?>)">
-	<h1><a href="/">CHABAD HOUSE OF ANN ARBOR</a></h1>
+	<h1 style="font-size:3vw;"><a href="/">CHABAD HOUSE OF ANN ARBOR</a></h1>
 		<?php if (is_front_page()): ?>
 		<div class="jumbotron text-center">
 			<div id="carousel" class="carousel slide" data-ride="carousel" data-interval="6000">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
-					<li data-target="#carousel" data-slide-to="0" class="active"></li>
-					<li data-target="#carousel" data-slide-to="1"></li>
-					<li data-target="#carousel" data-slide-to="2"></li>
+					<li data-target="#carousel" data-slide-to="1" class="active"></li>
+					<!--	<li data-target="#carousel" data-slide-to="2"></li> -->
+				<!--	<li data-target="#carousel" data-slide-to="0"></li> -->
 				</ol>
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="<?= get_template_directory_uri() ?>/assets/images/carousel/header.jpg" alt="chabad house">
+						<img src="<?= get_template_directory_uri() ?>/assets/images/carousel/header2.jpg" alt="chabad house">
 					</div>
 					<div class="item">
-						<img src="<?= get_template_directory_uri() ?>/assets/images/carousel/header2.jpg" alt="chabad house 2">
-					</div>
-					<div class="item">
-						<img src="<?= get_template_directory_uri() ?>/assets/images/carousel/header3.jpg" alt="chabad house 3">
-					</div>
+						<img src="<?= get_template_directory_uri() ?>/assets/images/carousel/header3.jpg" alt="chabad house 2">
+					</div>  
+					<!-- <div class="item">
+						<img src="<?= get_template_directory_uri() ?>/assets/images/carousel/header.jpg" alt="chabad house 3">
+					</div> -->
 				</div>
 
 				<!-- Controls -->
@@ -65,15 +65,14 @@
 					<a class="dropdown-toggle" id="students" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">STUDENTS <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="/studentcenter">About U of M Chabad</a></li>
-						<li><a href="/birthright">Free Trip to Israel</a></li>
-						<li><a href="/mythandfact">Myths & Facts</a></li>
-						<li><a href="/studycenter">Judaic Classes</a></li>
 						<li><a href="/shabbat">Shabbat Dinner</a></li>
-						<li><a href="/candlelighting">Candle Lighting Times</a></li>
+						<li><a href="/sinaischolars">Sinai Scholars</a></li>
+						<li><a href="/birthright">Free Trip to Israel</a></li>
+						<li><a href="/studycenter">Judaic Classes</a></li>
 						<li><a href="/kosher">Kosher in Ann Arbor</a></li>
-						<li><a href="/map">Map</a></li>
 						<li><a href="/visiting&amp;living">Visiting & Living</a></li>
-						<li><a href="/payment">Make a Payment</a></li>
+						<li><a href="/donate">Donate Online</a></li>
+						<li><a href="/mythandfact">Myths & Facts</a></li>
 					</ul>
 				</li>
 				<li class="dropdown">
@@ -106,7 +105,8 @@
 					<a href="#" class="dropdown-toggle" id="donate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DONATE <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="/donate">Donate Online</a></li>
-						<li><a href="https://www.paypal.com/fundraiser/charity/1619170">Donate with Paypal</a></li>					
+						<li><a href="https://www.paypal.com/fundraiser/charity/1619170">Donate with Paypal</a></li>		
+						<li><a href="https://venmo.com/umchabad">Donate with Venmo</a></li>							
 						<li><a href="/donation">About Donations</a></li>
 						<li><a href="/donateyourcar">Donate your car</a></li>
 						<li><a href="/wishlist">Chabad Wish List</a></li>
@@ -122,10 +122,10 @@
 						<li><a href="/map">Map</a></li>
 						<li><a href="/aboutus">About Us</a></li>
 						<li><a href="/visiting&amp;living">Visiting & Living</a></li>
+						<li><a href="/donate">Donate Online</a></li>
 						<li><a href="/payment">Make a Payment</a></li>
 						<li><a href="/ask">Ask the Rabbi</a></li>
 						<li><a href="/candlelighting">Candle Lighting Times</a></li>
-						<li><a href="/map">Map</a></li>
 					</ul>
 				</li>
 			</ul>
