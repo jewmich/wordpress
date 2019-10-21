@@ -18,7 +18,7 @@ Use the `scripts/import_sql.sh` script to import the https://www.jewmich.com dat
 Run the following command to deploy code to the jewmich.com server:
 
 ```
-ssh alterga2@jewmich.com 'cd jewmich.com && git pull && php composer.phar install'
+ssh -A jewmich_com@jewmich.com 'cd jewmich.com && git pull && php composer.phar install'
 ```
 
 If you changed the `secrets/secrets-production.php` file, you will need to manually upload it with:
