@@ -1,4 +1,4 @@
-FROM wordpress:4-php7.0-apache
+FROM wordpress:5-php7.3-apache
 
 ARG UID
 # assign host UID to www-data
