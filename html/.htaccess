@@ -46,16 +46,20 @@ Deny from all
 #AIOWPS_DEBUG_LOG_BLOCK_HTACCESS_RULES_END
 # END All In One WP Security
 
-Redirect 301 /raffle https://pledgejewish.com/M/175864
-Redirect 301 /granddraw  https://pledgejewish.com/M/175864
+Redirect 301 /granddraw https://keepchabadoncampusgrowing.org/granddraw/chabad-at-university-of-michigan
 Redirect 301 /medinsu https://www.travelinsurancecenter.com/eng/information/cm_quote.cfm?line=tx_max&affiliate=umchabad
 Redirect 301 /medtrvinsu https://www.travelinsurancecenter.com/eng/information/cm_quote.cfm?line=trvsf_clsc&affiliate=umchabad
 Redirect 301 /joinchabad https://docs.google.com/forms/d/e/1FAIpQLSdL3QhdkI7XXfLeR1AYd5MaVN4GXfMSDgk6Jc7yp9AXIWwbgw/viewform
 Redirect 301 /staffbirthright https://docs.google.com/forms/d/1bsehKyl9gYere0xSqb5JWV7TjxPWjbhG9Uom8p7Fj8I/viewform
-Redirect 301 /megachallah https://docs.google.com/forms/d/e/1FAIpQLSf6Hqw87aQmLfQBFMu3sBWRrv_IJ-7xtXCUGO-ujGj2uwf8xg/viewform
+Redirect 301 /highholidays https://www.jewmich.com/highholiday
+Redirect 301 /challah https://docs.google.com/forms/d/e/1FAIpQLSeN4h0aM6LFb7fEwTzHPrbhhn0YkiO8utqF8ByTtyvPsMaTMA/viewform?usp=sf_link
+
 
 
 # BEGIN WordPress
+# The directives (lines) between `BEGIN WordPress` and `END WordPress` are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /

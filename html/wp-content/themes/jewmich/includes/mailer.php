@@ -12,6 +12,7 @@ function getMailer() {
 	$mailer->Port = SMTP_PORT;
 	if (SMTP_USERNAME) {
 		$mailer->SMTPAuth = true;
+		$mailer->SMTPSecure = "tls";
 		$mailer->Username = SMTP_USERNAME;
 		$mailer->Password = SMTP_PASSWORD;
 	}
