@@ -47,7 +47,7 @@ add_action('wp_enqueue_scripts', function() {
 
 // Session needed for user handling
 add_action('init', function() {
-	if( !session_id() ) { session_start(); }
+	if( !is_admin() && !session_id() && !headers_sent() ) { session_start(); }
 });
 
 // Semi-hack alert: Evaluate inline PHP inside posts. Normally, this would be a huge security hole,
