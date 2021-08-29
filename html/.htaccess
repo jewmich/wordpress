@@ -52,16 +52,20 @@ Redirect 301 /medtrvinsu https://www.travelinsurancecenter.com/eng/information/c
 Redirect 301 /joinchabad https://docs.google.com/forms/d/e/1FAIpQLSdL3QhdkI7XXfLeR1AYd5MaVN4GXfMSDgk6Jc7yp9AXIWwbgw/viewform
 Redirect 301 /staffbirthright https://docs.google.com/forms/d/1bsehKyl9gYere0xSqb5JWV7TjxPWjbhG9Uom8p7Fj8I/viewform
 Redirect 301 /highholidays https://www.jewmich.com/highholiday
-Redirect 301 /challah https://docs.google.com/forms/d/e/1FAIpQLSeN4h0aM6LFb7fEwTzHPrbhhn0YkiO8utqF8ByTtyvPsMaTMA/viewform?usp=sf_link
-
+Redirect 301 /challah https://docs.google.com/forms/d/1zk1StKV3OQmfzT9e1ly_ShiHHPUXpZr3WxpXX6wpscI/viewform?edit_requested=true
+Redirect 301 /purim https://docs.google.com/forms/d/e/1FAIpQLScd_-KWUhVDh8frMYkAObB2ZiFrhW9Mg1ZAUhyTbr4EYdzTZw/viewform?usp=sf_link
+Redirect 301 /purimpack https://docs.google.com/forms/d/e/1FAIpQLScJaixJOOMHN3TLY67q5KHHugPUTOrAO7I_e-BSXHXx_5DWDg/viewform?usp=sf_link
+Redirect 301 /chametz https://www.jewmich.com/chometz
+Redirect 301 /freshmanpack https://docs.google.com/forms/d/e/1FAIpQLSdPDLFi8fXtCQ5VyqDvLRhFqzADZ7G-R0VAMBagvEb1Ql0bKQ/viewform?usp=sf_link
 
 
 # BEGIN WordPress
-# The directives (lines) between `BEGIN WordPress` and `END WordPress` are
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
 # dynamically generated, and should only be modified via WordPress filters.
 # Any changes to the directives between these markers will be overwritten.
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f

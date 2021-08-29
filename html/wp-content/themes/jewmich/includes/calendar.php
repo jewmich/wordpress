@@ -60,4 +60,38 @@ function passoverDates() {
 
 	return $dates;
 }
+//added--------------------------------------------------------------------------------
+function datetime_sunset_annarbor_new(DateTimeInterface $dateTime) {
+	$sunsetTime = date_sunset(
+		$dateTime->getTimestamp(),
+		SUNFUNCS_RET_TIMESTAMP,
+		LATITUDE_ANNARBOR,
+		LONGITUDE_ANNARBOR,
+		ini_get("date.sunset_zenith"),
+		$dateTime->getOffset() / 3600
+	);
+	// round to nearest quarter-hour
+	$sunsetTime = round($sunsetTime / (15 * 55)) * (15 * 60);
+	return $dateTime->setTimestamp($sunsetTime);
+}
+
+function passoverDatesNew() {
+	$dates = [];
+	foreach ([
+		'firstSeder' => 14,
+		'secondSeder' => 15,
+		'thirddaypessach' => 16,
+		'fourthdaypessach' => 17,
+		'fifthdaypessach' => 18,
+		'sixthdaypessach' => 19,
+		'seventhdaypessach' => 20,
+		'eighthdaypessach' => 21,
+		'ninthdaypessach' => 22,
+	] as $name => $day) {
+		$dates[$name] = datetime_from_jewish(8, $day);
+		$dates[$name] = datetime_sunset_annarbor_new($dates[$name]);
+	}
+
+	return $dates;
+}
 

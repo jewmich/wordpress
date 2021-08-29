@@ -105,11 +105,12 @@
 					<a href="#" class="dropdown-toggle" id="donate" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DONATE <span class="caret"></span></a>
 					<ul class="dropdown-menu">
 						<li><a href="/donate">Donate Online</a></li>
-						<li><a href="https://www.paypal.com/fundraiser/charity/1619170">Donate with Paypal</a></li>		
-						<li><a href="https://venmo.com/umchabad">Donate with Venmo</a></li>							
+						<li><a href="/paypal">Donate with Paypal</a></li>		
+<!--						<li><a href="https://venmo.com/umchabad">Donate with Venmo</a></li>	 -->						
 						<li><a href="/donation">About Donations</a></li>
 						<li><a href="/donateyourcar">Donate your car</a></li>
 						<li><a href="/wishlist">Chabad Wish List</a></li>
+						<li><a href="/lifeandlegacy">Life & Legacy</a></li>
 						<li><a href="/chaiclub">Chai Club</a></li>
 						<li><a href="/charitybox">Request a Charity Box</a></li>
 						<li><a href="/payment">Make a Payment</a></li>
