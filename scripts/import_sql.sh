@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -ex
 
 ssh -C jewmich_com@jewmich.com 'mysqldump -p -u jewmichwordpress -h mysql.jewmich.com jewmichmainsql' > dump.sql
 sed -i 's/DEFINER=[^*]*\*/\*/g' dump.sql

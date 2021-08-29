@@ -7,16 +7,16 @@
 		{ "type": "vcs", "url": "https://github.com/jewmich/jewmich_sidebar.git" }
 	],
 	"require": {
-		"wpackagist-plugin/debug-this": "*",
-		"wpackagist-plugin/error-log-monitor": "*",
 		"wpackagist-plugin/all-in-one-wp-security-and-firewall": "*",
+		"wpackagist-plugin/debug-this": "*",
+		"wpackagist-plugin/elementor": "*",
+		"wpackagist-plugin/error-log-monitor": "*",
 		"wpackagist-plugin/google-authenticator": "*",
-		"wpackagist-plugin/wp-super-cache": "*",
-		"wpackagist-plugin/ninja-forms": "*",
-		"wpackagist-plugin/wp-editor": "*",
-		"wpackagist-plugin/woocommerce": "*",
+		"wpackagist-plugin/html-editor-syntax-highlighter": "*",
 		"jewmich/jewmich_sidebar": "*",
-		"wpackagist-plugin/unique-headers": "^1.7"
+		"wpackagist-plugin/ninja-forms": "*",
+		"wpackagist-plugin/unique-headers": "*",
+		"wpackagist-plugin/wp-super-cache": "*"
 	},
 	"extra": {
 		"installer-paths": {
