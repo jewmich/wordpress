@@ -10,6 +10,9 @@
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  */
 
+// Start output buffering so we can redirect inside the_content()
+ob_start();
+
 get_header();
 ?>
 	<?php while ( have_posts() ) : the_post(); ?>
