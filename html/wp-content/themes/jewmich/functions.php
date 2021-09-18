@@ -69,20 +69,28 @@ add_filter('the_content', function($html) {
 	return $html;
 }, 7);
 
-set_error_handler(function($errno, $errstr, $errfile, $errline) {
-	// handle @
-	if (0 === error_reporting()) {
-		return false;
-	}
-	$message = $errstr . '  at URL ' . $_SERVER['REQUEST_URI'] . ', backtrace: ' . wp_debug_backtrace_summary( null, 1, true );
+function handle_error($errstr) {
+	$message = 'Error at URL ' . $_SERVER['REQUEST_URI'] . ': ' . $errstr;
 	if (WP_DEBUG_DISPLAY || ini_get('display_errors')) {
 		echo '<br />' . $message . '<br />';
 	}
 	if (WP_DEBUG_LOG || ini_get('log_errors')) {
 		error_log($message);
 	}
+}
+
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+	// handle @
+	if (0 === error_reporting()) {
+		return false;
+	}
+	handle_error($errstr . ', backtrace: ' . wp_debug_backtrace_summary(null, 1, true));
 	return true;
 }, error_reporting());
+
+set_exception_handler(function($exception) {
+	handle_error((string) $exception);
+});
 
 // Need to disable the block editor because it conflicts with above
 add_filter('use_block_editor_for_post_type', '__return_false', 6);
