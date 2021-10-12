@@ -100,6 +100,44 @@ add_filter('tiny_mce_before_init', function($in) {
 	return $in;
 });
 
+define('JEWMICH_USER_META_FIELDS', [
+	'Cell Phone' => 'phone',
+	'U of M School Year' => 'student_year',
+	'Address' => 'address',
+	'City' => 'city',
+	'State' => 'state',
+	'Zip' => 'zip',
+]);
+
+function jewmich_show_profile_fields($user) { ?>
+	<h2>Jewmich-specific Data</h3>
+	<table class="form-table">
+		<?php foreach (JEWMICH_USER_META_FIELDS as $label => $field): ?>
+		<tr>
+			<th><label for="<?= $field ?>"><?= $label ?></label></th>
+			<td><input type="text" name="<?= $field ?>" id="<?= $field ?>" value="<?= esc_attr(get_user_meta($user->ID, $field, true)) ?>" class="regular-text" /></td>
+		</tr>
+		<?php endforeach ?>
+	</table>
+<?php
+}
+
+add_action('show_user_profile', 'jewmich_show_profile_fields', 10);
+add_action('edit_user_profile', 'jewmich_show_profile_fields', 10);
+
+function jewmich_save_profile_fields($user_id) {
+	if (!current_user_can('edit_user', $user_id)) {
+		return false;
+	}
+
+	foreach (JEWMICH_USER_META_FIELDS as $label => $field) {
+		update_user_meta($user_id, $field, $_POST[$field]);
+	}
+}
+
+add_action('personal_options_update', 'jewmich_save_profile_fields', 10);
+add_action('edit_user_profile_update', 'jewmich_save_profile_fields', 10);
+
 // Add WP-Super-Cache cache filter to dynamically generate the sidebar for the footer
 // See example 1 at http://svn.wp-plugins.org/wp-super-cache/trunk/plugins/dynamic-cache-test.php
 require_once(ABSPATH . 'wp-admin/includes/plugin.php');
