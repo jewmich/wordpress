@@ -70,6 +70,7 @@
 						<li><a href="/birthright">Free Trip to Israel</a></li>
 						<li><a href="/studycenter">Judaic Classes</a></li>
 						<li><a href="/kosher">Kosher in Ann Arbor</a></li>
+						<li><a href="/signup">Signup for Chabad Email</a></li>											
 						<li><a href="/visiting&amp;living">Visiting & Living</a></li>
 						<li><a href="/donate">Donate Online</a></li>
 						<li><a href="/mythandfact">Myths & Facts</a></li>

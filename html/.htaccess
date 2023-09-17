@@ -11,7 +11,7 @@ Deny from all
 </IfModule>
 </Files>
 ServerSignature Off
-LimitRequestBody 10240000
+LimitRequestBody 10485760
 <Files wp-config.php>
 <IfModule mod_authz_core.c>
 Require all denied
@@ -22,17 +22,6 @@ Deny from all
 </IfModule>
 </Files>
 #AIOWPS_BASIC_HTACCESS_RULES_END
-#AIOWPS_PINGBACK_HTACCESS_RULES_START
-<Files xmlrpc.php>
-<IfModule mod_authz_core.c>
-Require all denied
-</IfModule>
-<IfModule !mod_authz_core.c>
-Order deny,allow
-Deny from all
-</IfModule>
-</Files>
-#AIOWPS_PINGBACK_HTACCESS_RULES_END
 #AIOWPS_DEBUG_LOG_BLOCK_HTACCESS_RULES_START
 <Files debug.log>
 <IfModule mod_authz_core.c>
@@ -46,6 +35,12 @@ Deny from all
 #AIOWPS_DEBUG_LOG_BLOCK_HTACCESS_RULES_END
 # END All In One WP Security
 
+# BEGIN force URL to lowercase
+RewriteEngine On
+RewriteCond expr "tolower(%{REQUEST_URI}) =~ /(.*)/"
+RewriteRule [A-Z] %1 [R=301,L]
+# END force URL to lowercase
+
 Redirect 301 /granddraw https://keepchabadoncampusgrowing.org/granddraw/chabad-at-university-of-michigan
 Redirect 301 /medinsu https://www.travelinsurancecenter.com/eng/information/cm_quote.cfm?line=tx_max&affiliate=umchabad
 Redirect 301 /medtrvinsu https://www.travelinsurancecenter.com/eng/information/cm_quote.cfm?line=trvsf_clsc&affiliate=umchabad
@@ -57,7 +52,8 @@ Redirect 301 /purim https://docs.google.com/forms/d/e/1FAIpQLScd_-KWUhVDh8frMYkA
 Redirect 301 /purimpack https://docs.google.com/forms/d/e/1FAIpQLScJaixJOOMHN3TLY67q5KHHugPUTOrAO7I_e-BSXHXx_5DWDg/viewform?usp=sf_link
 Redirect 301 /chametz https://www.jewmich.com/chometz
 Redirect 301 /freshmanpack https://docs.google.com/forms/d/e/1FAIpQLSdPDLFi8fXtCQ5VyqDvLRhFqzADZ7G-R0VAMBagvEb1Ql0bKQ/viewform?usp=sf_link
-
+Redirect 301 /shofar https://www.jewmich.com/donate
+Redirect 301 /helpprep https://calendar.google.com/calendar/u/0?cid=N2IyNGZkYTUxOTQyMDQ1MGQ4Y2M1MTg4ODQ5M2JkMDQ2NjBmYjlmY2ZlZTZiMTdhYTllM2M3MzhkNzgwZDJiZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t 
 
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
@@ -87,18 +83,18 @@ RewriteRule ^wp-includes/js/tinymce/langs/.+\.php - [F,L]
 RewriteRule ^wp-includes/theme-compat/ - [F,L]
 </IfModule>
 
-# BEGIN Expire headers  
-<ifModule mod_expires.c>  
-ExpiresActive On  
-ExpiresDefault "access plus 5 seconds"  
-ExpiresByType image/x-icon "access plus 1 week"  
-ExpiresByType image/jpeg "access plus 1 week"  
-ExpiresByType image/png "access plus 1 week"  
-ExpiresByType image/gif "access plus 1 week"  
-ExpiresByType application/x-shockwave-flash "access plus 1 week"  
-ExpiresByType text/css "access plus 2 weeks"  
-ExpiresByType text/javascript "access plus 2 weeks"  
-ExpiresByType application/javascript "access plus 2 weeks"  
-ExpiresByType application/x-javascript "access plus 2 weeks"  
-</ifModule>  
-# END Expire headers  
+# BEGIN Expire headers
+<ifModule mod_expires.c>
+ExpiresActive On
+ExpiresDefault "access plus 5 seconds"
+ExpiresByType image/x-icon "access plus 1 week"
+ExpiresByType image/jpeg "access plus 1 week"
+ExpiresByType image/png "access plus 1 week"
+ExpiresByType image/gif "access plus 1 week"
+ExpiresByType application/x-shockwave-flash "access plus 1 week"
+ExpiresByType text/css "access plus 2 weeks"
+ExpiresByType text/javascript "access plus 2 weeks"
+ExpiresByType application/javascript "access plus 2 weeks"
+ExpiresByType application/x-javascript "access plus 2 weeks"
+</ifModule>
+# END Expire headers

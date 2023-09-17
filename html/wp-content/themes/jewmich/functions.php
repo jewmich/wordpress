@@ -182,3 +182,4 @@ define('ERROR_EMAIL_RECIPIENTS', 'mason.malone@gmail.com,alter@jewmich.com');
 require_once('includes/calendar.php');
 require_once('includes/mailer.php');
 require_once('includes/shortcodes.php');
+require_once('gf_functions.php');

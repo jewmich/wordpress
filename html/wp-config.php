@@ -1,4 +1,9 @@
 <?php
+// Begin AIOWPSEC Firewall
+if (file_exists('/home/jewmich_com/jewmich.com/html/aios-bootstrap.php')) {
+	include_once('/home/jewmich_com/jewmich.com/html/aios-bootstrap.php');
+}
+// End AIOWPSEC Firewall
 /**
  * The base configurations of the WordPress.
  *
