@@ -35,6 +35,10 @@ Deny from all
 #AIOWPS_DEBUG_LOG_BLOCK_HTACCESS_RULES_END
 # END All In One WP Security
 
+<Files "xmlrpc.php">
+  Require all denied
+</Files>
+
 # BEGIN force URL to lowercase
 RewriteEngine On
 RewriteCond expr "tolower(%{REQUEST_URI}) =~ /(.*)/"
