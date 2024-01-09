@@ -36,7 +36,7 @@ Deny from all
 # END All In One WP Security
 
 <Files "xmlrpc.php">
-  Require all denied
+Require all denied
 </Files>
 
 # BEGIN force URL to lowercase
@@ -57,7 +57,7 @@ Redirect 301 /purimpack https://docs.google.com/forms/d/e/1FAIpQLScJaixJOOMHN3TL
 Redirect 301 /chametz https://www.jewmich.com/chometz
 Redirect 301 /freshmanpack https://docs.google.com/forms/d/e/1FAIpQLSdPDLFi8fXtCQ5VyqDvLRhFqzADZ7G-R0VAMBagvEb1Ql0bKQ/viewform?usp=sf_link
 Redirect 301 /shofar https://www.jewmich.com/donate
-Redirect 301 /helpprep https://calendar.google.com/calendar/u/0?cid=N2IyNGZkYTUxOTQyMDQ1MGQ4Y2M1MTg4ODQ5M2JkMDQ2NjBmYjlmY2ZlZTZiMTdhYTllM2M3MzhkNzgwZDJiZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t 
+Redirect 301 /mitzvah https://www.jewmich.com/contact
 
 # BEGIN WordPress
 # The directives (lines) between "BEGIN WordPress" and "END WordPress" are
