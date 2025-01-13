@@ -32,6 +32,7 @@ ini_set('display_errors', (ENVIRONMENT === 'development') ? 1 : 0);
 require_once(__DIR__ . '/../secrets/secrets-' . ENVIRONMENT . '.php');
 
 // Force SSL for all logins and wp-admin access, except in development/testing
+define('WP_CACHE', true);
 define('FORCE_SSL_ADMIN', ENVIRONMENT === 'production');
 
 /** Database Charset to use in creating database tables. */
@@ -68,7 +69,6 @@ define('WP_DEBUG_DISPLAY', WP_DEBUG);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', __DIR__ . '/');
 
-define('WP_CACHE', true); //Added by WP-Cache Manager
 define('WPCACHEHOME', ABSPATH . 'wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 
 /** Sets up WordPress vars and included files. */
