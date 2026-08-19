@@ -133,8 +133,8 @@
 		</div><!-- /.navbar-collapse -->
 	</nav>
 
-	<div class="container<?= get_post_meta(get_the_ID(), 'no_sidebar', true) ? '' : ' has-sidebar' ?>" id="pageContent">
+	<div class="container" id="pageContent">
 		<div class="row">
 			<div class="col col-xs-12 pageContentWrapperCol">
 				<div class="row">
-					<div class="col col-xs-<?= get_post_meta(get_the_ID(), 'no_sidebar', true) ? 12 : 11?> pageContentCol">
+					<div class="col col-xs-12 pageContentCol">

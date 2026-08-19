@@ -1,15 +1,4 @@
 							</div>
-							<?php if (!get_post_meta(get_the_ID(), 'no_sidebar', true)): ?>
-							<div class="col col-xs-1 sidebar">
-								<? if (is_plugin_active('wp-super-cache/wp-cache.php')): ?>
-									<!-- DYNAMIC_CACHE_SIDEBAR -->
-								<? else: ?>
-									<?= do_shortcode('[user_welcome][sidebar]') ?>
-								<? endif ?>
-								<script type="text/javascript" language="javascript" src="//beta.chabad.org/tools/shared/candlelighting/candlelighting.js.asp?z=48104"></script>
-								<br>&nbsp;</p>
-							</div>
-							<?php endif ?>
 						</div>
 					</div>
 				</div>
